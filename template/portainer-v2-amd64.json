@@ -1274,6 +1274,45 @@
 		},
 		{
 			"categories": [
+				"AI",
+				"Tools"
+			],
+			"description": "Claude Code is Anthropic's terminal-based coding agent, containerized here (Node 22 + git/ssh/curl, running as a non-root user) so it can be exec'd into as an isolated sandbox instead of installed on the host. Built from https://github.com/yo-repo87/claude-code-docker.",
+			"env": [
+				{
+					"description": "Get one at https://console.anthropic.com/ (leave blank to authenticate interactively with /login after attaching instead)",
+					"label": "ANTHROPIC_API_KEY",
+					"name": "ANTHROPIC_API_KEY"
+				},
+				{
+					"default": "false",
+					"description": "Set to true to always run with --dangerously-skip-permissions. Only enable this for trusted, sandboxed use.",
+					"label": "CLAUDE_SKIP_PERMISSIONS",
+					"name": "CLAUDE_SKIP_PERMISSIONS"
+				}
+			],
+			"image": "ghcr.io/yo-repo87/claude-code-docker:latest",
+			"interactive": true,
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/claude-code.png",
+			"name": "claude-code",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://docs.claude.com/en/docs/claude-code\" target=\"_blank\">https://docs.claude.com/en/docs/claude-code</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/yo-repo87/claude-code-docker#readme\" target=\"_blank\">https://github.com/yo-repo87/claude-code-docker#readme</a><br><br><br>This container has no web UI — after deploying, open Portainer's Console for this container and attach to a shell (or directly to the claude command) to use it interactively. Your project files belong in the /workspace volume; Claude Code's own login/session state is kept in /home/claude/.claude so it survives restarts.",
+			"platform": "linux",
+			"restart_policy": "unless-stopped",
+			"title": "Claude Code",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/ClaudeCode",
+					"container": "/home/claude/.claude"
+				},
+				{
+					"bind": "/portainer/ClaudeCodeWorkspace",
+					"container": "/workspace"
+				}
+			]
+		},
+		{
+			"categories": [
 				"DNS",
 				"Tools"
 			],

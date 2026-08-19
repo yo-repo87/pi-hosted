@@ -1,0 +1,54 @@
+{
+	"categories": [
+		"CCTV",
+		"Video"
+	],
+	"description": "ZoneMinder is a free, open-source, full-featured Network Video Recorder (NVR) suite that runs on Linux, supporting IP (RTSP/ONVIF), USB and analog cameras. It handles motion detection, zone-based triggers, recording, and remote viewing through a web console.",
+	"env": [
+		{
+			"default": "1000",
+			"label": "PUID",
+			"name": "PUID"
+		},
+		{
+			"default": "1000",
+			"label": "PGID",
+			"name": "PGID"
+		},
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		},
+		{
+			"default": "50%",
+			"label": "SHMEM",
+			"name": "SHMEM"
+		}
+	],
+	"image_arm64": "dlandon/zoneminder:latest",
+	"image_amd64": "dlandon/zoneminder:latest",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/zoneminder.png",
+	"name": "zoneminder",
+	"note": "Web console is served over HTTPS on the mapped port (default self-signed cert). Add cameras as an ONVIF or FFMPEG/RTSP source pointed at your camera's stream (e.g. rtsp://IP-CAM/ch0_0.h264). ZoneMinder uses a large shared-memory segment for frame buffers — if recording fails to start, increase the container's shm_size.",
+	"officialDoc": "https://github.com/dlandon/zoneminder.master-docker",
+	"platform": "linux",
+	"ports": [
+		"8443:443/tcp",
+		"9000:9000/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "ZoneMinder",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/ZoneMinder/config",
+			"container": "/config"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/ZoneMinder/data",
+			"container": "/var/cache/zoneminder"
+		}
+	],
+	"webpage": "https://zoneminder.com/"
+}

@@ -2935,6 +2935,51 @@
 		},
 		{
 			"categories": [
+				"CCTV",
+				"Video"
+			],
+			"description": "Frigate is a free, open-source Network Video Recorder (NVR) with realtime local object detection for IP cameras. It ingests RTSP camera streams (via its bundled go2rtc engine), records video, and detects people/vehicles/animals without sending footage to the cloud.",
+			"env": [
+				{
+					"default": "512mb",
+					"label": "FRIGATE_SHM_SIZE",
+					"name": "FRIGATE_SHM_SIZE"
+				}
+			],
+			"image": "ghcr.io/blakeblackshear/frigate:stable",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/frigate.png",
+			"name": "frigate",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://frigate.video/\" target=\"_blank\">https://frigate.video/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.frigate.video/frigate/installation/\" target=\"_blank\">https://docs.frigate.video/frigate/installation/</a><br><br><br>Requires a config.yml in the config volume defining your cameras' RTSP streams (e.g. rtsp://IP-CAM/ch0_1.h264 for detection, ch0_0.h264 for recording). This container needs a larger shared-memory allocation than Portainer's default 64MB — after deploying, edit the container/stack to add `shm_size: 512m` (or more) or detection will crash.",
+			"platform": "linux",
+			"ports": [
+				"8971:8971/tcp",
+				"8554:8554/tcp",
+				"8555:8555/tcp",
+				"8555:8555/udp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Frigate NVR",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Frigate/config",
+					"container": "/config"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Frigate/media",
+					"container": "/media/frigate"
+				},
+				{
+					"container": "/tmp/cache"
+				},
+				{
+					"bind": "/etc/localtime",
+					"container": "/etc/localtime"
+				}
+			]
+		},
+		{
+			"categories": [
 				"Web",
 				"Books",
 				"Tools"
@@ -3231,6 +3276,33 @@
 			"title": "Go-Socks5-Proxy",
 			"type": 1,
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hub.docker.com/r/serjs/go-socks5-proxy\" target=\"_blank\">https://hub.docker.com/r/serjs/go-socks5-proxy</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/serjs/go-socks5-proxy\" target=\"_blank\">https://hub.docker.com/r/serjs/go-socks5-proxy</a><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=IWj1-j2QWvo target=\"_blank\">Novaspirit Tech - Route Docker Traffic Through VPN Container</a><br><br>"
+		},
+		{
+			"categories": [
+				"CCTV",
+				"Video"
+			],
+			"description": "go2rtc is a free, open-source, ultimate camera streaming application with support for RTSP, RTMP, HTTP-FLV, WebRTC, HomeKit, FFmpeg, and more. It is the streaming engine bundled inside Frigate and is commonly used to restream RTSP camera feeds with low-latency WebRTC playback in the browser.",
+			"image": "alexxit/go2rtc:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/go2rtc.png",
+			"name": "go2rtc",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/AlexxIT/go2rtc\" target=\"_blank\">https://github.com/AlexxIT/go2rtc</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/AlexxIT/go2rtc/blob/master/docker/README.md\" target=\"_blank\">https://github.com/AlexxIT/go2rtc/blob/master/docker/README.md</a><br><br><br>Web UI/API on port 1984. Edit /config/go2rtc.yaml to add your camera's RTSP source (e.g. rtsp://IP-CAM/ch0_0.h264). For full WebRTC/HomeKit functionality you may need to switch this container to host networking.",
+			"platform": "linux",
+			"ports": [
+				"1984:1984/tcp",
+				"8554:8554/tcp",
+				"8555:8555/tcp",
+				"8555:8555/udp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "go2rtc",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/go2rtc",
+					"container": "/config"
+				}
+			]
 		},
 		{
 			"categories": [
@@ -5540,6 +5612,42 @@
 				{
 					"bind": "/portainer/Files/AppData/Config/mealie",
 					"container": "/app/data"
+				}
+			]
+		},
+		{
+			"categories": [
+				"CCTV",
+				"Video"
+			],
+			"description": "MediaMTX (formerly rtsp-simple-server) is a ready-to-use, zero-dependency, free and open-source real-time media server and media proxy that allows you to publish, read, and proxy live video and audio streams via RTSP, RTMP, HLS, WebRTC and SRT. Great for aggregating multiple IP camera RTSP feeds behind a single restream endpoint.",
+			"env": [
+				{
+					"default": "tcp",
+					"label": "MTX_RTSPTRANSPORTS",
+					"name": "MTX_RTSPTRANSPORTS"
+				}
+			],
+			"image": "bluenviron/mediamtx:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/mediamtx.png",
+			"name": "mediamtx",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/bluenviron/mediamtx\" target=\"_blank\">https://github.com/bluenviron/mediamtx</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/bluenviron/mediamtx#installation\" target=\"_blank\">https://github.com/bluenviron/mediamtx#installation</a><br><br><br>Free, open-source RTSP/RTMP/HLS/WebRTC/SRT server and proxy. Point it at your camera's RTSP URL (e.g. rtsp://IP-CAM/ch0_0.h264) via the mounted config file to restream/aggregate feeds for Frigate, Home Assistant, or NVR software.",
+			"platform": "linux",
+			"ports": [
+				"8554:8554/tcp",
+				"1935:1935/tcp",
+				"8888:8888/tcp",
+				"8889:8889/tcp",
+				"8890:8890/udp",
+				"9997:9997/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "MediaMTX",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/MediaMTX/mediamtx.yml",
+					"container": "/mediamtx.yml"
 				}
 			]
 		},
@@ -9128,6 +9236,61 @@
 		},
 		{
 			"categories": [
+				"CCTV",
+				"Video"
+			],
+			"description": "Shinobi is a free, open-source Network Video Recorder (NVR) and CCTV platform written in Node.js, supporting RTSP/ONVIF IP cameras, motion detection, object detection plugins, and a web/mobile-friendly viewer. This stack deploys Shinobi alongside its required MariaDB database.",
+			"env": [
+				{
+					"default": "shinobi",
+					"label": "DATABASE_NAME",
+					"name": "DATABASE_NAME"
+				},
+				{
+					"default": "shinobi",
+					"label": "DATABASE_USER",
+					"name": "DATABASE_USER"
+				},
+				{
+					"default": "",
+					"label": "DATABASE_PASSWORD",
+					"name": "DATABASE_PASSWORD"
+				},
+				{
+					"default": "",
+					"label": "MYSQL_ROOT_PASSWORD",
+					"name": "MYSQL_ROOT_PASSWORD"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "America/New_York",
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/shinobi.png",
+			"name": "shinobi",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://shinobi.video/\" target=\"_blank\">https://shinobi.video/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/shinobicctv/shinobi\" target=\"_blank\">https://hub.docker.com/r/shinobicctv/shinobi</a><br><br><br>After deploying, open the Super User Panel to create your first account/API key, then add a monitor pointed at your camera's RTSP stream (e.g. rtsp://IP-CAM/ch0_0.h264).",
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stack/shinobi-mariadb.yml",
+				"url": "https://github.com/yo-repo87/pi-hosted/"
+			},
+			"restart_policy": "unless-stopped",
+			"title": "Shinobi CCTV",
+			"type": 3
+		},
+		{
+			"categories": [
 				"Other",
 				"Tools"
 			],
@@ -11083,6 +11246,57 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://wiki.znc.in/ZNC\" target=\"_blank\">https://wiki.znc.in/ZNC</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-znc\" target=\"_blank\">https://docs.linuxserver.io/images/docker-znc</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"CCTV",
+				"Video"
+			],
+			"description": "ZoneMinder is a free, open-source, full-featured Network Video Recorder (NVR) suite that runs on Linux, supporting IP (RTSP/ONVIF), USB and analog cameras. It handles motion detection, zone-based triggers, recording, and remote viewing through a web console.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "America/New_York",
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"default": "50%",
+					"label": "SHMEM",
+					"name": "SHMEM"
+				}
+			],
+			"image": "dlandon/zoneminder:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/zoneminder.png",
+			"name": "zoneminder",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://zoneminder.com/\" target=\"_blank\">https://zoneminder.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/dlandon/zoneminder.master-docker\" target=\"_blank\">https://github.com/dlandon/zoneminder.master-docker</a><br><br><br>Web console is served over HTTPS on the mapped port (default self-signed cert). Add cameras as an ONVIF or FFMPEG/RTSP source pointed at your camera's stream (e.g. rtsp://IP-CAM/ch0_0.h264). ZoneMinder uses a large shared-memory segment for frame buffers — if recording fails to start, increase the container's shm_size.",
+			"platform": "linux",
+			"ports": [
+				"8443:443/tcp",
+				"9000:9000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "ZoneMinder",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/ZoneMinder/config",
+					"container": "/config"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/ZoneMinder/data",
+					"container": "/var/cache/zoneminder"
+				}
+			]
 		}
 	]
 }

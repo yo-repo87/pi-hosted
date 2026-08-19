@@ -1,0 +1,40 @@
+{
+	"categories": [
+		"CCTV",
+		"Video"
+	],
+	"description": "MediaMTX (formerly rtsp-simple-server) is a ready-to-use, zero-dependency, free and open-source real-time media server and media proxy that allows you to publish, read, and proxy live video and audio streams via RTSP, RTMP, HLS, WebRTC and SRT. Great for aggregating multiple IP camera RTSP feeds behind a single restream endpoint.",
+	"env": [
+		{
+			"default": "tcp",
+			"label": "MTX_RTSPTRANSPORTS",
+			"name": "MTX_RTSPTRANSPORTS"
+		}
+	],
+	"image_arm32": "bluenviron/mediamtx:latest",
+	"image_arm64": "bluenviron/mediamtx:latest",
+	"image_amd64": "bluenviron/mediamtx:latest",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/mediamtx.png",
+	"name": "mediamtx",
+	"note": "Free, open-source RTSP/RTMP/HLS/WebRTC/SRT server and proxy. Point it at your camera's RTSP URL (e.g. rtsp://IP-CAM/ch0_0.h264) via the mounted config file to restream/aggregate feeds for Frigate, Home Assistant, or NVR software.",
+	"officialDoc": "https://github.com/bluenviron/mediamtx#installation",
+	"platform": "linux",
+	"ports": [
+		"8554:8554/tcp",
+		"1935:1935/tcp",
+		"8888:8888/tcp",
+		"8889:8889/tcp",
+		"8890:8890/udp",
+		"9997:9997/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "MediaMTX",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/MediaMTX/mediamtx.yml",
+			"container": "/mediamtx.yml"
+		}
+	],
+	"webpage": "https://github.com/bluenviron/mediamtx"
+}

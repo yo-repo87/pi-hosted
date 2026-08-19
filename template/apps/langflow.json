@@ -6,7 +6,7 @@
 	"description": "Langflow is a visual, drag-and-drop builder for LangChain-based LLM applications and agents.",
 	"image_arm64": "langflowai/langflow:latest",
 	"image_amd64": "langflowai/langflow:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/langflow.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/langflow.png",
 	"name": "langflow",
 	"officialDoc": "https://docs.langflow.org/deployment-docker",
 	"platform": "linux",

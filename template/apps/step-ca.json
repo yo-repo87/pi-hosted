@@ -18,7 +18,7 @@
 	],
 	"image_arm64": "smallstep/step-ca:latest",
 	"image_amd64": "smallstep/step-ca:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/step-ca.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/step-ca.png",
 	"name": "step-ca",
 	"officialDoc": "https://smallstep.com/docs/tutorials/docker-tls-certificate-authority/",
 	"platform": "linux",

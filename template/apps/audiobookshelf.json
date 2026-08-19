@@ -24,7 +24,7 @@
 	],
 	"image_arm64": "ghcr.io/advplyr/audiobookshelf:latest",
 	"image_amd64": "ghcr.io/advplyr/audiobookshelf:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/audiobookshelf.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/audiobookshelf.png",
 	"name": "audiobookshelf",
 	"officialDoc": "https://www.audiobookshelf.org/docs#docker-compose",
 	"platform": "linux",

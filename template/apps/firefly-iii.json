@@ -28,7 +28,7 @@
 	],
 	"image_arm64": "fireflyiii/core:latest",
 	"image_amd64": "fireflyiii/core:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/firefly-iii.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/firefly-iii.png",
 	"name": "firefly-iii",
 	"officialDoc": "https://docs.firefly-iii.org/how-to/firefly-iii/installation/docker/",
 	"platform": "linux",

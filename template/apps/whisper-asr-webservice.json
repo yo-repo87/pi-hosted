@@ -6,7 +6,7 @@
 	"description": "OpenAI Whisper ASR Webservice provides a simple REST API (with a Swagger UI) for automatic speech-to-text transcription using OpenAI's Whisper models, entirely self-hosted.",
 	"image_arm64": "onerahmet/openai-whisper-asr-webservice:latest",
 	"image_amd64": "onerahmet/openai-whisper-asr-webservice:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/whisper-asr.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/whisper-asr.png",
 	"name": "whisper-asr-webservice",
 	"officialDoc": "https://github.com/ahmetoner/whisper-asr-webservice",
 	"platform": "linux",

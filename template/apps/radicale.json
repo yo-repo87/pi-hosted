@@ -6,7 +6,7 @@
 	"description": "Radicale is a free and open-source CalDAV and CardDAV server for calendars and contacts, simple to set up and lightweight enough to run on a Raspberry Pi.",
 	"image_arm64": "tomsquest/docker-radicale:latest",
 	"image_amd64": "tomsquest/docker-radicale:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/radicale.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/radicale.png",
 	"name": "radicale",
 	"officialDoc": "https://github.com/tomsquest/docker-radicale#quick-start",
 	"platform": "linux",

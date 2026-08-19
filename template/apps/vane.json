@@ -5,7 +5,7 @@
 	],
 	"description": "Vane (formerly Perplexica, rebranded March 2026) is a self-hosted, open-source AI-powered search engine that reads the web with an LLM and answers questions with citations — a self-hosted Perplexity AI alternative. This all-in-one image bundles the frontend, backend API, and a private SearXNG instance.",
 	"image_amd64": "itzcrazykns1337/vane:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/vane.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/vane.png",
 	"name": "vane",
 	"officialDoc": "https://github.com/ItzCrazyKns/Perplexica#getting-started-with-docker-recommended",
 	"platform": "linux",

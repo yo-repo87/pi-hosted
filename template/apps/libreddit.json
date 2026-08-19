@@ -7,7 +7,7 @@
 	"image_arm32": "quay.io/redlib/redlib:latest",
 	"image_arm64": "quay.io/redlib/redlib:latest",
 	"image_amd64": "quay.io/redlib/redlib:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/redlib.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/redlib.png",
 	"name": "redlib",
 	"officialDoc": "https://github.com/redlib-org/redlib#docker",
 	"platform": "linux",

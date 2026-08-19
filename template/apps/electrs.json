@@ -18,7 +18,7 @@
 	],
 	"image_arm64": "mempool/electrs:latest",
 	"image_amd64": "mempool/electrs:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/electrs.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/electrs.png",
 	"name": "electrs",
 	"officialDoc": "https://github.com/mempool/electrs",
 	"platform": "linux",

@@ -7,7 +7,7 @@
 	"description": "Geth (go-ethereum) is the most widely-used execution client for the Ethereum network. Post-Merge, it must be paired with a consensus client — see the Lighthouse template in this list — to fully sync and validate the chain.",
 	"image_arm64": "ethereum/client-go:latest",
 	"image_amd64": "ethereum/client-go:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/geth.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/geth.png",
 	"name": "geth",
 	"note": "A full Ethereum mainnet sync needs 1TB+ of fast (NVMe recommended) disk space and can take several days.",
 	"officialDoc": "https://geth.ethereum.org/docs/getting-started/installing-geth",

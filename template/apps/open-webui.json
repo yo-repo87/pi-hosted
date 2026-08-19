@@ -14,7 +14,7 @@
 	],
 	"image_arm64": "ghcr.io/open-webui/open-webui:main",
 	"image_amd64": "ghcr.io/open-webui/open-webui:main",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/open-webui.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/open-webui.png",
 	"name": "open-webui",
 	"officialDoc": "https://docs.openwebui.com/getting-started/quick-start/",
 	"platform": "linux",

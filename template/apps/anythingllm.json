@@ -6,7 +6,7 @@
 	"description": "AnythingLLM is an all-in-one, private AI app that lets you chat with your documents (RAG), connect to any LLM provider or Ollama, and manage multiple workspaces.",
 	"image_arm64": "mintplexlabs/anythingllm:latest",
 	"image_amd64": "mintplexlabs/anythingllm:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/anythingllm.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/anythingllm.png",
 	"name": "anythingllm",
 	"officialDoc": "https://docs.anythingllm.com/installation-docker/quickstart",
 	"platform": "linux",

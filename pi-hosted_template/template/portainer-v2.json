@@ -2034,7 +2034,7 @@
 				}
 			],
 			"image": "deluan/navidrome:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/navidrome.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/navidrome.png",
 			"name": "navidrome",
 			"platform": "linux",
 			"ports": [
@@ -2396,7 +2396,7 @@
 			"command": "serve",
 			"description": "ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service that lets you send push notifications to your phone or desktop from scripts, apps, or webhooks.",
 			"image": "binwiederhier/ntfy:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/ntfy.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/ntfy.png",
 			"name": "ntfy",
 			"platform": "linux",
 			"ports": [
@@ -3212,7 +3212,7 @@
 			],
 			"description": "[FORMERLY LIBREDDIT] Libreddit was discontinued and archived by its author in favor of Redlib, a maintained fork that continues to adapt to Reddit's API changes. An alternative private front-end to Reddit.",
 			"image": "quay.io/redlib/redlib:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/redlib.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/redlib.png",
 			"name": "redlib",
 			"platform": "linux",
 			"ports": [

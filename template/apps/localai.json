@@ -6,7 +6,7 @@
 	"description": "LocalAI is a free, open-source drop-in replacement for the OpenAI API that runs LLM, image, audio, and video generation models entirely on your own hardware — no GPU required.",
 	"image_arm64": "localai/localai:latest",
 	"image_amd64": "localai/localai:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/localai.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/localai.png",
 	"name": "localai",
 	"officialDoc": "https://localai.io/basics/container/",
 	"platform": "linux",

@@ -7,7 +7,7 @@
 	"description": "Freqtrade is a free, open-source crypto trading bot supporting backtesting, strategy optimization, and automated trading across many exchanges, with a FreqUI web dashboard. You must supply your own user_data/config.json (with exchange API keys and strategy) in the mounted volume before the bot can trade — see the official quickstart.",
 	"image_arm64": "freqtradeorg/freqtrade:stable",
 	"image_amd64": "freqtradeorg/freqtrade:stable",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/freqtrade.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/freqtrade.png",
 	"name": "freqtrade",
 	"officialDoc": "https://www.freqtrade.io/en/stable/docker_quickstart/",
 	"platform": "linux",

@@ -23,7 +23,7 @@
 	],
 	"image_arm64": "stirlingtools/stirling-pdf:latest",
 	"image_amd64": "stirlingtools/stirling-pdf:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/stirling-pdf.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/stirling-pdf.png",
 	"name": "stirling-pdf",
 	"officialDoc": "https://docs.stirlingpdf.com/Getting%20Started/Installation/",
 	"platform": "linux",

@@ -22,7 +22,7 @@
 	],
 	"image_arm64": "ruimarinho/bitcoin-core:latest",
 	"image_amd64": "ruimarinho/bitcoin-core:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/bitcoin-core.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/bitcoin-core.png",
 	"name": "bitcoin-core",
 	"note": "Initial block download syncs the entire Bitcoin blockchain, which takes days and needs 600GB+ of free disk space. Consider pruning (-prune=N) if you don't need a full archival node.",
 	"officialDoc": "https://github.com/ruimarinho/docker-bitcoin-core",

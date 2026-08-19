@@ -13,7 +13,7 @@
 	],
 	"image_arm64": "ghcr.io/lukegus/termix:latest",
 	"image_amd64": "ghcr.io/lukegus/termix:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/termix.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/termix.png",
 	"name": "termix",
 	"officialDoc": "https://github.com/Termix-SSH/Termix#-docker-installation",
 	"platform": "linux",

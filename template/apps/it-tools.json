@@ -5,7 +5,7 @@
 	"description": "IT-Tools is a collection of handy online tools for developers and sysadmins, such as JSON formatters, encoders/decoders, token generators, regex testers, and more — all in one self-hosted web app.",
 	"image_arm64": "corentinth/it-tools:latest",
 	"image_amd64": "corentinth/it-tools:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/it-tools.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/it-tools.png",
 	"name": "it-tools",
 	"officialDoc": "https://github.com/CorentinTh/it-tools#-installation",
 	"platform": "linux",

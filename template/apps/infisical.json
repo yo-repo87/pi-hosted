@@ -32,7 +32,7 @@
 		}
 	],
 	"image_amd64": "infisical/infisical:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/infisical.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/infisical.png",
 	"name": "infisical",
 	"officialDoc": "https://infisical.com/docs/self-hosting/deployment-options/standalone-infisical",
 	"platform": "linux",

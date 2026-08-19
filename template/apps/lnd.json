@@ -6,7 +6,7 @@
 	"command": "--bitcoin.active --bitcoin.mainnet --bitcoin.node=neutrino --neutrino.addpeer=btcd-mainnet.lightning.computer --restlisten=0.0.0.0:8080 --rpclisten=0.0.0.0:10009",
 	"description": "LND (Lightning Network Daemon) is a complete implementation of a Bitcoin Lightning Network node. This template defaults to Neutrino mode, a lightweight built-in light client, so it can run standalone without requiring a full Bitcoin Core node — swap the command to --bitcoin.node=bitcoind (plus --bitcoind.* options) to use the Bitcoin Core template in this list instead.",
 	"image_amd64": "lightninglabs/lnd:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/lnd.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/lnd.png",
 	"name": "lnd",
 	"officialDoc": "https://github.com/lightningnetwork/lnd/blob/master/docs/DOCKER.md",
 	"platform": "linux",

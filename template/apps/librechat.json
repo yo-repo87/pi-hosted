@@ -17,7 +17,7 @@
 		}
 	],
 	"image_amd64": "ghcr.io/danny-avila/librechat-dev:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/librechat.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/librechat.png",
 	"name": "librechat",
 	"officialDoc": "https://www.librechat.ai/docs/local/docker",
 	"platform": "linux",

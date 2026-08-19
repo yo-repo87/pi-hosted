@@ -5,7 +5,7 @@
 	],
 	"description": "InvokeAI is a professional, self-hosted Stable Diffusion studio with a polished web UI, unified canvas, and model management.",
 	"image_amd64": "ghcr.io/invoke-ai/invokeai:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/invokeai.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/invokeai.png",
 	"name": "invokeai",
 	"note": "Requires an NVIDIA GPU for practical performance. Attach a GPU to this container under Portainer's Runtime & Resources tab after creation (the equivalent of docker run --gpus all), and ensure the NVIDIA Container Toolkit is installed on the host.",
 	"officialDoc": "https://github.com/invoke-ai/InvokeAI/blob/main/docker/README.md",

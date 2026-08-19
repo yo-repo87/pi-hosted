@@ -6,7 +6,7 @@
 	"description": "HomeBox is a simple, self-hosted inventory and organization system built for home users to track their belongings, warranties, and locations. This template uses the sysadminsmedia/homebox community continuation, since the original hay-kot/homebox project was archived by its author.",
 	"image_arm64": "ghcr.io/sysadminsmedia/homebox:latest",
 	"image_amd64": "ghcr.io/sysadminsmedia/homebox:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/homebox.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/homebox.png",
 	"name": "homebox",
 	"officialDoc": "https://homebox.software/en/quick-start.html",
 	"platform": "linux",

@@ -23,7 +23,7 @@
 	"image_arm32": "deluan/navidrome:latest",
 	"image_arm64": "deluan/navidrome:latest",
 	"image_amd64": "deluan/navidrome:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/navidrome.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/navidrome.png",
 	"name": "navidrome",
 	"officialDoc": "https://www.navidrome.org/docs/installation/docker/",
 	"platform": "linux",

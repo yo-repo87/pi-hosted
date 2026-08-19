@@ -5,7 +5,7 @@
 	],
 	"description": "Hummingbot Dashboard is the web UI for building, backtesting, and monitoring automated crypto market-making and trading strategies on top of the open-source Hummingbot framework. Pair it with the Hummingbot API/Gateway services for live automated trading.",
 	"image_amd64": "hummingbot/dashboard:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/hummingbot.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/hummingbot.png",
 	"name": "hummingbot-dashboard",
 	"officialDoc": "https://hummingbot.org/installation/hummingbot-api/",
 	"platform": "linux",

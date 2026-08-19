@@ -13,7 +13,7 @@
 		}
 	],
 	"image_amd64": "ghcr.io/open-webui/open-webui:cuda",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/open-webui.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/open-webui.png",
 	"name": "open-webui-gpu",
 	"note": "Requires an NVIDIA GPU and the NVIDIA Container Toolkit on the host. After creating this container, attach a GPU to it under Portainer's Runtime & Resources tab (the equivalent of docker run --gpus all) before starting it.",
 	"officialDoc": "https://docs.openwebui.com/getting-started/quick-start/",

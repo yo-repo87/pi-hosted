@@ -20,7 +20,7 @@
 	"image_arm64": "ghcr.io/yo-repo87/claude-code-docker:latest",
 	"image_amd64": "ghcr.io/yo-repo87/claude-code-docker:latest",
 	"interactive": true,
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/claude-code.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/claude-code.png",
 	"name": "claude-code",
 	"note": "This container has no web UI — after deploying, open Portainer's Console for this container and attach to a shell (or directly to the claude command) to use it interactively. Your project files belong in the /workspace volume; Claude Code's own login/session state is kept in /home/claude/.claude so it survives restarts.",
 	"officialDoc": "https://github.com/yo-repo87/claude-code-docker#readme",

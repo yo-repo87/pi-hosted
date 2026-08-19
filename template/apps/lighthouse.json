@@ -7,7 +7,7 @@
 	"description": "Lighthouse is a fast, secure Ethereum consensus (beacon chain) client written in Rust. It must be paired with an execution client — such as the Geth template in this list — via the Engine API to run a full Ethereum node.",
 	"image_arm64": "sigp/lighthouse:latest",
 	"image_amd64": "sigp/lighthouse:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/lighthouse.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/lighthouse.png",
 	"name": "lighthouse",
 	"note": "Requires a shared JWT secret with the execution client at /root/.lighthouse/jwt.hex, and its --execution-endpoint should point at your execution client's authenticated Engine API port (default 8551).",
 	"officialDoc": "https://github.com/sigp/lighthouse",

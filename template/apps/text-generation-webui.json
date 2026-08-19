@@ -5,7 +5,7 @@
 	],
 	"description": "text-generation-webui (oobabooga) is a popular Gradio-based web UI for running local LLMs with support for many backends (llama.cpp, ExLlama, Transformers) and extensions. This template uses the community-maintained Atinoda/text-generation-webui-docker image; the CPU build is shown here — swap the image tag for an nvidia/rocm variant (e.g. default-nvidia) if you have a GPU.",
 	"image_amd64": "atinoda/text-generation-webui:default-cpu",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/text-generation-webui.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/text-generation-webui.png",
 	"name": "text-generation-webui",
 	"officialDoc": "https://github.com/Atinoda/text-generation-webui-docker",
 	"platform": "linux",

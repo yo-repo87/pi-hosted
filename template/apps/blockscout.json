@@ -27,7 +27,7 @@
 		}
 	],
 	"image_amd64": "blockscout/blockscout:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/blockscout.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/blockscout.png",
 	"name": "blockscout",
 	"officialDoc": "https://docs.blockscout.com/setup/deployment/docker-compose-deployment",
 	"platform": "linux",

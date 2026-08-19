@@ -278,7 +278,7 @@
 			],
 			"description": "AnythingLLM is an all-in-one, private AI app that lets you chat with your documents (RAG), connect to any LLM provider or Ollama, and manage multiple workspaces.",
 			"image": "mintplexlabs/anythingllm:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/anythingllm.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/anythingllm.png",
 			"name": "anythingllm",
 			"platform": "linux",
 			"ports": [
@@ -497,7 +497,7 @@
 				}
 			],
 			"image": "ghcr.io/advplyr/audiobookshelf:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/audiobookshelf.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/audiobookshelf.png",
 			"name": "audiobookshelf",
 			"platform": "linux",
 			"ports": [
@@ -629,7 +629,7 @@
 				}
 			],
 			"image": "baserow/baserow:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/baserow.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/baserow.png",
 			"name": "baserow",
 			"platform": "linux",
 			"ports": [
@@ -752,7 +752,7 @@
 				}
 			],
 			"image": "henrygd/beszel:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/beszel.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/beszel.png",
 			"name": "beszel",
 			"platform": "linux",
 			"ports": [
@@ -836,7 +836,7 @@
 				}
 			],
 			"image": "ruimarinho/bitcoin-core:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/bitcoin-core.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/bitcoin-core.png",
 			"name": "bitcoin-core",
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://bitcoincore.org/\" target=\"_blank\">https://bitcoincore.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/ruimarinho/docker-bitcoin-core\" target=\"_blank\">https://github.com/ruimarinho/docker-bitcoin-core</a><br><br><br>Initial block download syncs the entire Bitcoin blockchain, which takes days and needs 600GB+ of free disk space. Consider pruning (-prune=N) if you don't need a full archival node.",
 			"platform": "linux",
@@ -1069,7 +1069,7 @@
 			],
 			"description": "changedetection.io monitors websites for content changes and sends alerts via email, Discord, Slack, and many other services — useful for tracking price drops, restock alerts, or any page content change.",
 			"image": "ghcr.io/dgtlmoon/changedetection.io:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/changedetection.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/changedetection.png",
 			"name": "changedetection.io",
 			"platform": "linux",
 			"ports": [
@@ -1235,7 +1235,7 @@
 			],
 			"image": "ghcr.io/yo-repo87/claude-code-docker:latest",
 			"interactive": true,
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/claude-code.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/claude-code.png",
 			"name": "claude-code",
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://docs.claude.com/en/docs/claude-code\" target=\"_blank\">https://docs.claude.com/en/docs/claude-code</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/yo-repo87/claude-code-docker#readme\" target=\"_blank\">https://github.com/yo-repo87/claude-code-docker#readme</a><br><br><br>This container has no web UI — after deploying, open Portainer's Console for this container and attach to a shell (or directly to the claude command) to use it interactively. Your project files belong in the /workspace volume; Claude Code's own login/session state is kept in /home/claude/.claude so it survives restarts.",
 			"platform": "linux",
@@ -1558,7 +1558,7 @@
 			],
 			"description": "CryptPad is a privacy-focused, end-to-end encrypted collaborative office suite — real-time documents, spreadsheets, presentations, kanban boards, and more, with the server never able to read your content.",
 			"image": "cryptpad/cryptpad:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/cryptpad.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/cryptpad.png",
 			"name": "cryptpad",
 			"platform": "linux",
 			"ports": [
@@ -1958,7 +1958,7 @@
 				}
 			],
 			"image": "louislam/dockge:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/dockge.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/dockge.png",
 			"name": "dockge",
 			"platform": "linux",
 			"ports": [
@@ -2287,7 +2287,7 @@
 				}
 			],
 			"image": "mempool/electrs:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/electrs.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/electrs.png",
 			"name": "electrs",
 			"platform": "linux",
 			"ports": [
@@ -2427,7 +2427,7 @@
 			],
 			"description": "Excalidraw is a self-hosted virtual whiteboard for sketching hand-drawn-style diagrams, wireframes, and collaborative brainstorming.",
 			"image": "excalidraw/excalidraw:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/excalidraw.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/excalidraw.png",
 			"name": "excalidraw",
 			"platform": "linux",
 			"ports": [
@@ -2585,7 +2585,7 @@
 				}
 			],
 			"image": "fireflyiii/core:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/firefly-iii.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/firefly-iii.png",
 			"name": "firefly-iii",
 			"platform": "linux",
 			"ports": [
@@ -2770,7 +2770,7 @@
 			],
 			"description": "Flowise is a low-code, drag-and-drop builder for LLM workflows and AI agents, letting you visually chain prompts, tools, vector stores, and models.",
 			"image": "flowiseai/flowise:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/flowise.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/flowise.png",
 			"name": "flowise",
 			"platform": "linux",
 			"ports": [
@@ -2881,7 +2881,7 @@
 			"command": "trade --config /freqtrade/user_data/config.json --strategy SampleStrategy",
 			"description": "Freqtrade is a free, open-source crypto trading bot supporting backtesting, strategy optimization, and automated trading across many exchanges, with a FreqUI web dashboard. You must supply your own user_data/config.json (with exchange API keys and strategy) in the mounted volume before the bot can trade — see the official quickstart.",
 			"image": "freqtradeorg/freqtrade:stable",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/freqtrade.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/freqtrade.png",
 			"name": "freqtrade",
 			"platform": "linux",
 			"ports": [
@@ -2986,7 +2986,7 @@
 			"command": "--http --http.addr 0.0.0.0 --http.vhosts=* --authrpc.addr 0.0.0.0 --authrpc.vhosts=*",
 			"description": "Geth (go-ethereum) is the most widely-used execution client for the Ethereum network. Post-Merge, it must be paired with a consensus client — see the Lighthouse template in this list — to fully sync and validate the chain.",
 			"image": "ethereum/client-go:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/geth.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/geth.png",
 			"name": "geth",
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://geth.ethereum.org/\" target=\"_blank\">https://geth.ethereum.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://geth.ethereum.org/docs/getting-started/installing-geth\" target=\"_blank\">https://geth.ethereum.org/docs/getting-started/installing-geth</a><br><br><br>A full Ethereum mainnet sync needs 1TB+ of fast (NVMe recommended) disk space and can take several days.",
 			"platform": "linux",
@@ -3198,7 +3198,7 @@
 			],
 			"description": "Glance is a fast, customizable, self-hosted dashboard that puts all your feeds and widgets in one place, similar to Homepage and Homarr but focused on RSS, weather, monitoring, and other bite-sized widgets.",
 			"image": "glanceapp/glance:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/glance.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/glance.png",
 			"name": "glance",
 			"platform": "linux",
 			"ports": [
@@ -3406,7 +3406,7 @@
 				}
 			],
 			"image": "hashicorp/vault:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/vault.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/vault.png",
 			"name": "vault",
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.vaultproject.io/\" target=\"_blank\">https://www.vaultproject.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://developer.hashicorp.com/vault/docs/platform/docker\" target=\"_blank\">https://developer.hashicorp.com/vault/docs/platform/docker</a><br><br><br>This starts Vault in server mode; you must initialize and unseal it on first run (vault operator init / vault operator unseal). The container's internal API port remains the conventional 8200 even though the host-mapped port is different. For production use, add the IPC_LOCK capability to this container in Portainer's advanced settings to prevent memory from being swapped to disk.",
 			"platform": "linux",
@@ -3617,7 +3617,7 @@
 			],
 			"description": "HomeBox is a simple, self-hosted inventory and organization system built for home users to track their belongings, warranties, and locations. This template uses the sysadminsmedia/homebox community continuation, since the original hay-kot/homebox project was archived by its author.",
 			"image": "ghcr.io/sysadminsmedia/homebox:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/homebox.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/homebox.png",
 			"name": "homebox",
 			"platform": "linux",
 			"ports": [
@@ -3887,7 +3887,7 @@
 				}
 			],
 			"image": "ghcr.io/imagegenius/immich:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/immich.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/immich.png",
 			"name": "immich",
 			"platform": "linux",
 			"ports": [
@@ -4222,7 +4222,7 @@
 			],
 			"description": "IT-Tools is a collection of handy online tools for developers and sysadmins, such as JSON formatters, encoders/decoders, token generators, regex testers, and more — all in one self-hosted web app.",
 			"image": "corentinth/it-tools:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/it-tools.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/it-tools.png",
 			"name": "it-tools",
 			"platform": "linux",
 			"ports": [
@@ -4728,7 +4728,7 @@
 			],
 			"description": "Langflow is a visual, drag-and-drop builder for LangChain-based LLM applications and agents.",
 			"image": "langflowai/langflow:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/langflow.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/langflow.png",
 			"name": "langflow",
 			"platform": "linux",
 			"ports": [
@@ -4945,7 +4945,7 @@
 			"command": "lighthouse bn --network mainnet --execution-endpoint http://geth:8551 --execution-jwt /root/.lighthouse/jwt.hex --http --http-address 0.0.0.0 --checkpoint-sync-url https://mainnet.checkpoint.sigp.io",
 			"description": "Lighthouse is a fast, secure Ethereum consensus (beacon chain) client written in Rust. It must be paired with an execution client — such as the Geth template in this list — via the Engine API to run a full Ethereum node.",
 			"image": "sigp/lighthouse:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/lighthouse.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/lighthouse.png",
 			"name": "lighthouse",
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://lighthouse.sigmaprime.io/\" target=\"_blank\">https://lighthouse.sigmaprime.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/sigp/lighthouse\" target=\"_blank\">https://github.com/sigp/lighthouse</a><br><br><br>Requires a shared JWT secret with the execution client at /root/.lighthouse/jwt.hex, and its --execution-endpoint should point at your execution client's authenticated Engine API port (default 8551).",
 			"platform": "linux",
@@ -5021,7 +5021,7 @@
 				}
 			],
 			"image": "sissbruecker/linkding:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/linkding.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/linkding.png",
 			"name": "linkding",
 			"platform": "linux",
 			"ports": [
@@ -5101,7 +5101,7 @@
 			],
 			"description": "llama.cpp server exposes an OpenAI-compatible API for running GGUF-quantized LLMs efficiently on CPU or GPU. Place a GGUF model file in the mounted /models volume and set the command to point at it (e.g. -m /models/model.gguf --host 0.0.0.0 --port 8080).",
 			"image": "ghcr.io/ggml-org/llama.cpp:server",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/llamacpp.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/llamacpp.png",
 			"name": "llamacpp-server",
 			"platform": "linux",
 			"ports": [
@@ -5178,7 +5178,7 @@
 				}
 			],
 			"image": "lobehub/lobe-chat:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/lobe-chat.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/lobe-chat.png",
 			"name": "lobe-chat",
 			"platform": "linux",
 			"ports": [
@@ -5196,7 +5196,7 @@
 			],
 			"description": "LocalAI is a free, open-source drop-in replacement for the OpenAI API that runs LLM, image, audio, and video generation models entirely on your own hardware — no GPU required.",
 			"image": "localai/localai:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/localai.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/localai.png",
 			"name": "localai",
 			"platform": "linux",
 			"ports": [
@@ -5231,7 +5231,7 @@
 				}
 			],
 			"image": "lscr.io/linuxserver/luanti:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/luanti-icon.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/luanti-icon.png",
 			"name": "luanti",
 			"platform": "linux",
 			"ports": [
@@ -5709,7 +5709,7 @@
 				}
 			],
 			"image": "miniflux/miniflux:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/miniflux.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/miniflux.png",
 			"name": "miniflux",
 			"platform": "linux",
 			"ports": [
@@ -5814,7 +5814,7 @@
 			],
 			"description": "A full Monero node (monerod) — validates and relays Monero transactions and blocks, and can back a monero-wallet-rpc or GUI/CLI wallet for maximum privacy. This template uses the widely-used, community-maintained simple-monerod image, built from the official Monero project source.",
 			"image": "sethsimmons/simple-monerod:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/monero.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/monero.png",
 			"name": "monero-node",
 			"platform": "linux",
 			"ports": [
@@ -6224,7 +6224,7 @@
 				}
 			],
 			"image": "deluan/navidrome:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/navidrome.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/navidrome.png",
 			"name": "navidrome",
 			"platform": "linux",
 			"ports": [
@@ -6797,7 +6797,7 @@
 			"command": "serve",
 			"description": "ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service that lets you send push notifications to your phone or desktop from scripts, apps, or webhooks.",
 			"image": "binwiederhier/ntfy:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/ntfy.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/ntfy.png",
 			"name": "ntfy",
 			"platform": "linux",
 			"ports": [
@@ -7001,7 +7001,7 @@
 			],
 			"description": "Ollama lets you run open-source large language models (Llama, Mistral, Gemma, Qwen, and more) locally with a simple REST API. Many other AI apps in this list (Open WebUI, LibreChat, AnythingLLM, Perplexica/Vane) can connect to it as their model backend.",
 			"image": "ollama/ollama:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/ollama.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/ollama.png",
 			"name": "ollama",
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://ollama.com/\" target=\"_blank\">https://ollama.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/ollama/ollama/blob/main/docs/docker.md\" target=\"_blank\">https://github.com/ollama/ollama/blob/main/docs/docker.md</a><br><br><br>For GPU acceleration, attach a GPU to this container under Portainer's Runtime & Resources tab after creation (the equivalent of docker run --gpus all), and ensure the NVIDIA Container Toolkit is installed on the host.",
 			"platform": "linux",
@@ -7114,7 +7114,7 @@
 				}
 			],
 			"image": "ghcr.io/open-webui/open-webui:main",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/open-webui.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/open-webui.png",
 			"name": "open-webui",
 			"platform": "linux",
 			"ports": [
@@ -8454,7 +8454,7 @@
 			],
 			"description": "Radicale is a free and open-source CalDAV and CardDAV server for calendars and contacts, simple to set up and lightweight enough to run on a Raspberry Pi.",
 			"image": "tomsquest/docker-radicale:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/radicale.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/radicale.png",
 			"name": "radicale",
 			"platform": "linux",
 			"ports": [
@@ -8684,7 +8684,7 @@
 			],
 			"description": "[FORMERLY LIBREDDIT] Libreddit was discontinued and archived by its author in favor of Redlib, a maintained fork that continues to adapt to Reddit's API changes. An alternative private front-end to Reddit.",
 			"image": "quay.io/redlib/redlib:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/redlib.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/redlib.png",
 			"name": "redlib",
 			"platform": "linux",
 			"ports": [
@@ -9442,7 +9442,7 @@
 				}
 			],
 			"image": "smallstep/step-ca:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/step-ca.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/step-ca.png",
 			"name": "step-ca",
 			"platform": "linux",
 			"ports": [
@@ -9483,7 +9483,7 @@
 				}
 			],
 			"image": "stirlingtools/stirling-pdf:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/stirling-pdf.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/stirling-pdf.png",
 			"name": "stirling-pdf",
 			"platform": "linux",
 			"ports": [
@@ -9754,7 +9754,7 @@
 				}
 			],
 			"image": "ghcr.io/lukegus/termix:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/termix.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/termix.png",
 			"name": "termix",
 			"platform": "linux",
 			"ports": [
@@ -10672,7 +10672,7 @@
 			],
 			"description": "OpenAI Whisper ASR Webservice provides a simple REST API (with a Swagger UI) for automatic speech-to-text transcription using OpenAI's Whisper models, entirely self-hosted.",
 			"image": "onerahmet/openai-whisper-asr-webservice:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/whisper-asr.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/whisper-asr.png",
 			"name": "whisper-asr-webservice",
 			"platform": "linux",
 			"ports": [

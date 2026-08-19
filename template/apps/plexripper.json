@@ -16,7 +16,7 @@
 		}
 	],
 	"image_amd64": "plexripper/plexripper:latest",
-	"logo": "https://raw.githubusercontent.com/PlexRipper/PlexRipper/dev/export/plexripper/logo/full/full-logo-256.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/plexripper-logo.png",
 	"name": "PlexRipper",
 	"officialDoc": "https://github.com/PlexRipper/PlexRipper",
 	"platform": "linux",

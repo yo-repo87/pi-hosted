@@ -16,7 +16,7 @@
 		}
 	],
 	"image_amd64": "mikeah/cura-novnc",
-	"logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Logo_for_Cura_Software.png/120px-Logo_for_Cura_Software.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/cura-logo.png",
 	"name": "CuraNoVNC",
 	"officialDoc": "https://github.com/helfrichmichael/cura-novnc",
 	"platform": "linux",

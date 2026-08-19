@@ -1243,7 +1243,7 @@
 			],
 			"description": "ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware & other malicious threats.",
 			"image": "mkodockx/docker-clamav:alpine",
-			"logo": "http://www.clamav.net/assets/clamav-trademark.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/clamav-trademark.png",
 			"name": "clamav",
 			"platform": "linux",
 			"ports": [
@@ -1668,7 +1668,7 @@
 				}
 			],
 			"image": "mikeah/cura-novnc",
-			"logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Logo_for_Cura_Software.png/120px-Logo_for_Cura_Software.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/cura-logo.png",
 			"name": "CuraNoVNC",
 			"platform": "linux",
 			"ports": [
@@ -2214,7 +2214,7 @@
 				"stackfile": "stack/dock-droid.yml",
 				"url": "https://github.com/pi-hosted/pi-hosted/"
 			},
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/dock-droid.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/dock-droid-android.png",
 			"name": "dock-droid-vnc",
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hub.docker.com/r/sickcodes/dock-droid\" target=\"_blank\">https://hub.docker.com/r/sickcodes/dock-droid</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/sickcodes/dock-droid\" target=\"_blank\">https://github.com/sickcodes/dock-droid</a><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=GTtdTksS6L0 target=\"_blank\">Novaspirit Tech - Run Android In Docker with this Container!</a><br><br>You will need QEMU and some other dependencies on your host:<br><b>sudo apt install qemu qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager</b><br><br>Then, enable libvirt and load the KVM kernel module:<br><b>sudo systemctl enable --now libvirtd<br>sudo systemctl enable --now virtlogd<br><br>sudo modprobe kvm<<br><br>echo 1 | sudo tee /sys/module/kvm/parameters/ignore_msrs</b><br><br>If you enable the password in the QEMU console, type change vnc password user<br>",
 			"platform": "linux",
@@ -3413,7 +3413,7 @@
 				"Tools"
 			],
 			"description": "Grafana Dashboard anything. Observe everything.  Query, visualize, alert on, and understand your data no matter where it’s stored. With Grafana you can create, explore, and share all of your data through beautiful, flexible dashboards.",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/grafana.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/grafana-logo.png",
 			"name": "grafana",
 			"platform": "linux",
 			"ports": [
@@ -3520,7 +3520,7 @@
 				}
 			],
 			"image": "jlesage/handbrake",
-			"logo": "https://camo.githubusercontent.com/0156e7756fa49886748421553158970ca7600e31559f331b1b4e6dd127103bcd/68747470733a2f2f696d616765732e7765736572762e6e6c2f3f75726c3d7261772e67697468756275736572636f6e74656e742e636f6d2f6a6c65736167652f646f636b65722d74656d706c617465732f6d61737465722f6a6c65736167652f696d616765732f68616e646272616b652d69636f6e2e706e6726773d313130",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/handbrake-icon-v2.png",
 			"name": "HandBrake",
 			"platform": "linux",
 			"ports": [
@@ -5915,7 +5915,7 @@
 			],
 			"description": "A privacy-first, lightweight note-taking service.",
 			"image": "ghcr.io/usememos/memos:latest",
-			"logo": "https://raw.githubusercontent.com/usememos/memos/main/web/public/logo.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/memos-logo.png",
 			"name": "memos",
 			"platform": "linux",
 			"ports": [
@@ -7800,7 +7800,7 @@
 					"name": "EMAIL_TLS"
 				}
 			],
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/passbolt.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/passbolt-logo.png",
 			"name": "Passbolt",
 			"platform": "linux",
 			"repository": {
@@ -8136,7 +8136,7 @@
 			],
 			"description": "This is a weather station designed to be used with a Raspberry Pi on the official 7 800x480 touchscreen. The weather station will require you to have API keys from Mapbox and ClimaCell (v4). Optionally, you can use an API key from LocationIQ to preform reverse geocoding.",
 			"image": "seanriggs/pi-weather-station",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/weather.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/pi-weather-station-icon.png",
 			"name": "pi-weather-station",
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/SeanRiggs/pi-weather-station\" target=\"_blank\">https://github.com/SeanRiggs/pi-weather-station</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/SeanRiggs/pi-weather-station/blob/master/Docker%20Image/Docker-ReadMe.md\" target=\"_blank\">https://github.com/SeanRiggs/pi-weather-station/blob/master/Docker%20Image/Docker-ReadMe.md</a><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=5JfPzvcm0E8 target=\"_blank\">Novaspirit Tech - Your Personal Weather Station Docker Container</a><br><br>MUST DO FIRST! - create volume call weatherdata",
 			"platform": "linux",
@@ -8289,7 +8289,7 @@
 				}
 			],
 			"image": "plexripper/plexripper:latest",
-			"logo": "https://raw.githubusercontent.com/PlexRipper/PlexRipper/dev/export/plexripper/logo/full/full-logo-256.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/plexripper-logo.png",
 			"name": "PlexRipper",
 			"platform": "linux",
 			"ports": [
@@ -9644,7 +9644,7 @@
 			],
 			"description": "Slash is an open source, self-hosted bookmarks and link sharing platform. It allows you to organize your links with tags, and share them with custom shortened URLs. Slash also supports team sharing of link libraries for easy collaboration.",
 			"image": "yourselfhosted/slash:latest",
-			"logo": "https://raw.githubusercontent.com/yourselfhosted/slash/main/frontend/web/public/logo.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/slash-logo.png",
 			"name": "slash",
 			"platform": "linux",
 			"ports": [
@@ -10007,7 +10007,7 @@
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.the-diy-life.com/\" target=\"_blank\">https://www.the-diy-life.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/mklements/OLED_Stats_Docker\" target=\"_blank\">https://github.com/mklements/OLED_Stats_Docker</a><br><br><br>Run this command first to enable is2 communication! \\nsudo raspi-config nonint do_i2c 0\\nsudo /DietPi/dietpi/func/dietpi-set_hardware i2c enable || sudo /boot/dietpi/func/dietpi-set_hardware i2c enable\\n",
 			"image": "mklements/oled_stats:latest",
-			"logo": "https://camo.githubusercontent.com/4cf4aaa1e53612347e4d48f152d6d4eea0ce93a6ecacacaa9d44061d0994b408/68747470733a2f2f7777772e7468652d6469792d6c6966652e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032322f30392f3138373137323831322d64653264653635632d626433302d343065372d613835322d3264343234656463323761622e6a7067",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/oled-stats-icon.png",
 			"name": "OLED_Stats",
 			"platform": "linux",
 			"restart_policy": "unless-stopped",
@@ -10214,7 +10214,7 @@
 			],
 			"description": "[Thanos](https://github.com/aternosorg/thanos) is a tool that allows you to shrink your minecraft worlds by deleting unused chuncks.",
 			"image": "cristianeduardmihai/thanos:latest",
-			"logo": "https://raw.githubusercontent.com/novaspirit/pi-hosted/images/aternos-thanos.png",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/thanos-minecraft.png",
 			"name": "Thanos",
 			"platform": "linux",
 			"restart_policy": "never",

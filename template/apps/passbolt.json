@@ -102,7 +102,7 @@
 		"name": "EMAIL_TLS"
 	}
 	],
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/passbolt.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/passbolt-logo.png",
 	"name": "Passbolt",
 	"officialDoc": "https://github.com/pi-hosted/pi-hosted/blob/master/docs/passbolt.md",
 	"piHostedDoc": "passbolt.md",

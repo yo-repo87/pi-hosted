@@ -7,7 +7,7 @@
 	"image_arm32": "mkodockx/docker-clamav:alpine",
 	"image_arm64": "mkodockx/docker-clamav:alpine",
 	"image_amd64": "mkodockx/docker-clamav:alpine",
-	"logo": "http://www.clamav.net/assets/clamav-trademark.png",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/clamav-trademark.png",
 	"name": "clamav",
 	
 	"officialDoc": "https://hub.docker.com/r/mkodockx/docker-clamav",

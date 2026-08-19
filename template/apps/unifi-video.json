@@ -2,7 +2,7 @@
 	"categories": [
 		"CCTV"
 	],
-	"description": "UniFi Video is a powerful and flexible, integrated IP video management surveillance system designed to work with Ubiquiti’s UniFi Video Camera product line. UniFi Video has an intuitive, configurable, and feature‑packed user interface with advanced features such as motion detection, auto‑discovery, user‑level security, storage management, reporting, and mobile device support.",
+	"description": "[DEPRECATED] UniFi Video is a powerful and flexible, integrated IP video management surveillance system designed to work with Ubiquiti's UniFi Video Camera product line. UniFi Video has an intuitive, configurable, and feature‑packed user interface with advanced features such as motion detection, auto‑discovery, user‑level security, storage management, reporting, and mobile device support. [DEPRECATED] Ubiquiti discontinued the UniFi Video product line in favor of UniFi Protect, which requires their own NVR/controller hardware and has no self-hosted docker equivalent. This template is kept only for existing UniFi Video camera owners.",
 	"env": [
 		{
 			"default": "99",
@@ -44,7 +44,7 @@
 		"7446:7446/tcp"
 	],
 	"restart_policy": "unless-stopped",
-	"title": "UniFi Video",
+	"title": "UniFi Video [DEPRECATED]",
 	"type": 1,
 	"volumes": [
 		{

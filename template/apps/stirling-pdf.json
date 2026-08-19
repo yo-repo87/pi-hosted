@@ -1,0 +1,51 @@
+{
+	"categories": [
+		"Tools",
+		"Productivity"
+	],
+	"description": "Stirling-PDF is a powerful, locally-hosted web-based PDF manipulation tool offering merge, split, convert, compress, OCR, and dozens of other PDF operations.",
+	"env": [
+		{
+			"default": "1000",
+			"label": "PUID",
+			"name": "PUID"
+		},
+		{
+			"default": "1000",
+			"label": "PGID",
+			"name": "PGID"
+		},
+		{
+			"default": "false",
+			"label": "DOCKER_ENABLE_SECURITY",
+			"name": "DOCKER_ENABLE_SECURITY"
+		}
+	],
+	"image_arm64": "stirlingtools/stirling-pdf:latest",
+	"image_amd64": "stirlingtools/stirling-pdf:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/stirling-pdf.png",
+	"name": "stirling-pdf",
+	"officialDoc": "https://docs.stirlingpdf.com/Getting%20Started/Installation/",
+	"platform": "linux",
+	"ports": [
+		"7383:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Stirling-PDF",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/StirlingPDF/tessdata",
+			"container": "/usr/share/tessdata"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/StirlingPDF/configs",
+			"container": "/configs"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/StirlingPDF/logs",
+			"container": "/logs"
+		}
+	],
+	"webpage": "https://www.stirlingpdf.com/"
+}

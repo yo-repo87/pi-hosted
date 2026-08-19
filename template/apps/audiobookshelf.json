@@ -1,0 +1,56 @@
+{
+	"categories": [
+		"Music",
+		"Books",
+		"Video"
+	],
+	"description": "Audiobookshelf is a self-hosted server for managing and streaming your audiobooks and podcasts, with mobile apps and Android Auto/CarPlay support.",
+	"env": [
+		{
+			"default": "1000",
+			"label": "PUID",
+			"name": "PUID"
+		},
+		{
+			"default": "1000",
+			"label": "PGID",
+			"name": "PGID"
+		},
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		}
+	],
+	"image_arm64": "ghcr.io/advplyr/audiobookshelf:latest",
+	"image_amd64": "ghcr.io/advplyr/audiobookshelf:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/audiobookshelf.png",
+	"name": "audiobookshelf",
+	"officialDoc": "https://www.audiobookshelf.org/docs#docker-compose",
+	"platform": "linux",
+	"ports": [
+		"13378:80/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Audiobookshelf",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Audiobooks",
+			"container": "/audiobooks"
+		},
+		{
+			"bind": "/portainer/Podcasts",
+			"container": "/podcasts"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/Audiobookshelf/config",
+			"container": "/config"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/Audiobookshelf/metadata",
+			"container": "/metadata"
+		}
+	],
+	"webpage": "https://www.audiobookshelf.org/"
+}

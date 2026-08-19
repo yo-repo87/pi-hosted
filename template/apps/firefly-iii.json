@@ -1,0 +1,52 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "Firefly III is a free and open-source personal finance manager to track expenses, income, budgets, and bills. This template defaults to SQLite for a self-contained single-container setup; set DB_CONNECTION and the related DB_* variables to use an external MySQL/MariaDB or PostgreSQL container instead.",
+	"env": [
+		{
+			"description": "Must be left blank before first start. Generate one after first start with: docker exec -it firefly-iii php artisan key:generate --show",
+			"label": "APP_KEY",
+			"name": "APP_KEY"
+		},
+		{
+			"default": "sqlite",
+			"label": "DB_CONNECTION",
+			"name": "DB_CONNECTION"
+		},
+		{
+			"default": "en",
+			"label": "DEFAULT_LANGUAGE",
+			"name": "DEFAULT_LANGUAGE"
+		},
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		}
+	],
+	"image_arm64": "fireflyiii/core:latest",
+	"image_amd64": "fireflyiii/core:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/firefly-iii.png",
+	"name": "firefly-iii",
+	"officialDoc": "https://docs.firefly-iii.org/how-to/firefly-iii/installation/docker/",
+	"platform": "linux",
+	"ports": [
+		"7387:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Firefly III",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/FireflyIII/upload",
+			"container": "/var/www/html/storage/upload"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/FireflyIII/database",
+			"container": "/var/www/html/storage/database"
+		}
+	],
+	"webpage": "https://www.firefly-iii.org/"
+}

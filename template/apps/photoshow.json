@@ -2,7 +2,7 @@
 	"categories": [
 		"Photos"
 	],
-	"description": "A simple, easy way to turn a photo album into a webgallery",
+	"description": "[DEPRECATED] A simple, easy way to turn a photo album into a webgallery. [DEPRECATED] The upstream project is no longer in development and this image is on LinuxServer.io's deprecated images list. Consider PhotoPrism, Piwigo, or Lychee instead (also available in this app list).",
 	"env": [
 		{
 			"default": "1000",
@@ -25,7 +25,7 @@
 		"7380:80/tcp"
 	],
 	"restart_policy": "unless-stopped",
-	"title": "PhotoShow",
+	"title": "PhotoShow [DEPRECATED]",
 	"type": 1,
 	"volumes": [
 		{

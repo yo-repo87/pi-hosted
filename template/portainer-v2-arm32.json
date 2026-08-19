@@ -316,7 +316,7 @@
 				"Tools",
 				"Photo"
 			],
-			"description": "Chevereto is a powerful and fast image hosting script that allows you to create your very own full featured image hosting website in just minutes. Please note that this offers only the free Chevereto version..",
+			"description": "Chevereto is a powerful and fast image hosting script that allows you to create your very own full featured image hosting website in just minutes. This template now uses the official chevereto/chevereto image (the older third-party nmtan/chevereto build is unmaintained). Please note that this offers only the free Chevereto version..",
 			"env": [
 				{
 					"default": "1000",
@@ -354,7 +354,7 @@
 					"name": "CHEVERETO_DB_PREFIX"
 				}
 			],
-			"image": "nmtan/chevereto:latest",
+			"image": "chevereto/chevereto:latest",
 			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/Chevereto.png",
 			"name": "Chevereto",
 			"platform": "linux",
@@ -369,7 +369,7 @@
 					"container": "/var/www/html/images"
 				}
 			],
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://chevereto.com/\" target=\"_blank\">https://chevereto.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/nmtan/chevereto\" target=\"_blank\">https://hub.docker.com/r/nmtan/chevereto</a><br><br><br>"
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://chevereto.com/\" target=\"_blank\">https://chevereto.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/chevereto/docker\" target=\"_blank\">https://github.com/chevereto/docker</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -475,7 +475,7 @@
 				"Other",
 				"Tools"
 			],
-			"description": "Another application bookmark dashboard, with fun features.",
+			"description": "[DEPRECATED] Another application bookmark dashboard, with fun features. [DEPRECATED] The upstream DashMachine project is unmaintained (removed from awesome-selfhosted) and this image hasn't been updated in years. Consider Homarr, Dashy, or Homepage instead (also available in this app list).",
 			"image": "failed2run/dashmachine:latest",
 			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/dashmachine_logo.png",
 			"name": "dashmachine",
@@ -484,7 +484,7 @@
 				"5100:5000/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "DashMachine",
+			"title": "DashMachine [DEPRECATED]",
 			"type": 1,
 			"volumes": [
 				{
@@ -1638,30 +1638,6 @@
 		},
 		{
 			"categories": [
-				"Other",
-				"Tools"
-			],
-			"description": "An alternative private front-end to Reddit",
-			"image": "libreddit/libreddit:armv7",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/libreddit.png",
-			"name": "libreddit",
-			"platform": "linux",
-			"ports": [
-				"8088:8080/tcp"
-			],
-			"restart_policy": "unless-stopped",
-			"title": "libreddit",
-			"type": 1,
-			"volumes": [
-				{
-					"bind": "/portainer/Files/AppData/Config/libreddit",
-					"container": "/config"
-				}
-			],
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://libreddit.silkky.cloud/\" target=\"_blank\">https://libreddit.silkky.cloud/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/spikecodes/libreddit#2-docker\" target=\"_blank\">https://github.com/spikecodes/libreddit#2-docker</a><br><br><br>"
-		},
-		{
-			"categories": [
 				"Tools",
 				"Productivity"
 			],
@@ -2037,6 +2013,50 @@
 		},
 		{
 			"categories": [
+				"Music"
+			],
+			"description": "Navidrome is a modern, actively-maintained, self-hosted music server and streamer, giving you freedom to listen to your music collection from any browser or Subsonic-compatible mobile app.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "America/New_York",
+					"label": "ND_TIMEZONE",
+					"name": "ND_TIMEZONE"
+				}
+			],
+			"image": "deluan/navidrome:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/navidrome.png",
+			"name": "navidrome",
+			"platform": "linux",
+			"ports": [
+				"4533:4533/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Navidrome",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Navidrome",
+					"container": "/data"
+				},
+				{
+					"bind": "/portainer/Music",
+					"container": "/music"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.navidrome.org/\" target=\"_blank\">https://www.navidrome.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://www.navidrome.org/docs/installation/docker/\" target=\"_blank\">https://www.navidrome.org/docs/installation/docker/</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Other",
 				"Tools"
 			],
@@ -2367,6 +2387,35 @@
 			"type": 1,
 			"privileged": true,
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/azinchen/nordvpn\" target=\"_blank\">https://github.com/azinchen/nordvpn</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/azinchen/nordvpn\" target=\"_blank\">https://hub.docker.com/r/azinchen/nordvpn</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"command": "serve",
+			"description": "ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service that lets you send push notifications to your phone or desktop from scripts, apps, or webhooks.",
+			"image": "binwiederhier/ntfy:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/ntfy.png",
+			"name": "ntfy",
+			"platform": "linux",
+			"ports": [
+				"7180:80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "ntfy",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/ntfy/cache",
+					"container": "/var/cache/ntfy"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/ntfy/etc",
+					"container": "/etc/ntfy"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://ntfy.sh/\" target=\"_blank\">https://ntfy.sh/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.ntfy.sh/install/#docker\" target=\"_blank\">https://docs.ntfy.sh/install/#docker</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -3161,6 +3210,30 @@
 				"Other",
 				"Tools"
 			],
+			"description": "[FORMERLY LIBREDDIT] Libreddit was discontinued and archived by its author in favor of Redlib, a maintained fork that continues to adapt to Reddit's API changes. An alternative private front-end to Reddit.",
+			"image": "quay.io/redlib/redlib:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/redlib.png",
+			"name": "redlib",
+			"platform": "linux",
+			"ports": [
+				"8088:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Redlib (formerly libreddit)",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/redlib",
+					"container": "/config"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/redlib-org/redlib\" target=\"_blank\">https://github.com/redlib-org/redlib</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/redlib-org/redlib#docker\" target=\"_blank\">https://github.com/redlib-org/redlib#docker</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
 			"description": "A remote desktop software, the open source TeamViewer alternative, works out of the box, no configuration required. You have full control of your data, with no concerns about security.",
 			"env": [
 				{
@@ -3797,7 +3870,7 @@
 			"categories": [
 				"CCTV"
 			],
-			"description": "UniFi Video is a powerful and flexible, integrated IP video management surveillance system designed to work with Ubiquiti’s UniFi Video Camera product line. UniFi Video has an intuitive, configurable, and feature‑packed user interface with advanced features such as motion detection, auto‑discovery, user‑level security, storage management, reporting, and mobile device support.",
+			"description": "[DEPRECATED] UniFi Video is a powerful and flexible, integrated IP video management surveillance system designed to work with Ubiquiti's UniFi Video Camera product line. UniFi Video has an intuitive, configurable, and feature‑packed user interface with advanced features such as motion detection, auto‑discovery, user‑level security, storage management, reporting, and mobile device support. [DEPRECATED] Ubiquiti discontinued the UniFi Video product line in favor of UniFi Protect, which requires their own NVR/controller hardware and has no self-hosted docker equivalent. This template is kept only for existing UniFi Video camera owners.",
 			"env": [
 				{
 					"default": "99",
@@ -3836,7 +3909,7 @@
 				"7446:7446/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "UniFi Video",
+			"title": "UniFi Video [DEPRECATED]",
 			"type": 1,
 			"volumes": [
 				{
@@ -4007,10 +4080,10 @@
 				"Maintenance"
 			],
 			"description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
-			"image": "containrrr/watchtower:latest",
+			"image": "ghcr.io/nicholas-fedor/watchtower:latest",
 			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/watchtower.png",
 			"name": "watchtower",
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://containrrr.dev/watchtower/\" target=\"_blank\">https://containrrr.dev/watchtower/</a><br><b>Official Docker Documentation: </b><a href=\"https://containrrr.dev/watchtower/usage-overview/\" target=\"_blank\">https://containrrr.dev/watchtower/usage-overview/</a><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=q3wKqk8qVS8&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=7 target=\"_blank\">Novaspirit Tech - Upgrading Portainer and Updating Containers</a><br><br>It is recommended to manually update your containers but we're including this for those of you that don't care",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://nicholas-fedor.github.io/watchtower/\" target=\"_blank\">https://nicholas-fedor.github.io/watchtower/</a><br><b>Official Docker Documentation: </b><a href=\"https://nicholas-fedor.github.io/watchtower/usage-overview/\" target=\"_blank\">https://nicholas-fedor.github.io/watchtower/usage-overview/</a><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=q3wKqk8qVS8&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=7 target=\"_blank\">Novaspirit Tech - Upgrading Portainer and Updating Containers</a><br><br>The original containrrr/watchtower project was archived by its maintainers in December 2025. This template now uses the actively maintained nicholas-fedor/watchtower fork, which is a drop-in API-compatible replacement. It is recommended to manually update your containers but we're including this for those of you that don't care",
 			"platform": "linux",
 			"command": "--cleanup",
 			"restart_policy": "unless-stopped",

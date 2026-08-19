@@ -2,7 +2,7 @@
 	"categories": [
 		"Productivity"
 	],
-	"description": "[DEPRECATED] Codiad is a web-based IDE framework with a small footprint and minimal requirements.\n  ",
+	"description": "[DEPRECATED] Codiad is a web-based IDE framework with a small footprint and minimal requirements. Unmaintained since 2017 and on LinuxServer.io's deprecated images list. Consider code-server instead (also available in this app list).\n  ",
 	"env": [
 		{
 			"default": "1000",
@@ -25,7 +25,7 @@
 		"7294:80/tcp"
 	],
 	"restart_policy": "unless-stopped",
-	"title": "Codiad",
+	"title": "Codiad [DEPRECATED]",
 	"type": 1,
 	"volumes": [
 		{

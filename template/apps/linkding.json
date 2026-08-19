@@ -1,0 +1,36 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "linkding is a minimal, fast, and self-hosted bookmark manager with tagging, full-text search, automatic snapshots, and a browser extension.",
+	"env": [
+		{
+			"label": "LD_SUPERUSER_NAME",
+			"name": "LD_SUPERUSER_NAME"
+		},
+		{
+			"label": "LD_SUPERUSER_PASSWORD",
+			"name": "LD_SUPERUSER_PASSWORD"
+		}
+	],
+	"image_arm64": "sissbruecker/linkding:latest",
+	"image_amd64": "sissbruecker/linkding:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/linkding.png",
+	"name": "linkding",
+	"officialDoc": "https://github.com/sissbruecker/linkding#docker-compose",
+	"platform": "linux",
+	"ports": [
+		"7392:9090/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "linkding",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Linkding",
+			"container": "/etc/linkding/data"
+		}
+	],
+	"webpage": "https://linkding.link/"
+}

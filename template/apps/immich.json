@@ -1,0 +1,47 @@
+{
+	"categories": [
+		"Photos",
+		"Cloud"
+	],
+	"description": "Immich is a high performance self-hosted photo and video backup solution with mobile apps, AI-powered search, and facial recognition. This template uses the community-maintained imagegenius/immich monolithic image, which bundles the Immich server, machine learning service, PostgreSQL, and Redis into a single container for easy deployment.",
+	"env": [
+		{
+			"default": "1000",
+			"label": "PUID",
+			"name": "PUID"
+		},
+		{
+			"default": "1000",
+			"label": "PGID",
+			"name": "PGID"
+		},
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		}
+	],
+	"image_arm64": "ghcr.io/imagegenius/immich:latest",
+	"image_amd64": "ghcr.io/imagegenius/immich:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/immich.png",
+	"name": "immich",
+	"officialDoc": "https://github.com/imagegenius/docker-immich",
+	"platform": "linux",
+	"ports": [
+		"2283:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Immich",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Immich",
+			"container": "/config"
+		},
+		{
+			"bind": "/portainer/Photos",
+			"container": "/photos"
+		}
+	],
+	"webpage": "https://immich.app/"
+}

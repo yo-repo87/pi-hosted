@@ -1,0 +1,26 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "Glance is a fast, customizable, self-hosted dashboard that puts all your feeds and widgets in one place, similar to Homepage and Homarr but focused on RSS, weather, monitoring, and other bite-sized widgets.",
+	"image_arm64": "glanceapp/glance:latest",
+	"image_amd64": "glanceapp/glance:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/glance.png",
+	"name": "glance",
+	"officialDoc": "https://github.com/glanceapp/glance#docker-compose",
+	"platform": "linux",
+	"ports": [
+		"7391:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Glance",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Glance",
+			"container": "/app/config"
+		}
+	],
+	"webpage": "https://github.com/glanceapp/glance"
+}

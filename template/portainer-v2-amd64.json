@@ -450,6 +450,60 @@
 		},
 		{
 			"categories": [
+				"Music",
+				"Books",
+				"Video"
+			],
+			"description": "Audiobookshelf is a self-hosted server for managing and streaming your audiobooks and podcasts, with mobile apps and Android Auto/CarPlay support.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "America/New_York",
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "ghcr.io/advplyr/audiobookshelf:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/audiobookshelf.png",
+			"name": "audiobookshelf",
+			"platform": "linux",
+			"ports": [
+				"13378:80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Audiobookshelf",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Audiobooks",
+					"container": "/audiobooks"
+				},
+				{
+					"bind": "/portainer/Podcasts",
+					"container": "/podcasts"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Audiobookshelf/config",
+					"container": "/config"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Audiobookshelf/metadata",
+					"container": "/metadata"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.audiobookshelf.org/\" target=\"_blank\">https://www.audiobookshelf.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://www.audiobookshelf.org/docs#docker-compose\" target=\"_blank\">https://www.audiobookshelf.org/docs#docker-compose</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Other",
 				"Tools",
 				"Authentication"
@@ -536,6 +590,37 @@
 			"restart_policy": "unless-stopped",
 			"title": "Authentik",
 			"type": 3
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Baserow is a free and open-source no-code database and spreadsheet-hybrid tool, an open-source alternative to Airtable. This template uses the all-in-one image, which bundles its own PostgreSQL and Redis in a single container for simple deployments.",
+			"env": [
+				{
+					"description": "e.g. http://192.168.1.50 or https://baserow.example.com",
+					"label": "BASEROW_PUBLIC_URL",
+					"name": "BASEROW_PUBLIC_URL"
+				}
+			],
+			"image": "baserow/baserow:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/baserow.png",
+			"name": "baserow",
+			"platform": "linux",
+			"ports": [
+				"7388:80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Baserow",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Baserow",
+					"container": "/baserow/data"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://baserow.io/\" target=\"_blank\">https://baserow.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://baserow.io/docs/installation/install-with-docker\" target=\"_blank\">https://baserow.io/docs/installation/install-with-docker</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -628,6 +713,41 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://beets.io/\" target=\"_blank\">https://beets.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-beets\" target=\"_blank\">https://docs.linuxserver.io/images/docker-beets</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Beszel is a lightweight server monitoring hub with a clean web UI displaying historical CPU, memory, disk, and network usage for all your Docker hosts.",
+			"env": [
+				{
+					"default": "http://localhost:7393",
+					"label": "APP_URL",
+					"name": "APP_URL"
+				}
+			],
+			"image": "henrygd/beszel:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/beszel.png",
+			"name": "beszel",
+			"platform": "linux",
+			"ports": [
+				"7393:8090/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Beszel",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Beszel/data",
+					"container": "/beszel_data"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Beszel/socket",
+					"container": "/beszel_socket"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://beszel.dev/\" target=\"_blank\">https://beszel.dev/</a><br><b>Official Docker Documentation: </b><a href=\"https://www.beszel.dev/guide/hub-installation\" target=\"_blank\">https://www.beszel.dev/guide/hub-installation</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -880,10 +1000,34 @@
 		{
 			"categories": [
 				"Other",
+				"Tools"
+			],
+			"description": "changedetection.io monitors websites for content changes and sends alerts via email, Discord, Slack, and many other services — useful for tracking price drops, restock alerts, or any page content change.",
+			"image": "ghcr.io/dgtlmoon/changedetection.io:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/changedetection.png",
+			"name": "changedetection.io",
+			"platform": "linux",
+			"ports": [
+				"5099:5000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "changedetection.io",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/ChangeDetection",
+					"container": "/datastore"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://changedetection.io/\" target=\"_blank\">https://changedetection.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/dgtlmoon/changedetection.io#docker-run-example\" target=\"_blank\">https://github.com/dgtlmoon/changedetection.io#docker-run-example</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
 				"Tools",
 				"Photo"
 			],
-			"description": "Chevereto is a powerful and fast image hosting script that allows you to create your very own full featured image hosting website in just minutes. Please note that this offers only the free Chevereto version..",
+			"description": "Chevereto is a powerful and fast image hosting script that allows you to create your very own full featured image hosting website in just minutes. This template now uses the official chevereto/chevereto image (the older third-party nmtan/chevereto build is unmaintained). Please note that this offers only the free Chevereto version..",
 			"env": [
 				{
 					"default": "1000",
@@ -921,7 +1065,7 @@
 					"name": "CHEVERETO_DB_PREFIX"
 				}
 			],
-			"image": "nmtan/chevereto:latest",
+			"image": "chevereto/chevereto:latest",
 			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/Chevereto.png",
 			"name": "Chevereto",
 			"platform": "linux",
@@ -936,7 +1080,7 @@
 					"container": "/var/www/html/images"
 				}
 			],
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://chevereto.com/\" target=\"_blank\">https://chevereto.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/nmtan/chevereto\" target=\"_blank\">https://hub.docker.com/r/nmtan/chevereto</a><br><br><br>"
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://chevereto.com/\" target=\"_blank\">https://chevereto.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/chevereto/docker\" target=\"_blank\">https://github.com/chevereto/docker</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -1120,7 +1264,7 @@
 			"categories": [
 				"Productivity"
 			],
-			"description": "[DEPRECATED] Codiad is a web-based IDE framework with a small footprint and minimal requirements.\n  ",
+			"description": "[DEPRECATED] Codiad is a web-based IDE framework with a small footprint and minimal requirements. Unmaintained since 2017 and on LinuxServer.io's deprecated images list. Consider code-server instead (also available in this app list).\n  ",
 			"env": [
 				{
 					"default": "1000",
@@ -1141,7 +1285,7 @@
 				"7294:80/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Codiad",
+			"title": "Codiad [DEPRECATED]",
 			"type": 1,
 			"volumes": [
 				{
@@ -1381,7 +1525,7 @@
 				"Other",
 				"Tools"
 			],
-			"description": "Another application bookmark dashboard, with fun features.",
+			"description": "[DEPRECATED] Another application bookmark dashboard, with fun features. [DEPRECATED] The upstream DashMachine project is unmaintained (removed from awesome-selfhosted) and this image hasn't been updated in years. Consider Homarr, Dashy, or Homepage instead (also available in this app list).",
 			"image": "failed2run/dashmachine:latest",
 			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/dashmachine_logo.png",
 			"name": "dashmachine",
@@ -1390,7 +1534,7 @@
 				"5100:5000/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "DashMachine",
+			"title": "DashMachine [DEPRECATED]",
 			"type": 1,
 			"volumes": [
 				{
@@ -1688,6 +1832,45 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.deluge-torrent.org/\" target=\"_blank\">https://www.deluge-torrent.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/sgtsquiggs/docker-deluge-openvpn\" target=\"_blank\">https://github.com/sgtsquiggs/docker-deluge-openvpn</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Dockge is a fancy, easy-to-use, and reactive self-hosted docker compose.yaml stack-oriented manager, built by the creator of Uptime Kuma.",
+			"env": [
+				{
+					"default": "/portainer/Files/AppData/Config/Dockge/stacks",
+					"label": "DOCKGE_STACKS_DIR",
+					"name": "DOCKGE_STACKS_DIR"
+				}
+			],
+			"image": "louislam/dockge:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/dockge.png",
+			"name": "dockge",
+			"platform": "linux",
+			"ports": [
+				"7390:5001/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Dockge",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/var/run/docker.sock",
+					"container": "/var/run/docker.sock"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Dockge",
+					"container": "/app/data"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Dockge/stacks",
+					"container": "/portainer/Files/AppData/Config/Dockge/stacks"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://dockge.kuma.pet/\" target=\"_blank\">https://dockge.kuma.pet/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/louislam/dockge#-how-to-install\" target=\"_blank\">https://github.com/louislam/dockge#-how-to-install</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -2134,6 +2317,24 @@
 		},
 		{
 			"categories": [
+				"Tools",
+				"Productivity"
+			],
+			"description": "Excalidraw is a self-hosted virtual whiteboard for sketching hand-drawn-style diagrams, wireframes, and collaborative brainstorming.",
+			"image": "excalidraw/excalidraw:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/excalidraw.png",
+			"name": "excalidraw",
+			"platform": "linux",
+			"ports": [
+				"7386:80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Excalidraw",
+			"type": 1,
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://excalidraw.com/\" target=\"_blank\">https://excalidraw.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/excalidraw/excalidraw#docker\" target=\"_blank\">https://github.com/excalidraw/excalidraw#docker</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Other",
 				"Tools"
 			],
@@ -2249,6 +2450,56 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hub.docker.com/r/linuxserver/filezilla\" target=\"_blank\">https://hub.docker.com/r/linuxserver/filezilla</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/linuxserver/filezilla\" target=\"_blank\">https://hub.docker.com/r/linuxserver/filezilla</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Firefly III is a free and open-source personal finance manager to track expenses, income, budgets, and bills. This template defaults to SQLite for a self-contained single-container setup; set DB_CONNECTION and the related DB_* variables to use an external MySQL/MariaDB or PostgreSQL container instead.",
+			"env": [
+				{
+					"description": "Must be left blank before first start. Generate one after first start with: docker exec -it firefly-iii php artisan key:generate --show",
+					"label": "APP_KEY",
+					"name": "APP_KEY"
+				},
+				{
+					"default": "sqlite",
+					"label": "DB_CONNECTION",
+					"name": "DB_CONNECTION"
+				},
+				{
+					"default": "en",
+					"label": "DEFAULT_LANGUAGE",
+					"name": "DEFAULT_LANGUAGE"
+				},
+				{
+					"default": "America/New_York",
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "fireflyiii/core:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/firefly-iii.png",
+			"name": "firefly-iii",
+			"platform": "linux",
+			"ports": [
+				"7387:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Firefly III",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/FireflyIII/upload",
+					"container": "/var/www/html/storage/upload"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/FireflyIII/database",
+					"container": "/var/www/html/storage/database"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.firefly-iii.org/\" target=\"_blank\">https://www.firefly-iii.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.firefly-iii.org/how-to/firefly-iii/installation/docker/\" target=\"_blank\">https://docs.firefly-iii.org/how-to/firefly-iii/installation/docker/</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -2760,6 +3011,30 @@
 		},
 		{
 			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Glance is a fast, customizable, self-hosted dashboard that puts all your feeds and widgets in one place, similar to Homepage and Homarr but focused on RSS, weather, monitoring, and other bite-sized widgets.",
+			"image": "glanceapp/glance:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/glance.png",
+			"name": "glance",
+			"platform": "linux",
+			"ports": [
+				"7391:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Glance",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Glance",
+					"container": "/app/config"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/glanceapp/glance\" target=\"_blank\">https://github.com/glanceapp/glance</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/glanceapp/glance#docker-compose\" target=\"_blank\">https://github.com/glanceapp/glance#docker-compose</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Proxy"
 			],
 			"description": "Simple socks5 server using go-socks5 with authentication options",
@@ -3147,6 +3422,30 @@
 		},
 		{
 			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "HomeBox is a simple, self-hosted inventory and organization system built for home users to track their belongings, warranties, and locations. This template uses the sysadminsmedia/homebox community continuation, since the original hay-kot/homebox project was archived by its author.",
+			"image": "ghcr.io/sysadminsmedia/homebox:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/homebox.png",
+			"name": "homebox",
+			"platform": "linux",
+			"ports": [
+				"7394:7745/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "HomeBox",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Homebox",
+					"container": "/data"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://homebox.software/\" target=\"_blank\">https://homebox.software/</a><br><b>Official Docker Documentation: </b><a href=\"https://homebox.software/en/quick-start.html\" target=\"_blank\">https://homebox.software/en/quick-start.html</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"HomeAutomation"
 			],
 			"description": "Homebridge allows you to integrate with smart home devices that do not natively support HomeKit. There are over 2,000 Homebridge plugins supporting thousands of different smart accessories.",
@@ -3373,6 +3672,51 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/huginn/huginn\" target=\"_blank\">https://github.com/huginn/huginn</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/huginn/huginn/tree/master/docker\" target=\"_blank\">https://github.com/huginn/huginn/tree/master/docker</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Photos",
+				"Cloud"
+			],
+			"description": "Immich is a high performance self-hosted photo and video backup solution with mobile apps, AI-powered search, and facial recognition. This template uses the community-maintained imagegenius/immich monolithic image, which bundles the Immich server, machine learning service, PostgreSQL, and Redis into a single container for easy deployment.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "America/New_York",
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "ghcr.io/imagegenius/immich:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/immich.png",
+			"name": "immich",
+			"platform": "linux",
+			"ports": [
+				"2283:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Immich",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Immich",
+					"container": "/config"
+				},
+				{
+					"bind": "/portainer/Photos",
+					"container": "/photos"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://immich.app/\" target=\"_blank\">https://immich.app/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/imagegenius/docker-immich\" target=\"_blank\">https://github.com/imagegenius/docker-immich</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -3681,6 +4025,23 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/buanet/ioBroker.docker\" target=\"_blank\">https://github.com/buanet/ioBroker.docker</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/buanet/ioBroker.docker\" target=\"_blank\">https://github.com/buanet/ioBroker.docker</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Tools"
+			],
+			"description": "IT-Tools is a collection of handy online tools for developers and sysadmins, such as JSON formatters, encoders/decoders, token generators, regex testers, and more — all in one self-hosted web app.",
+			"image": "corentinth/it-tools:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/it-tools.png",
+			"name": "it-tools",
+			"platform": "linux",
+			"ports": [
+				"7384:80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "IT-Tools",
+			"type": 1,
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://it-tools.io/\" target=\"_blank\">https://it-tools.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/CorentinTh/it-tools#-installation\" target=\"_blank\">https://github.com/CorentinTh/it-tools#-installation</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -4287,30 +4648,6 @@
 				"Other",
 				"Tools"
 			],
-			"description": "An alternative private front-end to Reddit",
-			"image": "libreddit/libreddit:latest",
-			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/libreddit.png",
-			"name": "libreddit",
-			"platform": "linux",
-			"ports": [
-				"8088:8080/tcp"
-			],
-			"restart_policy": "unless-stopped",
-			"title": "libreddit",
-			"type": 1,
-			"volumes": [
-				{
-					"bind": "/portainer/Files/AppData/Config/libreddit",
-					"container": "/config"
-				}
-			],
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://libreddit.silkky.cloud/\" target=\"_blank\">https://libreddit.silkky.cloud/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/spikecodes/libreddit#2-docker\" target=\"_blank\">https://github.com/spikecodes/libreddit#2-docker</a><br><br><br>"
-		},
-		{
-			"categories": [
-				"Other",
-				"Tools"
-			],
 			"description": "A Free and Open Source Speedtest for HTML5 and more.",
 			"env": [
 				{
@@ -4429,6 +4766,40 @@
 		{
 			"categories": [
 				"Other",
+				"Tools"
+			],
+			"description": "linkding is a minimal, fast, and self-hosted bookmark manager with tagging, full-text search, automatic snapshots, and a browser extension.",
+			"env": [
+				{
+					"label": "LD_SUPERUSER_NAME",
+					"name": "LD_SUPERUSER_NAME"
+				},
+				{
+					"label": "LD_SUPERUSER_PASSWORD",
+					"name": "LD_SUPERUSER_PASSWORD"
+				}
+			],
+			"image": "sissbruecker/linkding:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/linkding.png",
+			"name": "linkding",
+			"platform": "linux",
+			"ports": [
+				"7392:9090/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "linkding",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Linkding",
+					"container": "/etc/linkding/data"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://linkding.link/\" target=\"_blank\">https://linkding.link/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/sissbruecker/linkding#docker-compose\" target=\"_blank\">https://github.com/sissbruecker/linkding#docker-compose</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
 				"Web"
 			],
 			"description": "The Ultimate Link Management Solution",
@@ -4523,6 +4894,40 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/nitnelave/lldap\" target=\"_blank\">https://github.com/nitnelave/lldap</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/nitnelave/lldap\" target=\"_blank\">https://github.com/nitnelave/lldap</a><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_lldap.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_lldap.sh | bash</h3><br><br>"
+		},
+		{
+			"categories": [
+				"Other"
+			],
+			"description": "Server version of Luanti (formerly Minetest — renamed in October 2024 due to a trademark dispute), a free, open source alternative to minecraft.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "lscr.io/linuxserver/luanti:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/luanti-icon.png",
+			"name": "luanti",
+			"platform": "linux",
+			"ports": [
+				"30000:30000/udp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Luanti (formerly Minetest)",
+			"type": 1,
+			"volumes": [
+				{
+					"container": "/config/.minetest"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.luanti.org/\" target=\"_blank\">https://www.luanti.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-luanti\" target=\"_blank\">https://docs.linuxserver.io/images/docker-luanti</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -4959,35 +5364,43 @@
 			"categories": [
 				"Other"
 			],
-			"description": "Server version of minetest, a free, open source alternative to minecraft.",
+			"description": "Miniflux is a minimalist, opinionated RSS/Atom feed reader. It requires an external PostgreSQL database — point DATABASE_URL at an existing PostgreSQL container (e.g. the PostgreSQL template in this app list) before starting.",
 			"env": [
 				{
-					"default": "1000",
-					"label": "PUID",
-					"name": "PUID"
+					"description": "e.g. postgres://miniflux:password@dbhost/miniflux?sslmode=disable",
+					"label": "DATABASE_URL",
+					"name": "DATABASE_URL"
 				},
 				{
-					"default": "1000",
-					"label": "PGID",
-					"name": "PGID"
+					"default": "1",
+					"label": "RUN_MIGRATIONS",
+					"name": "RUN_MIGRATIONS"
+				},
+				{
+					"default": "1",
+					"label": "CREATE_ADMIN",
+					"name": "CREATE_ADMIN"
+				},
+				{
+					"label": "ADMIN_USERNAME",
+					"name": "ADMIN_USERNAME"
+				},
+				{
+					"label": "ADMIN_PASSWORD",
+					"name": "ADMIN_PASSWORD"
 				}
 			],
-			"image": "linuxserver/minetest:latest",
-			"logo": "https://raw.githubusercontent.com/linuxserver/beta-templates/master/lsiodev/img/minetest-icon.png",
-			"name": "minetest",
+			"image": "miniflux/miniflux:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/miniflux.png",
+			"name": "miniflux",
 			"platform": "linux",
 			"ports": [
-				"30000:30000/udp"
+				"7385:8080/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Minetest",
+			"title": "Miniflux",
 			"type": 1,
-			"volumes": [
-				{
-					"container": "/config/.minetest"
-				}
-			],
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.minetest.net/\" target=\"_blank\">https://www.minetest.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-minetest\" target=\"_blank\">https://docs.linuxserver.io/images/docker-minetest</a><br><br><br>"
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://miniflux.app/\" target=\"_blank\">https://miniflux.app/</a><br><b>Official Docker Documentation: </b><a href=\"https://miniflux.app/docs/docker.html\" target=\"_blank\">https://miniflux.app/docs/docker.html</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -5283,7 +5696,7 @@
 				"Other",
 				"Tools"
 			],
-			"description": "A lightweight portal to view, manage your HTPC apps without having to run anything more than a PHP enabled webserver. With Muximux you don't need to keep multiple tabs open, or bookmark the URL to all of your apps.",
+			"description": "[DEPRECATED] A lightweight portal to view, manage your HTPC apps without having to run anything more than a PHP enabled webserver. With Muximux you don't need to keep multiple tabs open, or bookmark the URL to all of your apps. [DEPRECATED] The upstream Muximux project is unmaintained and this image is on LinuxServer.io's deprecated images list. Consider Homarr, Organizr, or Heimdall instead (also available in this app list).",
 			"env": [
 				{
 					"default": "1000",
@@ -5304,7 +5717,7 @@
 				"7205:80/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Muximux",
+			"title": "Muximux [DEPRECATED]",
 			"type": 1,
 			"volumes": [
 				{
@@ -5444,6 +5857,50 @@
 					"container": "/home/node/.n8n"
 				}
 			]
+		},
+		{
+			"categories": [
+				"Music"
+			],
+			"description": "Navidrome is a modern, actively-maintained, self-hosted music server and streamer, giving you freedom to listen to your music collection from any browser or Subsonic-compatible mobile app.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "America/New_York",
+					"label": "ND_TIMEZONE",
+					"name": "ND_TIMEZONE"
+				}
+			],
+			"image": "deluan/navidrome:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/navidrome.png",
+			"name": "navidrome",
+			"platform": "linux",
+			"ports": [
+				"4533:4533/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Navidrome",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Navidrome",
+					"container": "/data"
+				},
+				{
+					"bind": "/portainer/Music",
+					"container": "/music"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.navidrome.org/\" target=\"_blank\">https://www.navidrome.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://www.navidrome.org/docs/installation/docker/\" target=\"_blank\">https://www.navidrome.org/docs/installation/docker/</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -5988,6 +6445,35 @@
 			"type": 1,
 			"privileged": true,
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/azinchen/nordvpn\" target=\"_blank\">https://github.com/azinchen/nordvpn</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/azinchen/nordvpn\" target=\"_blank\">https://hub.docker.com/r/azinchen/nordvpn</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"command": "serve",
+			"description": "ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service that lets you send push notifications to your phone or desktop from scripts, apps, or webhooks.",
+			"image": "binwiederhier/ntfy:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/ntfy.png",
+			"name": "ntfy",
+			"platform": "linux",
+			"ports": [
+				"7180:80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "ntfy",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/ntfy/cache",
+					"container": "/var/cache/ntfy"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/ntfy/etc",
+					"container": "/etc/ntfy"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://ntfy.sh/\" target=\"_blank\">https://ntfy.sh/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.ntfy.sh/install/#docker\" target=\"_blank\">https://docs.ntfy.sh/install/#docker</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -6717,7 +7203,7 @@
 			"categories": [
 				"Photos"
 			],
-			"description": "A simple, easy way to turn a photo album into a webgallery",
+			"description": "[DEPRECATED] A simple, easy way to turn a photo album into a webgallery. [DEPRECATED] The upstream project is no longer in development and this image is on LinuxServer.io's deprecated images list. Consider PhotoPrism, Piwigo, or Lychee instead (also available in this app list).",
 			"env": [
 				{
 					"default": "1000",
@@ -6738,7 +7224,7 @@
 				"7380:80/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "PhotoShow",
+			"title": "PhotoShow [DEPRECATED]",
 			"type": 1,
 			"volumes": [
 				{
@@ -7369,7 +7855,7 @@
 				"Cloud",
 				"Other"
 			],
-			"description": "Pydio (formerly AjaXplorer) is a mature open source software solution for file sharing and synchronization. With intuitive user interfaces (web / mobile / desktop), Pydio provides enterprise-grade features to gain back control and privacy of your data: user directory connectors, legacy filesystems drivers, comprehensive admin interface, and much more.",
+			"description": "Pydio Cells is a mature open source software solution for file sharing and synchronization. With intuitive user interfaces (web / mobile / desktop), Pydio provides enterprise-grade features to gain back control and privacy of your data: user directory connectors, legacy filesystems drivers, comprehensive admin interface, and much more. Classic Pydio (the PHP version this template used) was deprecated by both its author and LinuxServer.io in favor of Pydio Cells, a full Go rewrite — this template now uses that.",
 			"env": [
 				{
 					"default": "1000",
@@ -7382,15 +7868,15 @@
 					"name": "PGID"
 				}
 			],
-			"image": "linuxserver/pydio:latest",
+			"image": "lscr.io/linuxserver/pydio-cells:latest",
 			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/pydio-icon.png",
-			"name": "pydio",
+			"name": "pydio-cells",
 			"platform": "linux",
 			"ports": [
-				"7526:443/tcp"
+				"7526:8080/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "Pydio",
+			"title": "Pydio Cells",
 			"type": 1,
 			"volumes": [
 				{
@@ -7402,7 +7888,7 @@
 					"container": "/data"
 				}
 			],
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.pydio.com/\" target=\"_blank\">https://www.pydio.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/linuxserver/pydio\" target=\"_blank\">https://hub.docker.com/r/linuxserver/pydio</a><br><br><br>"
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.pydio.com/\" target=\"_blank\">https://www.pydio.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-pydio-cells\" target=\"_blank\">https://docs.linuxserver.io/images/docker-pydio-cells</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -7611,6 +8097,34 @@
 		},
 		{
 			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Radicale is a free and open-source CalDAV and CardDAV server for calendars and contacts, simple to set up and lightweight enough to run on a Raspberry Pi.",
+			"image": "tomsquest/docker-radicale:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/radicale.png",
+			"name": "radicale",
+			"platform": "linux",
+			"ports": [
+				"5232:5232/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Radicale",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Radicale/config",
+					"container": "/config"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Radicale/data",
+					"container": "/data"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://radicale.org/\" target=\"_blank\">https://radicale.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/tomsquest/docker-radicale#quick-start\" target=\"_blank\">https://github.com/tomsquest/docker-radicale#quick-start</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Monitor",
 				"Tools"
 			],
@@ -7810,6 +8324,30 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://readarr.com/\" target=\"_blank\">https://readarr.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://wiki.servarr.com/en/readarr\" target=\"_blank\">https://wiki.servarr.com/en/readarr</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "[FORMERLY LIBREDDIT] Libreddit was discontinued and archived by its author in favor of Redlib, a maintained fork that continues to adapt to Reddit's API changes. An alternative private front-end to Reddit.",
+			"image": "quay.io/redlib/redlib:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/redlib.png",
+			"name": "redlib",
+			"platform": "linux",
+			"ports": [
+				"8088:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Redlib (formerly libreddit)",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/redlib",
+					"container": "/config"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/redlib-org/redlib\" target=\"_blank\">https://github.com/redlib-org/redlib</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/redlib-org/redlib#docker\" target=\"_blank\">https://github.com/redlib-org/redlib#docker</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -8506,6 +9044,55 @@
 		},
 		{
 			"categories": [
+				"Tools",
+				"Productivity"
+			],
+			"description": "Stirling-PDF is a powerful, locally-hosted web-based PDF manipulation tool offering merge, split, convert, compress, OCR, and dozens of other PDF operations.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "false",
+					"label": "DOCKER_ENABLE_SECURITY",
+					"name": "DOCKER_ENABLE_SECURITY"
+				}
+			],
+			"image": "stirlingtools/stirling-pdf:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/stirling-pdf.png",
+			"name": "stirling-pdf",
+			"platform": "linux",
+			"ports": [
+				"7383:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Stirling-PDF",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/StirlingPDF/tessdata",
+					"container": "/usr/share/tessdata"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/StirlingPDF/configs",
+					"container": "/configs"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/StirlingPDF/logs",
+					"container": "/logs"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.stirlingpdf.com/\" target=\"_blank\">https://www.stirlingpdf.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.stirlingpdf.com/Getting%20Started/Installation/\" target=\"_blank\">https://docs.stirlingpdf.com/Getting%20Started/Installation/</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Other",
 				"Tool"
 			],
@@ -8735,6 +9322,37 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hub.docker.com/r/r3aper/teeworlds-server\" target=\"_blank\">https://hub.docker.com/r/r3aper/teeworlds-server</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Termix is a clientless, self-hosted, web-based server management platform with an SSH terminal, tunneling, and file editing capabilities — a self-hosted alternative to Termius.",
+			"env": [
+				{
+					"default": "8080",
+					"label": "PORT",
+					"name": "PORT"
+				}
+			],
+			"image": "ghcr.io/lukegus/termix:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/termix.png",
+			"name": "termix",
+			"platform": "linux",
+			"ports": [
+				"7389:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Termix",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Termix",
+					"container": "/app/data"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/Termix-SSH/Termix\" target=\"_blank\">https://github.com/Termix-SSH/Termix</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/Termix-SSH/Termix#-docker-installation\" target=\"_blank\">https://github.com/Termix-SSH/Termix#-docker-installation</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -9201,7 +9819,7 @@
 			"categories": [
 				"CCTV"
 			],
-			"description": "UniFi Video is a powerful and flexible, integrated IP video management surveillance system designed to work with Ubiquiti’s UniFi Video Camera product line. UniFi Video has an intuitive, configurable, and feature‑packed user interface with advanced features such as motion detection, auto‑discovery, user‑level security, storage management, reporting, and mobile device support.",
+			"description": "[DEPRECATED] UniFi Video is a powerful and flexible, integrated IP video management surveillance system designed to work with Ubiquiti's UniFi Video Camera product line. UniFi Video has an intuitive, configurable, and feature‑packed user interface with advanced features such as motion detection, auto‑discovery, user‑level security, storage management, reporting, and mobile device support. [DEPRECATED] Ubiquiti discontinued the UniFi Video product line in favor of UniFi Protect, which requires their own NVR/controller hardware and has no self-hosted docker equivalent. This template is kept only for existing UniFi Video camera owners.",
 			"env": [
 				{
 					"default": "99",
@@ -9240,7 +9858,7 @@
 				"7446:7446/tcp"
 			],
 			"restart_policy": "unless-stopped",
-			"title": "UniFi Video",
+			"title": "UniFi Video [DEPRECATED]",
 			"type": 1,
 			"volumes": [
 				{
@@ -9523,10 +10141,10 @@
 				"Maintenance"
 			],
 			"description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
-			"image": "containrrr/watchtower:latest",
+			"image": "ghcr.io/nicholas-fedor/watchtower:latest",
 			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/watchtower.png",
 			"name": "watchtower",
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://containrrr.dev/watchtower/\" target=\"_blank\">https://containrrr.dev/watchtower/</a><br><b>Official Docker Documentation: </b><a href=\"https://containrrr.dev/watchtower/usage-overview/\" target=\"_blank\">https://containrrr.dev/watchtower/usage-overview/</a><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=q3wKqk8qVS8&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=7 target=\"_blank\">Novaspirit Tech - Upgrading Portainer and Updating Containers</a><br><br>It is recommended to manually update your containers but we're including this for those of you that don't care",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://nicholas-fedor.github.io/watchtower/\" target=\"_blank\">https://nicholas-fedor.github.io/watchtower/</a><br><b>Official Docker Documentation: </b><a href=\"https://nicholas-fedor.github.io/watchtower/usage-overview/\" target=\"_blank\">https://nicholas-fedor.github.io/watchtower/usage-overview/</a><br><br><br><b>Youtube Video: </b><a href=https://www.youtube.com/watch?v=q3wKqk8qVS8&list=PL846hFPMqg3jwkxcScD1xw2bKXrJVvarc&index=7 target=\"_blank\">Novaspirit Tech - Upgrading Portainer and Updating Containers</a><br><br>The original containrrr/watchtower project was archived by its maintainers in December 2025. This template now uses the actively maintained nicholas-fedor/watchtower fork, which is a drop-in API-compatible replacement. It is recommended to manually update your containers but we're including this for those of you that don't care",
 			"platform": "linux",
 			"command": "--cleanup",
 			"restart_policy": "unless-stopped",

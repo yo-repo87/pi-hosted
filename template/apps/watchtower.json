@@ -5,13 +5,13 @@
 		"Maintenance"
 	],
 	"description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
-	"image_arm32": "containrrr/watchtower:latest",
-	"image_arm64": "containrrr/watchtower:latest",
-	"image_amd64": "containrrr/watchtower:latest",
+	"image_arm32": "ghcr.io/nicholas-fedor/watchtower:latest",
+	"image_arm64": "ghcr.io/nicholas-fedor/watchtower:latest",
+	"image_amd64": "ghcr.io/nicholas-fedor/watchtower:latest",
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/watchtower.png",
 	"name": "watchtower",
-	"note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
-	"officialDoc": "https://containrrr.dev/watchtower/usage-overview/",
+	"note": "The original containrrr/watchtower project was archived by its maintainers in December 2025. This template now uses the actively maintained nicholas-fedor/watchtower fork, which is a drop-in API-compatible replacement. It is recommended to manually update your containers but we're including this for those of you that don't care",
+	"officialDoc": "https://nicholas-fedor.github.io/watchtower/usage-overview/",
 	"platform": "linux",
 	"command": "--cleanup",
 	"restart_policy": "unless-stopped",
@@ -24,5 +24,5 @@
 			"container": "/var/run/docker.sock"
 		}
 	],
-	"webpage": "https://containrrr.dev/watchtower/"
+	"webpage": "https://nicholas-fedor.github.io/watchtower/"
 }

@@ -4,7 +4,7 @@
 		"Tools",
 		"Photo"
 	],
-	"description": "Chevereto is a powerful and fast image hosting script that allows you to create your very own full featured image hosting website in just minutes. Please note that this offers only the free Chevereto version..",
+	"description": "Chevereto is a powerful and fast image hosting script that allows you to create your very own full featured image hosting website in just minutes. This template now uses the official chevereto/chevereto image (the older third-party nmtan/chevereto build is unmaintained). Please note that this offers only the free Chevereto version..",
 	"env": [
 		{
 			"default": "1000",
@@ -42,12 +42,12 @@
 			"name": "CHEVERETO_DB_PREFIX"
 		}
 	],
-	"image_arm32": "nmtan/chevereto:latest",
-	"image_arm64": "nmtan/chevereto:latest",
-	"image_amd64": "nmtan/chevereto:latest",
+	"image_arm32": "chevereto/chevereto:latest",
+	"image_arm64": "chevereto/chevereto:latest",
+	"image_amd64": "chevereto/chevereto:latest",
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/Chevereto.png",
 	"name": "Chevereto",
-	"officialDoc": "https://hub.docker.com/r/nmtan/chevereto",
+	"officialDoc": "https://github.com/chevereto/docker",
 	"platform": "linux",
 	"ports": [
 		"7382:80/tcp"

@@ -2,7 +2,7 @@
 	"categories": [
 		"Other"
 	],
-	"description": "Server version of minetest, a free, open source alternative to minecraft.",
+	"description": "Server version of Luanti (formerly Minetest — renamed in October 2024 due to a trademark dispute), a free, open source alternative to minecraft.",
 	"env": [
 		{
 			"default": "1000",
@@ -15,22 +15,22 @@
 			"name": "PGID"
 		}
 	],
-	"image_arm64": "linuxserver/minetest:latest",
-	"image_amd64": "linuxserver/minetest:latest",
-	"logo": "https://raw.githubusercontent.com/linuxserver/beta-templates/master/lsiodev/img/minetest-icon.png",
-	"name": "minetest",
-	"officialDoc": "https://docs.linuxserver.io/images/docker-minetest",
+	"image_arm64": "lscr.io/linuxserver/luanti:latest",
+	"image_amd64": "lscr.io/linuxserver/luanti:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/luanti-icon.png",
+	"name": "luanti",
+	"officialDoc": "https://docs.linuxserver.io/images/docker-luanti",
 	"platform": "linux",
 	"ports": [
 		"30000:30000/udp"
 	],
 	"restart_policy": "unless-stopped",
-	"title": "Minetest",
+	"title": "Luanti (formerly Minetest)",
 	"type": 1,
 	"volumes": [
 		{
 			"container": "/config/.minetest"
 		}
 	],
-	"webpage": "https://www.minetest.net/"
+	"webpage": "https://www.luanti.org/"
 }

@@ -3,7 +3,7 @@
 		"Other",
 		"Tools"
 	],
-	"description": "Another application bookmark dashboard, with fun features.",
+	"description": "[DEPRECATED] Another application bookmark dashboard, with fun features. [DEPRECATED] The upstream DashMachine project is unmaintained (removed from awesome-selfhosted) and this image hasn't been updated in years. Consider Homarr, Dashy, or Homepage instead (also available in this app list).",
 	"image_arm32": "failed2run/dashmachine:latest",
 	"image_arm64": "failed2run/dashmachine:latest",
 	"image_amd64": "failed2run/dashmachine:latest",
@@ -15,7 +15,7 @@
 		"5100:5000/tcp"
 	],
 	"restart_policy": "unless-stopped",
-	"title": "DashMachine",
+	"title": "DashMachine [DEPRECATED]",
 	"type": 1,
 	"volumes": [
 		{

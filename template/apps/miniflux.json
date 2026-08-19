@@ -1,0 +1,44 @@
+{
+	"categories": [
+		"Other"
+	],
+	"description": "Miniflux is a minimalist, opinionated RSS/Atom feed reader. It requires an external PostgreSQL database — point DATABASE_URL at an existing PostgreSQL container (e.g. the PostgreSQL template in this app list) before starting.",
+	"env": [
+		{
+			"description": "e.g. postgres://miniflux:password@dbhost/miniflux?sslmode=disable",
+			"label": "DATABASE_URL",
+			"name": "DATABASE_URL"
+		},
+		{
+			"default": "1",
+			"label": "RUN_MIGRATIONS",
+			"name": "RUN_MIGRATIONS"
+		},
+		{
+			"default": "1",
+			"label": "CREATE_ADMIN",
+			"name": "CREATE_ADMIN"
+		},
+		{
+			"label": "ADMIN_USERNAME",
+			"name": "ADMIN_USERNAME"
+		},
+		{
+			"label": "ADMIN_PASSWORD",
+			"name": "ADMIN_PASSWORD"
+		}
+	],
+	"image_arm64": "miniflux/miniflux:latest",
+	"image_amd64": "miniflux/miniflux:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/miniflux.png",
+	"name": "miniflux",
+	"officialDoc": "https://miniflux.app/docs/docker.html",
+	"platform": "linux",
+	"ports": [
+		"7385:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Miniflux",
+	"type": 1,
+	"webpage": "https://miniflux.app/"
+}

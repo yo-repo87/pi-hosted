@@ -1,0 +1,33 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "Termix is a clientless, self-hosted, web-based server management platform with an SSH terminal, tunneling, and file editing capabilities — a self-hosted alternative to Termius.",
+	"env": [
+		{
+			"default": "8080",
+			"label": "PORT",
+			"name": "PORT"
+		}
+	],
+	"image_arm64": "ghcr.io/lukegus/termix:latest",
+	"image_amd64": "ghcr.io/lukegus/termix:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/termix.png",
+	"name": "termix",
+	"officialDoc": "https://github.com/Termix-SSH/Termix#-docker-installation",
+	"platform": "linux",
+	"ports": [
+		"7389:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Termix",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Termix",
+			"container": "/app/data"
+		}
+	],
+	"webpage": "https://github.com/Termix-SSH/Termix"
+}

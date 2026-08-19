@@ -1,0 +1,37 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "Beszel is a lightweight server monitoring hub with a clean web UI displaying historical CPU, memory, disk, and network usage for all your Docker hosts.",
+	"env": [
+		{
+			"default": "http://localhost:7393",
+			"label": "APP_URL",
+			"name": "APP_URL"
+		}
+	],
+	"image_arm64": "henrygd/beszel:latest",
+	"image_amd64": "henrygd/beszel:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/beszel.png",
+	"name": "beszel",
+	"officialDoc": "https://www.beszel.dev/guide/hub-installation",
+	"platform": "linux",
+	"ports": [
+		"7393:8090/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Beszel",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Beszel/data",
+			"container": "/beszel_data"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/Beszel/socket",
+			"container": "/beszel_socket"
+		}
+	],
+	"webpage": "https://beszel.dev/"
+}

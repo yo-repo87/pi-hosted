@@ -5,7 +5,7 @@
 		"Other",
 		"Tools"
 	],
-	"description": "A lightweight portal to view, manage your HTPC apps without having to run anything more than a PHP enabled webserver. With Muximux you don't need to keep multiple tabs open, or bookmark the URL to all of your apps.",
+	"description": "[DEPRECATED] A lightweight portal to view, manage your HTPC apps without having to run anything more than a PHP enabled webserver. With Muximux you don't need to keep multiple tabs open, or bookmark the URL to all of your apps. [DEPRECATED] The upstream Muximux project is unmaintained and this image is on LinuxServer.io's deprecated images list. Consider Homarr, Organizr, or Heimdall instead (also available in this app list).",
 	"env": [
 		{
 			"default": "1000",
@@ -28,7 +28,7 @@
 		"7205:80/tcp"
 	],
 	"restart_policy": "unless-stopped",
-	"title": "Muximux",
+	"title": "Muximux [DEPRECATED]",
 	"type": 1,
 	"volumes": [
 		{

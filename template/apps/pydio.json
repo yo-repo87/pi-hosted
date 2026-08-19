@@ -3,7 +3,7 @@
 		"Cloud",
 		"Other"
 	],
-	"description": "Pydio (formerly AjaXplorer) is a mature open source software solution for file sharing and synchronization. With intuitive user interfaces (web / mobile / desktop), Pydio provides enterprise-grade features to gain back control and privacy of your data: user directory connectors, legacy filesystems drivers, comprehensive admin interface, and much more.",
+	"description": "Pydio Cells is a mature open source software solution for file sharing and synchronization. With intuitive user interfaces (web / mobile / desktop), Pydio provides enterprise-grade features to gain back control and privacy of your data: user directory connectors, legacy filesystems drivers, comprehensive admin interface, and much more. Classic Pydio (the PHP version this template used) was deprecated by both its author and LinuxServer.io in favor of Pydio Cells, a full Go rewrite — this template now uses that.",
 	"env": [
 		{
 			"default": "1000",
@@ -16,17 +16,17 @@
 			"name": "PGID"
 		}
 	],
-	"image_arm64": "linuxserver/pydio:latest",
-	"image_amd64": "linuxserver/pydio:latest",
+	"image_arm64": "lscr.io/linuxserver/pydio-cells:latest",
+	"image_amd64": "lscr.io/linuxserver/pydio-cells:latest",
 	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/pydio-icon.png",
-	"name": "pydio",
-	"officialDoc": "https://hub.docker.com/r/linuxserver/pydio",
+	"name": "pydio-cells",
+	"officialDoc": "https://docs.linuxserver.io/images/docker-pydio-cells",
 	"platform": "linux",
 	"ports": [
-		"7526:443/tcp"
+		"7526:8080/tcp"
 	],
 	"restart_policy": "unless-stopped",
-	"title": "Pydio",
+	"title": "Pydio Cells",
 	"type": 1,
 	"volumes": [
 		{

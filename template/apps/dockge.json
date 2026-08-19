@@ -1,0 +1,41 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "Dockge is a fancy, easy-to-use, and reactive self-hosted docker compose.yaml stack-oriented manager, built by the creator of Uptime Kuma.",
+	"env": [
+		{
+			"default": "/portainer/Files/AppData/Config/Dockge/stacks",
+			"label": "DOCKGE_STACKS_DIR",
+			"name": "DOCKGE_STACKS_DIR"
+		}
+	],
+	"image_arm64": "louislam/dockge:latest",
+	"image_amd64": "louislam/dockge:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/dockge.png",
+	"name": "dockge",
+	"officialDoc": "https://github.com/louislam/dockge#-how-to-install",
+	"platform": "linux",
+	"ports": [
+		"7390:5001/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Dockge",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/var/run/docker.sock",
+			"container": "/var/run/docker.sock"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/Dockge",
+			"container": "/app/data"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/Dockge/stacks",
+			"container": "/portainer/Files/AppData/Config/Dockge/stacks"
+		}
+	],
+	"webpage": "https://dockge.kuma.pet/"
+}

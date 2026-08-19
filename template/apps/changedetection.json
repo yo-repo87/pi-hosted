@@ -1,0 +1,26 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "changedetection.io monitors websites for content changes and sends alerts via email, Discord, Slack, and many other services — useful for tracking price drops, restock alerts, or any page content change.",
+	"image_arm64": "ghcr.io/dgtlmoon/changedetection.io:latest",
+	"image_amd64": "ghcr.io/dgtlmoon/changedetection.io:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/changedetection.png",
+	"name": "changedetection.io",
+	"officialDoc": "https://github.com/dgtlmoon/changedetection.io#docker-run-example",
+	"platform": "linux",
+	"ports": [
+		"5099:5000/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "changedetection.io",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/ChangeDetection",
+			"container": "/datastore"
+		}
+	],
+	"webpage": "https://changedetection.io/"
+}

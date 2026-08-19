@@ -1,0 +1,47 @@
+{
+	"categories": [
+		"Music"
+	],
+	"description": "Navidrome is a modern, actively-maintained, self-hosted music server and streamer, giving you freedom to listen to your music collection from any browser or Subsonic-compatible mobile app.",
+	"env": [
+		{
+			"default": "1000",
+			"label": "PUID",
+			"name": "PUID"
+		},
+		{
+			"default": "1000",
+			"label": "PGID",
+			"name": "PGID"
+		},
+		{
+			"default": "America/New_York",
+			"label": "ND_TIMEZONE",
+			"name": "ND_TIMEZONE"
+		}
+	],
+	"image_arm32": "deluan/navidrome:latest",
+	"image_arm64": "deluan/navidrome:latest",
+	"image_amd64": "deluan/navidrome:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/navidrome.png",
+	"name": "navidrome",
+	"officialDoc": "https://www.navidrome.org/docs/installation/docker/",
+	"platform": "linux",
+	"ports": [
+		"4533:4533/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Navidrome",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Navidrome",
+			"container": "/data"
+		},
+		{
+			"bind": "/portainer/Music",
+			"container": "/music"
+		}
+	],
+	"webpage": "https://www.navidrome.org/"
+}

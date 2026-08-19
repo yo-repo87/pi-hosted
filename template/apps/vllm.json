@@ -1,0 +1,27 @@
+{
+	"categories": [
+		"AI",
+		"Tools"
+	],
+	"description": "vLLM is a high-throughput, memory-efficient inference and serving engine for LLMs with an OpenAI-compatible API, using PagedAttention for fast batched serving.",
+	"command": "--model mistralai/Mistral-7B-Instruct-v0.2",
+	"image_amd64": "vllm/vllm-openai:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/vllm.png",
+	"name": "vllm",
+	"note": "Requires an NVIDIA GPU. Attach a GPU to this container under Portainer's Runtime & Resources tab after creation (the equivalent of docker run --gpus all), and ensure the NVIDIA Container Toolkit is installed on the host.",
+	"officialDoc": "https://docs.vllm.ai/en/stable/deployment/docker/",
+	"platform": "linux",
+	"ports": [
+		"7398:8000/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "vLLM",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/vLLM/huggingface",
+			"container": "/root/.cache/huggingface"
+		}
+	],
+	"webpage": "https://vllm.ai/"
+}

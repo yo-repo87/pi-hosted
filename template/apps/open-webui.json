@@ -1,0 +1,34 @@
+{
+	"categories": [
+		"AI",
+		"Chat"
+	],
+	"description": "Open WebUI is a feature-rich, self-hosted web interface for Ollama and OpenAI-compatible APIs, supporting multiple users, RAG document chat, web search, and more. This is the CPU/default build — see 'Open WebUI (GPU)' in this app list for the CUDA-accelerated variant.",
+	"env": [
+		{
+			"default": "http://ollama:11434",
+			"description": "URL of an Ollama instance, e.g. the Ollama template in this app list",
+			"label": "OLLAMA_BASE_URL",
+			"name": "OLLAMA_BASE_URL"
+		}
+	],
+	"image_arm64": "ghcr.io/open-webui/open-webui:main",
+	"image_amd64": "ghcr.io/open-webui/open-webui:main",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/open-webui.png",
+	"name": "open-webui",
+	"officialDoc": "https://docs.openwebui.com/getting-started/quick-start/",
+	"platform": "linux",
+	"ports": [
+		"7399:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Open WebUI",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/OpenWebUI",
+			"container": "/app/backend/data"
+		}
+	],
+	"webpage": "https://openwebui.com/"
+}

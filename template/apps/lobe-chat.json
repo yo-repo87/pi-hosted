@@ -1,0 +1,31 @@
+{
+	"categories": [
+		"AI",
+		"Chat"
+	],
+	"description": "Lobe Chat is an open-source, modern-design AI chat framework supporting multiple providers (OpenAI, Claude, Gemini, Ollama, Bedrock, and more), voice synthesis, and a plugin system.",
+	"env": [
+		{
+			"label": "OPENAI_API_KEY",
+			"name": "OPENAI_API_KEY"
+		},
+		{
+			"description": "Password required to access this instance",
+			"label": "ACCESS_CODE",
+			"name": "ACCESS_CODE"
+		}
+	],
+	"image_arm64": "lobehub/lobe-chat:latest",
+	"image_amd64": "lobehub/lobe-chat:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/lobe-chat.png",
+	"name": "lobe-chat",
+	"officialDoc": "https://lobehub.com/docs/self-hosting/platform/docker",
+	"platform": "linux",
+	"ports": [
+		"3210:3210/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Lobe Chat",
+	"type": 1,
+	"webpage": "https://lobechat.com/"
+}

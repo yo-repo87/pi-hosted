@@ -1,0 +1,26 @@
+{
+	"categories": [
+		"AI",
+		"Tools"
+	],
+	"description": "Flowise is a low-code, drag-and-drop builder for LLM workflows and AI agents, letting you visually chain prompts, tools, vector stores, and models.",
+	"image_arm64": "flowiseai/flowise:latest",
+	"image_amd64": "flowiseai/flowise:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/flowise.png",
+	"name": "flowise",
+	"officialDoc": "https://docs.flowiseai.com/getting-started",
+	"platform": "linux",
+	"ports": [
+		"7403:3000/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Flowise",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Flowise",
+			"container": "/root/.flowise"
+		}
+	],
+	"webpage": "https://flowiseai.com/"
+}

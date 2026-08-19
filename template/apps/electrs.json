@@ -1,0 +1,38 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "electrs is an efficient Electrum Server implementation in Rust, letting Electrum-compatible wallets query balances and transaction history against your own Bitcoin Core node instead of a third-party server. Requires an already-running, txindex-enabled Bitcoin Core node — see the Bitcoin Core template in this list.",
+	"env": [
+		{
+			"description": "e.g. bitcoin-core:8332",
+			"label": "ELECTRS_DAEMON_RPC_ADDR",
+			"name": "ELECTRS_DAEMON_RPC_ADDR"
+		},
+		{
+			"description": "e.g. bitcoin-core:8333",
+			"label": "ELECTRS_DAEMON_P2P_ADDR",
+			"name": "ELECTRS_DAEMON_P2P_ADDR"
+		}
+	],
+	"image_arm64": "mempool/electrs:latest",
+	"image_amd64": "mempool/electrs:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/electrs.png",
+	"name": "electrs",
+	"officialDoc": "https://github.com/mempool/electrs",
+	"platform": "linux",
+	"ports": [
+		"50001:50001/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Electrs",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Electrs",
+			"container": "/data"
+		}
+	],
+	"webpage": "https://github.com/romanz/electrs"
+}

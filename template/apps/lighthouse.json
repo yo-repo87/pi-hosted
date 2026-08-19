@@ -1,0 +1,30 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"command": "lighthouse bn --network mainnet --execution-endpoint http://geth:8551 --execution-jwt /root/.lighthouse/jwt.hex --http --http-address 0.0.0.0 --checkpoint-sync-url https://mainnet.checkpoint.sigp.io",
+	"description": "Lighthouse is a fast, secure Ethereum consensus (beacon chain) client written in Rust. It must be paired with an execution client — such as the Geth template in this list — via the Engine API to run a full Ethereum node.",
+	"image_arm64": "sigp/lighthouse:latest",
+	"image_amd64": "sigp/lighthouse:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/lighthouse.png",
+	"name": "lighthouse",
+	"note": "Requires a shared JWT secret with the execution client at /root/.lighthouse/jwt.hex, and its --execution-endpoint should point at your execution client's authenticated Engine API port (default 8551).",
+	"officialDoc": "https://github.com/sigp/lighthouse",
+	"platform": "linux",
+	"ports": [
+		"9000:9000/tcp",
+		"9000:9000/udp",
+		"5052:5052/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Lighthouse",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Lighthouse",
+			"container": "/root/.lighthouse"
+		}
+	],
+	"webpage": "https://lighthouse.sigmaprime.io/"
+}

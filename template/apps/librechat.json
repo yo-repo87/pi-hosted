@@ -1,0 +1,45 @@
+{
+	"categories": [
+		"AI",
+		"Chat"
+	],
+	"description": "LibreChat is an open-source, feature-rich ChatGPT-style interface supporting many AI providers (OpenAI, Anthropic, Ollama, local models, and more) plus plugins, agents, and multi-user accounts. Requires an external MongoDB — point MONGO_URI at an existing MongoDB instance before starting.",
+	"env": [
+		{
+			"description": "e.g. mongodb://mongo-host:27017/LibreChat",
+			"label": "MONGO_URI",
+			"name": "MONGO_URI"
+		},
+		{
+			"default": "0.0.0.0",
+			"label": "HOST",
+			"name": "HOST"
+		}
+	],
+	"image_amd64": "ghcr.io/danny-avila/librechat-dev:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/librechat.png",
+	"name": "librechat",
+	"officialDoc": "https://www.librechat.ai/docs/local/docker",
+	"platform": "linux",
+	"ports": [
+		"3080:3080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "LibreChat",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/LibreChat/logs",
+			"container": "/app/api/logs"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/LibreChat/images",
+			"container": "/app/client/public/images"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/LibreChat/uploads",
+			"container": "/app/uploads"
+		}
+	],
+	"webpage": "https://librechat.ai/"
+}

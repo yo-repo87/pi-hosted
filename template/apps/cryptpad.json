@@ -1,0 +1,43 @@
+{
+	"categories": [
+		"Productivity",
+		"Security"
+	],
+	"description": "CryptPad is a privacy-focused, end-to-end encrypted collaborative office suite — real-time documents, spreadsheets, presentations, kanban boards, and more, with the server never able to read your content.",
+	"image_arm64": "cryptpad/cryptpad:latest",
+	"image_amd64": "cryptpad/cryptpad:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/cryptpad.png",
+	"name": "cryptpad",
+	"officialDoc": "https://docs.cryptpad.org/en/admin_guide/installation.html",
+	"platform": "linux",
+	"ports": [
+		"7413:3000/tcp",
+		"7414:3003/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "CryptPad",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/CryptPad/data",
+			"container": "/cryptpad/data"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/CryptPad/blob",
+			"container": "/cryptpad/blob"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/CryptPad/block",
+			"container": "/cryptpad/block"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/CryptPad/datastore",
+			"container": "/cryptpad/datastore"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/CryptPad/customize",
+			"container": "/cryptpad/customize"
+		}
+	],
+	"webpage": "https://cryptpad.org/"
+}

@@ -273,6 +273,30 @@
 		},
 		{
 			"categories": [
+				"AI",
+				"Chat"
+			],
+			"description": "AnythingLLM is an all-in-one, private AI app that lets you chat with your documents (RAG), connect to any LLM provider or Ollama, and manage multiple workspaces.",
+			"image": "mintplexlabs/anythingllm:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/anythingllm.png",
+			"name": "anythingllm",
+			"platform": "linux",
+			"ports": [
+				"7401:3001/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "AnythingLLM",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/AnythingLLM",
+					"container": "/app/server/storage"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://anythingllm.com/\" target=\"_blank\">https://anythingllm.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.anythingllm.com/installation-docker/quickstart\" target=\"_blank\">https://docs.anythingllm.com/installation-docker/quickstart</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Web",
 				"Proxy"
 			],
@@ -751,6 +775,24 @@
 		},
 		{
 			"categories": [
+				"AI",
+				"Chat"
+			],
+			"description": "big-AGI is a polished, open-source chat interface for GPT, Claude, Gemini, and local models, with AI personas, multi-model 'Beam' chats, voice, and code execution.",
+			"image": "ghcr.io/enricoros/big-agi:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/big-agi.png",
+			"name": "big-agi",
+			"platform": "linux",
+			"ports": [
+				"7402:3000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "big-AGI",
+			"type": 1,
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://big-agi.com/\" target=\"_blank\">https://big-agi.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://big-agi.com/docs/deploy-docker\" target=\"_blank\">https://big-agi.com/docs/deploy-docker</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"DNS",
 				"Tools"
 			],
@@ -788,6 +830,87 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hub.docker.com/r/ubuntu/bind9\" target=\"_blank\">https://hub.docker.com/r/ubuntu/bind9</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/ubuntu/bind9\" target=\"_blank\">https://hub.docker.com/r/ubuntu/bind9</a><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_bind9.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_bind9.sh | bash</h3><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Bitcoin Core is the reference full node implementation of the Bitcoin protocol — validates and relays transactions/blocks and can serve as the trusted backend for a wallet, an Electrum server (see the electrs template in this list), or a Lightning node (see the LND template in this list).",
+			"env": [
+				{
+					"label": "BITCOIN_RPC_USER",
+					"name": "BITCOIN_RPC_USER"
+				},
+				{
+					"label": "BITCOIN_RPC_PASSWORD",
+					"name": "BITCOIN_RPC_PASSWORD"
+				},
+				{
+					"default": "-txindex=1",
+					"description": "-txindex=1 is required if you plan to run electrs against this node",
+					"label": "BITCOIN_EXTRA_ARGS",
+					"name": "BITCOIN_EXTRA_ARGS"
+				}
+			],
+			"image": "ruimarinho/bitcoin-core:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/bitcoin-core.png",
+			"name": "bitcoin-core",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://bitcoincore.org/\" target=\"_blank\">https://bitcoincore.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/ruimarinho/docker-bitcoin-core\" target=\"_blank\">https://github.com/ruimarinho/docker-bitcoin-core</a><br><br><br>Initial block download syncs the entire Bitcoin blockchain, which takes days and needs 600GB+ of free disk space. Consider pruning (-prune=N) if you don't need a full archival node.",
+			"platform": "linux",
+			"ports": [
+				"8333:8333/tcp",
+				"8332:8332/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Bitcoin Core",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/BitcoinCore",
+					"container": "/home/bitcoin/.bitcoin"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "Blockscout is an open-source block explorer for Ethereum and EVM-compatible chains, showing transactions, addresses, smart contracts, and tokens. Requires an external PostgreSQL database and an EVM JSON-RPC endpoint — e.g. the Geth template in this list.",
+			"env": [
+				{
+					"description": "e.g. postgresql://blockscout:password@postgres-host:5432/blockscout",
+					"label": "DATABASE_URL",
+					"name": "DATABASE_URL"
+				},
+				{
+					"description": "e.g. http://geth:8545",
+					"label": "ETHEREUM_JSONRPC_HTTP_URL",
+					"name": "ETHEREUM_JSONRPC_HTTP_URL"
+				},
+				{
+					"description": "e.g. ws://geth:8546",
+					"label": "ETHEREUM_JSONRPC_WS_URL",
+					"name": "ETHEREUM_JSONRPC_WS_URL"
+				},
+				{
+					"description": "Random 64-byte base64 secret, generate with: mix phx.gen.secret",
+					"label": "SECRET_KEY_BASE",
+					"name": "SECRET_KEY_BASE"
+				}
+			],
+			"image": "blockscout/blockscout:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/blockscout.png",
+			"name": "blockscout",
+			"platform": "linux",
+			"ports": [
+				"4000:4000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Blockscout",
+			"type": 1,
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.blockscout.com/\" target=\"_blank\">https://www.blockscout.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.blockscout.com/setup/deployment/docker-compose-deployment\" target=\"_blank\">https://docs.blockscout.com/setup/deployment/docker-compose-deployment</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -1446,6 +1569,47 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://couchpota.to/\" target=\"_blank\">https://couchpota.to/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-couchpotato\" target=\"_blank\">https://docs.linuxserver.io/images/docker-couchpotato</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Productivity",
+				"Security"
+			],
+			"description": "CryptPad is a privacy-focused, end-to-end encrypted collaborative office suite — real-time documents, spreadsheets, presentations, kanban boards, and more, with the server never able to read your content.",
+			"image": "cryptpad/cryptpad:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/cryptpad.png",
+			"name": "cryptpad",
+			"platform": "linux",
+			"ports": [
+				"7413:3000/tcp",
+				"7414:3003/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "CryptPad",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/CryptPad/data",
+					"container": "/cryptpad/data"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/CryptPad/blob",
+					"container": "/cryptpad/blob"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/CryptPad/block",
+					"container": "/cryptpad/block"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/CryptPad/datastore",
+					"container": "/cryptpad/datastore"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/CryptPad/customize",
+					"container": "/cryptpad/customize"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://cryptpad.org/\" target=\"_blank\">https://cryptpad.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.cryptpad.org/en/admin_guide/installation.html\" target=\"_blank\">https://docs.cryptpad.org/en/admin_guide/installation.html</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -2201,6 +2365,42 @@
 		},
 		{
 			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "electrs is an efficient Electrum Server implementation in Rust, letting Electrum-compatible wallets query balances and transaction history against your own Bitcoin Core node instead of a third-party server. Requires an already-running, txindex-enabled Bitcoin Core node — see the Bitcoin Core template in this list.",
+			"env": [
+				{
+					"description": "e.g. bitcoin-core:8332",
+					"label": "ELECTRS_DAEMON_RPC_ADDR",
+					"name": "ELECTRS_DAEMON_RPC_ADDR"
+				},
+				{
+					"description": "e.g. bitcoin-core:8333",
+					"label": "ELECTRS_DAEMON_P2P_ADDR",
+					"name": "ELECTRS_DAEMON_P2P_ADDR"
+				}
+			],
+			"image": "mempool/electrs:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/electrs.png",
+			"name": "electrs",
+			"platform": "linux",
+			"ports": [
+				"50001:50001/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Electrs",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Electrs",
+					"container": "/data"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/romanz/electrs\" target=\"_blank\">https://github.com/romanz/electrs</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/mempool/electrs\" target=\"_blank\">https://github.com/mempool/electrs</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Video",
 				"Music",
 				"Photos"
@@ -2660,6 +2860,30 @@
 		},
 		{
 			"categories": [
+				"AI",
+				"Tools"
+			],
+			"description": "Flowise is a low-code, drag-and-drop builder for LLM workflows and AI agents, letting you visually chain prompts, tools, vector stores, and models.",
+			"image": "flowiseai/flowise:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/flowise.png",
+			"name": "flowise",
+			"platform": "linux",
+			"ports": [
+				"7403:3000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Flowise",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Flowise",
+					"container": "/root/.flowise"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://flowiseai.com/\" target=\"_blank\">https://flowiseai.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.flowiseai.com/getting-started\" target=\"_blank\">https://docs.flowiseai.com/getting-started</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"tools"
 			],
 			"description": "Crunch numbers for scientists. just click deploy the stack, IMPORTANT!!! make sure you use firefox to open the site.",
@@ -2746,6 +2970,31 @@
 		},
 		{
 			"categories": [
+				"Finance",
+				"Other"
+			],
+			"command": "trade --config /freqtrade/user_data/config.json --strategy SampleStrategy",
+			"description": "Freqtrade is a free, open-source crypto trading bot supporting backtesting, strategy optimization, and automated trading across many exchanges, with a FreqUI web dashboard. You must supply your own user_data/config.json (with exchange API keys and strategy) in the mounted volume before the bot can trade — see the official quickstart.",
+			"image": "freqtradeorg/freqtrade:stable",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/freqtrade.png",
+			"name": "freqtrade",
+			"platform": "linux",
+			"ports": [
+				"7410:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Freqtrade",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Freqtrade/user_data",
+					"container": "/freqtrade/user_data"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.freqtrade.io/\" target=\"_blank\">https://www.freqtrade.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://www.freqtrade.io/en/stable/docker_quickstart/\" target=\"_blank\">https://www.freqtrade.io/en/stable/docker_quickstart/</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Other"
 			],
 			"description": "A free, self-hostable rss aggregator…",
@@ -2823,6 +3072,34 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/hubbcaps/gazee\" target=\"_blank\">https://github.com/hubbcaps/gazee</a><br><b>Official Docker Documentation: </b><a href=\"https://hub.docker.com/r/linuxserver/gazee\" target=\"_blank\">https://hub.docker.com/r/linuxserver/gazee</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"command": "--http --http.addr 0.0.0.0 --http.vhosts=* --authrpc.addr 0.0.0.0 --authrpc.vhosts=*",
+			"description": "Geth (go-ethereum) is the most widely-used execution client for the Ethereum network. Post-Merge, it must be paired with a consensus client — see the Lighthouse template in this list — to fully sync and validate the chain.",
+			"image": "ethereum/client-go:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/geth.png",
+			"name": "geth",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://geth.ethereum.org/\" target=\"_blank\">https://geth.ethereum.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://geth.ethereum.org/docs/getting-started/installing-geth\" target=\"_blank\">https://geth.ethereum.org/docs/getting-started/installing-geth</a><br><br><br>A full Ethereum mainnet sync needs 1TB+ of fast (NVMe recommended) disk space and can take several days.",
+			"platform": "linux",
+			"ports": [
+				"30303:30303/tcp",
+				"30303:30303/udp",
+				"8545:8545/tcp",
+				"8546:8546/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Geth (go-ethereum)",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Geth",
+					"container": "/root/.ethereum"
+				}
+			]
 		},
 		{
 			"categories": [
@@ -3232,6 +3509,37 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hub.docker.com/r/jlesage/handbrake\" target=\"_blank\">https://hub.docker.com/r/jlesage/handbrake</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/jlesage/docker-handbrake\" target=\"_blank\">https://github.com/jlesage/docker-handbrake</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Security",
+				"Tools"
+			],
+			"description": "HashiCorp Vault is a secrets management, encryption-as-a-service, and PKI tool for securely storing and tightly controlling access to tokens, passwords, certificates, and encryption keys.",
+			"env": [
+				{
+					"default": "http://0.0.0.0:8200",
+					"label": "VAULT_ADDR",
+					"name": "VAULT_ADDR"
+				}
+			],
+			"image": "hashicorp/vault:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/vault.png",
+			"name": "vault",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.vaultproject.io/\" target=\"_blank\">https://www.vaultproject.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://developer.hashicorp.com/vault/docs/platform/docker\" target=\"_blank\">https://developer.hashicorp.com/vault/docs/platform/docker</a><br><br><br>This starts Vault in server mode; you must initialize and unseal it on first run (vault operator init / vault operator unseal). The container's internal API port remains the conventional 8200 even though the host-mapped port is different. For production use, add the IPC_LOCK capability to this container in Portainer's advanced settings to prevent memory from being swapped to disk.",
+			"platform": "linux",
+			"ports": [
+				"7416:8200/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "HashiCorp Vault",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Vault",
+					"container": "/vault/file"
+				}
+			]
 		},
 		{
 			"categories": [
@@ -3675,6 +3983,30 @@
 		},
 		{
 			"categories": [
+				"Finance",
+				"Other"
+			],
+			"description": "Hummingbot Dashboard is the web UI for building, backtesting, and monitoring automated crypto market-making and trading strategies on top of the open-source Hummingbot framework. Pair it with the Hummingbot API/Gateway services for live automated trading.",
+			"image": "hummingbot/dashboard:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/hummingbot.png",
+			"name": "hummingbot-dashboard",
+			"platform": "linux",
+			"ports": [
+				"8501:8501/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Hummingbot Dashboard",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Hummingbot",
+					"container": "/home/dashboard/conf"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hummingbot.org/\" target=\"_blank\">https://hummingbot.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://hummingbot.org/installation/hummingbot-api/\" target=\"_blank\">https://hummingbot.org/installation/hummingbot-api/</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Photos",
 				"Cloud"
 			],
@@ -3717,6 +4049,51 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://immich.app/\" target=\"_blank\">https://immich.app/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/imagegenius/docker-immich\" target=\"_blank\">https://github.com/imagegenius/docker-immich</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Security",
+				"Tools"
+			],
+			"description": "Infisical is an open-source secrets management platform — centrally store, encrypt, sync, and inject API keys, database credentials, and config across your apps and CI/CD. Requires external PostgreSQL and Redis instances.",
+			"env": [
+				{
+					"description": "32-byte hex encryption key, generate with: openssl rand -hex 16",
+					"label": "ENCRYPTION_KEY",
+					"name": "ENCRYPTION_KEY"
+				},
+				{
+					"description": "Random secret, generate with: openssl rand -base64 32",
+					"label": "AUTH_SECRET",
+					"name": "AUTH_SECRET"
+				},
+				{
+					"description": "e.g. postgres://infisical:password@postgres-host:5432/infisical",
+					"label": "DB_CONNECTION_URI",
+					"name": "DB_CONNECTION_URI"
+				},
+				{
+					"description": "e.g. redis://redis-host:6379",
+					"label": "REDIS_URL",
+					"name": "REDIS_URL"
+				},
+				{
+					"description": "e.g. http://192.168.1.50:7412",
+					"label": "SITE_URL",
+					"name": "SITE_URL"
+				}
+			],
+			"image": "infisical/infisical:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/infisical.png",
+			"name": "infisical",
+			"platform": "linux",
+			"ports": [
+				"7412:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Infisical",
+			"type": 1,
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://infisical.com/\" target=\"_blank\">https://infisical.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://infisical.com/docs/self-hosting/deployment-options/standalone-infisical\" target=\"_blank\">https://infisical.com/docs/self-hosting/deployment-options/standalone-infisical</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -3990,6 +4367,30 @@
 			},
 			"title": "Invidious",
 			"type": 3
+		},
+		{
+			"categories": [
+				"AI",
+				"Photo"
+			],
+			"description": "InvokeAI is a professional, self-hosted Stable Diffusion studio with a polished web UI, unified canvas, and model management.",
+			"image": "ghcr.io/invoke-ai/invokeai:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/invokeai.png",
+			"name": "invokeai",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.invoke.com/\" target=\"_blank\">https://www.invoke.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/invoke-ai/InvokeAI/blob/main/docker/README.md\" target=\"_blank\">https://github.com/invoke-ai/InvokeAI/blob/main/docker/README.md</a><br><br><br>Requires an NVIDIA GPU for practical performance. Attach a GPU to this container under Portainer's Runtime & Resources tab after creation (the equivalent of docker run --gpus all), and ensure the NVIDIA Container Toolkit is installed on the host.",
+			"platform": "linux",
+			"ports": [
+				"7407:9090/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "InvokeAI",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/InvokeAI",
+					"container": "/invokeai"
+				}
+			]
 		},
 		{
 			"categories": [
@@ -4533,6 +4934,30 @@
 		},
 		{
 			"categories": [
+				"AI",
+				"Tools"
+			],
+			"description": "Langflow is a visual, drag-and-drop builder for LangChain-based LLM applications and agents.",
+			"image": "langflowai/langflow:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/langflow.png",
+			"name": "langflow",
+			"platform": "linux",
+			"ports": [
+				"7404:7860/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Langflow",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Langflow",
+					"container": "/app/langflow"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.langflow.org/\" target=\"_blank\">https://www.langflow.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.langflow.org/deployment-docker\" target=\"_blank\">https://docs.langflow.org/deployment-docker</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Books"
 			],
 			"description": "LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs.",
@@ -4645,6 +5070,50 @@
 		},
 		{
 			"categories": [
+				"AI",
+				"Chat"
+			],
+			"description": "LibreChat is an open-source, feature-rich ChatGPT-style interface supporting many AI providers (OpenAI, Anthropic, Ollama, local models, and more) plus plugins, agents, and multi-user accounts. Requires an external MongoDB — point MONGO_URI at an existing MongoDB instance before starting.",
+			"env": [
+				{
+					"description": "e.g. mongodb://mongo-host:27017/LibreChat",
+					"label": "MONGO_URI",
+					"name": "MONGO_URI"
+				},
+				{
+					"default": "0.0.0.0",
+					"label": "HOST",
+					"name": "HOST"
+				}
+			],
+			"image": "ghcr.io/danny-avila/librechat-dev:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/librechat.png",
+			"name": "librechat",
+			"platform": "linux",
+			"ports": [
+				"3080:3080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "LibreChat",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/LibreChat/logs",
+					"container": "/app/api/logs"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/LibreChat/images",
+					"container": "/app/client/public/images"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/LibreChat/uploads",
+					"container": "/app/uploads"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://librechat.ai/\" target=\"_blank\">https://librechat.ai/</a><br><b>Official Docker Documentation: </b><a href=\"https://www.librechat.ai/docs/local/docker\" target=\"_blank\">https://www.librechat.ai/docs/local/docker</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Other",
 				"Tools"
 			],
@@ -4722,6 +5191,33 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://lidarr.audio/\" target=\"_blank\">https://lidarr.audio/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-lidarr\" target=\"_blank\">https://docs.linuxserver.io/images/docker-lidarr</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"command": "lighthouse bn --network mainnet --execution-endpoint http://geth:8551 --execution-jwt /root/.lighthouse/jwt.hex --http --http-address 0.0.0.0 --checkpoint-sync-url https://mainnet.checkpoint.sigp.io",
+			"description": "Lighthouse is a fast, secure Ethereum consensus (beacon chain) client written in Rust. It must be paired with an execution client — such as the Geth template in this list — via the Engine API to run a full Ethereum node.",
+			"image": "sigp/lighthouse:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/lighthouse.png",
+			"name": "lighthouse",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://lighthouse.sigmaprime.io/\" target=\"_blank\">https://lighthouse.sigmaprime.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/sigp/lighthouse\" target=\"_blank\">https://github.com/sigp/lighthouse</a><br><br><br>Requires a shared JWT secret with the execution client at /root/.lighthouse/jwt.hex, and its --execution-endpoint should point at your execution client's authenticated Engine API port (default 8551).",
+			"platform": "linux",
+			"ports": [
+				"9000:9000/tcp",
+				"9000:9000/udp",
+				"5052:5052/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Lighthouse",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Lighthouse",
+					"container": "/root/.lighthouse"
+				}
+			]
 		},
 		{
 			"categories": [
@@ -4855,6 +5351,30 @@
 		},
 		{
 			"categories": [
+				"AI",
+				"Tools"
+			],
+			"description": "llama.cpp server exposes an OpenAI-compatible API for running GGUF-quantized LLMs efficiently on CPU or GPU. Place a GGUF model file in the mounted /models volume and set the command to point at it (e.g. -m /models/model.gguf --host 0.0.0.0 --port 8080).",
+			"image": "ghcr.io/ggml-org/llama.cpp:server",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/llamacpp.png",
+			"name": "llamacpp-server",
+			"platform": "linux",
+			"ports": [
+				"7397:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "llama.cpp Server",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/LlamaCpp/models",
+					"container": "/models"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/ggml-org/llama.cpp\" target=\"_blank\">https://github.com/ggml-org/llama.cpp</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/ggml-org/llama.cpp/blob/master/docs/docker.md\" target=\"_blank\">https://github.com/ggml-org/llama.cpp/blob/master/docs/docker.md</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Tools",
 				"Productivity"
 			],
@@ -4894,6 +5414,86 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/nitnelave/lldap\" target=\"_blank\">https://github.com/nitnelave/lldap</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/nitnelave/lldap\" target=\"_blank\">https://github.com/nitnelave/lldap</a><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_lldap.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_lldap.sh | bash</h3><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"command": "--bitcoin.active --bitcoin.mainnet --bitcoin.node=neutrino --neutrino.addpeer=btcd-mainnet.lightning.computer --restlisten=0.0.0.0:8080 --rpclisten=0.0.0.0:10009",
+			"description": "LND (Lightning Network Daemon) is a complete implementation of a Bitcoin Lightning Network node. This template defaults to Neutrino mode, a lightweight built-in light client, so it can run standalone without requiring a full Bitcoin Core node — swap the command to --bitcoin.node=bitcoind (plus --bitcoind.* options) to use the Bitcoin Core template in this list instead.",
+			"image": "lightninglabs/lnd:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/lnd.png",
+			"name": "lnd",
+			"platform": "linux",
+			"ports": [
+				"9735:9735/tcp",
+				"7409:8080/tcp",
+				"10009:10009/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "LND (Lightning Network Daemon)",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/LND",
+					"container": "/root/.lnd"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://lightning.engineering/\" target=\"_blank\">https://lightning.engineering/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/lightningnetwork/lnd/blob/master/docs/DOCKER.md\" target=\"_blank\">https://github.com/lightningnetwork/lnd/blob/master/docs/DOCKER.md</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"AI",
+				"Chat"
+			],
+			"description": "Lobe Chat is an open-source, modern-design AI chat framework supporting multiple providers (OpenAI, Claude, Gemini, Ollama, Bedrock, and more), voice synthesis, and a plugin system.",
+			"env": [
+				{
+					"label": "OPENAI_API_KEY",
+					"name": "OPENAI_API_KEY"
+				},
+				{
+					"description": "Password required to access this instance",
+					"label": "ACCESS_CODE",
+					"name": "ACCESS_CODE"
+				}
+			],
+			"image": "lobehub/lobe-chat:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/lobe-chat.png",
+			"name": "lobe-chat",
+			"platform": "linux",
+			"ports": [
+				"3210:3210/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Lobe Chat",
+			"type": 1,
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://lobechat.com/\" target=\"_blank\">https://lobechat.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://lobehub.com/docs/self-hosting/platform/docker\" target=\"_blank\">https://lobehub.com/docs/self-hosting/platform/docker</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"AI",
+				"Tools"
+			],
+			"description": "LocalAI is a free, open-source drop-in replacement for the OpenAI API that runs LLM, image, audio, and video generation models entirely on your own hardware — no GPU required.",
+			"image": "localai/localai:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/localai.png",
+			"name": "localai",
+			"platform": "linux",
+			"ports": [
+				"7395:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "LocalAI",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/LocalAI/models",
+					"container": "/models"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://localai.io/\" target=\"_blank\">https://localai.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://localai.io/basics/container/\" target=\"_blank\">https://localai.io/basics/container/</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -5488,6 +6088,31 @@
 			"title": "Minisatip",
 			"type": 1,
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/catalinii/minisatip\" target=\"_blank\">https://github.com/catalinii/minisatip</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-minisatip\" target=\"_blank\">https://docs.linuxserver.io/images/docker-minisatip</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "A full Monero node (monerod) — validates and relays Monero transactions and blocks, and can back a monero-wallet-rpc or GUI/CLI wallet for maximum privacy. This template uses the widely-used, community-maintained simple-monerod image, built from the official Monero project source.",
+			"image": "sethsimmons/simple-monerod:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/monero.png",
+			"name": "monero-node",
+			"platform": "linux",
+			"ports": [
+				"18080:18080/tcp",
+				"18081:18081/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Monero Node",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/MoneroNode",
+					"container": "/home/monero/.bitmonero"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://www.getmonero.org/\" target=\"_blank\">https://www.getmonero.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/sethforprivacy/simple-monerod-docker\" target=\"_blank\">https://github.com/sethforprivacy/simple-monerod-docker</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -6653,6 +7278,30 @@
 		},
 		{
 			"categories": [
+				"AI",
+				"Tools"
+			],
+			"description": "Ollama lets you run open-source large language models (Llama, Mistral, Gemma, Qwen, and more) locally with a simple REST API. Many other AI apps in this list (Open WebUI, LibreChat, AnythingLLM, Perplexica/Vane) can connect to it as their model backend.",
+			"image": "ollama/ollama:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/ollama.png",
+			"name": "ollama",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://ollama.com/\" target=\"_blank\">https://ollama.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/ollama/ollama/blob/main/docs/docker.md\" target=\"_blank\">https://github.com/ollama/ollama/blob/main/docs/docker.md</a><br><br><br>For GPU acceleration, attach a GPU to this container under Portainer's Runtime & Resources tab after creation (the equivalent of docker run --gpus all), and ensure the NVIDIA Container Toolkit is installed on the host.",
+			"platform": "linux",
+			"ports": [
+				"11434:11434/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Ollama",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Ollama",
+					"container": "/root/.ollama"
+				}
+			]
+		},
+		{
+			"categories": [
 				"Management",
 				"Tools"
 			],
@@ -6731,6 +7380,70 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://ombi.io/\" target=\"_blank\">https://ombi.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-ombi\" target=\"_blank\">https://docs.linuxserver.io/images/docker-ombi</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"AI",
+				"Chat"
+			],
+			"description": "Open WebUI is a feature-rich, self-hosted web interface for Ollama and OpenAI-compatible APIs, supporting multiple users, RAG document chat, web search, and more. This is the CPU/default build — see 'Open WebUI (GPU)' in this app list for the CUDA-accelerated variant.",
+			"env": [
+				{
+					"default": "http://ollama:11434",
+					"description": "URL of an Ollama instance, e.g. the Ollama template in this app list",
+					"label": "OLLAMA_BASE_URL",
+					"name": "OLLAMA_BASE_URL"
+				}
+			],
+			"image": "ghcr.io/open-webui/open-webui:main",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/open-webui.png",
+			"name": "open-webui",
+			"platform": "linux",
+			"ports": [
+				"7399:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Open WebUI",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/OpenWebUI",
+					"container": "/app/backend/data"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://openwebui.com/\" target=\"_blank\">https://openwebui.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.openwebui.com/getting-started/quick-start/\" target=\"_blank\">https://docs.openwebui.com/getting-started/quick-start/</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"AI",
+				"Chat"
+			],
+			"description": "Open WebUI (GPU build): the CUDA-accelerated image of Open WebUI, for running local Whisper transcription and embedding models on an NVIDIA GPU in addition to chatting with Ollama/OpenAI-compatible APIs.",
+			"env": [
+				{
+					"default": "http://ollama:11434",
+					"description": "URL of an Ollama instance, e.g. the Ollama template in this app list",
+					"label": "OLLAMA_BASE_URL",
+					"name": "OLLAMA_BASE_URL"
+				}
+			],
+			"image": "ghcr.io/open-webui/open-webui:cuda",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/open-webui.png",
+			"name": "open-webui-gpu",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://openwebui.com/\" target=\"_blank\">https://openwebui.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.openwebui.com/getting-started/quick-start/\" target=\"_blank\">https://docs.openwebui.com/getting-started/quick-start/</a><br><br><br>Requires an NVIDIA GPU and the NVIDIA Container Toolkit on the host. After creating this container, attach a GPU to it under Portainer's Runtime & Resources tab (the equivalent of docker run --gpus all) before starting it.",
+			"platform": "linux",
+			"ports": [
+				"7400:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Open WebUI (GPU)",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/OpenWebUI-GPU",
+					"container": "/app/backend/data"
+				}
+			]
 		},
 		{
 			"categories": [
@@ -8461,6 +9174,34 @@
 		},
 		{
 			"categories": [
+				"Finance",
+				"Other"
+			],
+			"description": "rotki is an open-source, privacy-first portfolio tracker, accounting, and analytics tool for cryptocurrencies. All data is processed and stored locally — nothing is sent to a remote server.",
+			"image": "rotki/rotki:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/rotki.png",
+			"name": "rotki",
+			"platform": "linux",
+			"ports": [
+				"7411:80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "rotki",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Rotki/data",
+					"container": "/data"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Rotki/logs",
+					"container": "/logs"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://rotki.com/\" target=\"_blank\">https://rotki.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.rotki.com/requirement-and-installation/packaged-binaries.html\" target=\"_blank\">https://docs.rotki.com/requirement-and-installation/packaged-binaries.html</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Other",
 				"Tools"
 			],
@@ -9044,6 +9785,42 @@
 		},
 		{
 			"categories": [
+				"Security",
+				"Tools"
+			],
+			"description": "step-ca is a private online certificate authority (CA) for secure, automated X.509 and SSH certificate management on your own network — issue and rotate internal TLS certificates without relying on a public CA.",
+			"env": [
+				{
+					"description": "Name for your private CA, e.g. Homelab CA",
+					"label": "DOCKER_STEPCA_INIT_NAME",
+					"name": "DOCKER_STEPCA_INIT_NAME"
+				},
+				{
+					"description": "Comma-separated DNS names/IPs the CA will be reachable at, e.g. localhost,step-ca,192.168.1.10",
+					"label": "DOCKER_STEPCA_INIT_DNS_NAMES",
+					"name": "DOCKER_STEPCA_INIT_DNS_NAMES"
+				}
+			],
+			"image": "smallstep/step-ca:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/step-ca.png",
+			"name": "step-ca",
+			"platform": "linux",
+			"ports": [
+				"7415:9000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "step-ca",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/StepCA",
+					"container": "/home/step"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://smallstep.com/certificate-manager/\" target=\"_blank\">https://smallstep.com/certificate-manager/</a><br><b>Official Docker Documentation: </b><a href=\"https://smallstep.com/docs/tutorials/docker-tls-certificate-authority/\" target=\"_blank\">https://smallstep.com/docs/tutorials/docker-tls-certificate-authority/</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Tools",
 				"Productivity"
 			],
@@ -9353,6 +10130,34 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/Termix-SSH/Termix\" target=\"_blank\">https://github.com/Termix-SSH/Termix</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/Termix-SSH/Termix#-docker-installation\" target=\"_blank\">https://github.com/Termix-SSH/Termix#-docker-installation</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"AI",
+				"Chat"
+			],
+			"description": "text-generation-webui (oobabooga) is a popular Gradio-based web UI for running local LLMs with support for many backends (llama.cpp, ExLlama, Transformers) and extensions. This template uses the community-maintained Atinoda/text-generation-webui-docker image; the CPU build is shown here — swap the image tag for an nvidia/rocm variant (e.g. default-nvidia) if you have a GPU.",
+			"image": "atinoda/text-generation-webui:default-cpu",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/text-generation-webui.png",
+			"name": "text-generation-webui",
+			"platform": "linux",
+			"ports": [
+				"7860:7860/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Text Generation WebUI (oobabooga)",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/TextGenWebUI/models",
+					"container": "/app/models"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/TextGenWebUI/characters",
+					"container": "/app/characters"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/oobabooga/text-generation-webui\" target=\"_blank\">https://github.com/oobabooga/text-generation-webui</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/Atinoda/text-generation-webui-docker\" target=\"_blank\">https://github.com/Atinoda/text-generation-webui-docker</a><br><br><br>"
 		},
 		{
 			"categories": [
@@ -10002,6 +10807,35 @@
 		},
 		{
 			"categories": [
+				"AI",
+				"Tools"
+			],
+			"description": "Vane (formerly Perplexica, rebranded March 2026) is a self-hosted, open-source AI-powered search engine that reads the web with an LLM and answers questions with citations — a self-hosted Perplexity AI alternative. This all-in-one image bundles the frontend, backend API, and a private SearXNG instance.",
+			"image": "itzcrazykns1337/vane:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/vane.png",
+			"name": "vane",
+			"platform": "linux",
+			"ports": [
+				"7405:3000/tcp",
+				"7406:3001/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Vane (formerly Perplexica)",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Vane/data",
+					"container": "/home/perplexica/data"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Vane/uploads",
+					"container": "/home/perplexica/uploads"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/ItzCrazyKns/Perplexica\" target=\"_blank\">https://github.com/ItzCrazyKns/Perplexica</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/ItzCrazyKns/Perplexica#getting-started-with-docker-recommended\" target=\"_blank\">https://github.com/ItzCrazyKns/Perplexica#getting-started-with-docker-recommended</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Other",
 				"Tools"
 			],
@@ -10081,6 +10915,31 @@
 			"title": "Vikunja With Frontend",
 			"type": 3,
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://vikunja.io/\" target=\"_blank\">https://vikunja.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://vikunja.io/docs/full-docker-example/#example-with-nginx-as-proxy\" target=\"_blank\">https://vikunja.io/docs/full-docker-example/#example-with-nginx-as-proxy</a><br><br><h3><b><a href=\"https://github.com/pi-hosted/pi-hosted/blob/master/tools/install_vikunja.sh\" target=\"_blank\">Pre-installation script</a> must be RAN before you install: </b>wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/tools/install_vikunja.sh | bash</h3><br><br>"
+		},
+		{
+			"categories": [
+				"AI",
+				"Tools"
+			],
+			"description": "vLLM is a high-throughput, memory-efficient inference and serving engine for LLMs with an OpenAI-compatible API, using PagedAttention for fast batched serving.",
+			"command": "--model mistralai/Mistral-7B-Instruct-v0.2",
+			"image": "vllm/vllm-openai:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/vllm.png",
+			"name": "vllm",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://vllm.ai/\" target=\"_blank\">https://vllm.ai/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.vllm.ai/en/stable/deployment/docker/\" target=\"_blank\">https://docs.vllm.ai/en/stable/deployment/docker/</a><br><br><br>Requires an NVIDIA GPU. Attach a GPU to this container under Portainer's Runtime & Resources tab after creation (the equivalent of docker run --gpus all), and ensure the NVIDIA Container Toolkit is installed on the host.",
+			"platform": "linux",
+			"ports": [
+				"7398:8000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "vLLM",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/vLLM/huggingface",
+					"container": "/root/.cache/huggingface"
+				}
+			]
 		},
 		{
 			"categories": [
@@ -10247,6 +11106,30 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://hotio.dev/\" target=\"_blank\">https://hotio.dev/</a><br><b>Official Docker Documentation: </b><a href=\"https://wiki.servarr.com/en/whisparr\" target=\"_blank\">https://wiki.servarr.com/en/whisparr</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"AI",
+				"Tools"
+			],
+			"description": "OpenAI Whisper ASR Webservice provides a simple REST API (with a Swagger UI) for automatic speech-to-text transcription using OpenAI's Whisper models, entirely self-hosted.",
+			"image": "onerahmet/openai-whisper-asr-webservice:latest",
+			"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/whisper-asr.png",
+			"name": "whisper-asr-webservice",
+			"platform": "linux",
+			"ports": [
+				"7408:9000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Whisper ASR Webservice",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/WhisperASR/cache",
+					"container": "/root/.cache"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/ahmetoner/whisper-asr-webservice\" target=\"_blank\">https://github.com/ahmetoner/whisper-asr-webservice</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/ahmetoner/whisper-asr-webservice\" target=\"_blank\">https://github.com/ahmetoner/whisper-asr-webservice</a><br><br><br>"
 		},
 		{
 			"categories": [

@@ -1,0 +1,38 @@
+{
+	"categories": [
+		"Security",
+		"Tools"
+	],
+	"description": "step-ca is a private online certificate authority (CA) for secure, automated X.509 and SSH certificate management on your own network — issue and rotate internal TLS certificates without relying on a public CA.",
+	"env": [
+		{
+			"description": "Name for your private CA, e.g. Homelab CA",
+			"label": "DOCKER_STEPCA_INIT_NAME",
+			"name": "DOCKER_STEPCA_INIT_NAME"
+		},
+		{
+			"description": "Comma-separated DNS names/IPs the CA will be reachable at, e.g. localhost,step-ca,192.168.1.10",
+			"label": "DOCKER_STEPCA_INIT_DNS_NAMES",
+			"name": "DOCKER_STEPCA_INIT_DNS_NAMES"
+		}
+	],
+	"image_arm64": "smallstep/step-ca:latest",
+	"image_amd64": "smallstep/step-ca:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/step-ca.png",
+	"name": "step-ca",
+	"officialDoc": "https://smallstep.com/docs/tutorials/docker-tls-certificate-authority/",
+	"platform": "linux",
+	"ports": [
+		"7415:9000/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "step-ca",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/StepCA",
+			"container": "/home/step"
+		}
+	],
+	"webpage": "https://smallstep.com/certificate-manager/"
+}

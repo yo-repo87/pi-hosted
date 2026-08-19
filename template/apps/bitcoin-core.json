@@ -1,0 +1,44 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "Bitcoin Core is the reference full node implementation of the Bitcoin protocol — validates and relays transactions/blocks and can serve as the trusted backend for a wallet, an Electrum server (see the electrs template in this list), or a Lightning node (see the LND template in this list).",
+	"env": [
+		{
+			"label": "BITCOIN_RPC_USER",
+			"name": "BITCOIN_RPC_USER"
+		},
+		{
+			"label": "BITCOIN_RPC_PASSWORD",
+			"name": "BITCOIN_RPC_PASSWORD"
+		},
+		{
+			"default": "-txindex=1",
+			"description": "-txindex=1 is required if you plan to run electrs against this node",
+			"label": "BITCOIN_EXTRA_ARGS",
+			"name": "BITCOIN_EXTRA_ARGS"
+		}
+	],
+	"image_arm64": "ruimarinho/bitcoin-core:latest",
+	"image_amd64": "ruimarinho/bitcoin-core:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/bitcoin-core.png",
+	"name": "bitcoin-core",
+	"note": "Initial block download syncs the entire Bitcoin blockchain, which takes days and needs 600GB+ of free disk space. Consider pruning (-prune=N) if you don't need a full archival node.",
+	"officialDoc": "https://github.com/ruimarinho/docker-bitcoin-core",
+	"platform": "linux",
+	"ports": [
+		"8333:8333/tcp",
+		"8332:8332/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Bitcoin Core",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/BitcoinCore",
+			"container": "/home/bitcoin/.bitcoin"
+		}
+	],
+	"webpage": "https://bitcoincore.org/"
+}

@@ -1,0 +1,34 @@
+{
+	"categories": [
+		"AI",
+		"Chat"
+	],
+	"description": "Open WebUI (GPU build): the CUDA-accelerated image of Open WebUI, for running local Whisper transcription and embedding models on an NVIDIA GPU in addition to chatting with Ollama/OpenAI-compatible APIs.",
+	"env": [
+		{
+			"default": "http://ollama:11434",
+			"description": "URL of an Ollama instance, e.g. the Ollama template in this app list",
+			"label": "OLLAMA_BASE_URL",
+			"name": "OLLAMA_BASE_URL"
+		}
+	],
+	"image_amd64": "ghcr.io/open-webui/open-webui:cuda",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/open-webui.png",
+	"name": "open-webui-gpu",
+	"note": "Requires an NVIDIA GPU and the NVIDIA Container Toolkit on the host. After creating this container, attach a GPU to it under Portainer's Runtime & Resources tab (the equivalent of docker run --gpus all) before starting it.",
+	"officialDoc": "https://docs.openwebui.com/getting-started/quick-start/",
+	"platform": "linux",
+	"ports": [
+		"7400:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Open WebUI (GPU)",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/OpenWebUI-GPU",
+			"container": "/app/backend/data"
+		}
+	],
+	"webpage": "https://openwebui.com/"
+}

@@ -1,0 +1,41 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "Blockscout is an open-source block explorer for Ethereum and EVM-compatible chains, showing transactions, addresses, smart contracts, and tokens. Requires an external PostgreSQL database and an EVM JSON-RPC endpoint — e.g. the Geth template in this list.",
+	"env": [
+		{
+			"description": "e.g. postgresql://blockscout:password@postgres-host:5432/blockscout",
+			"label": "DATABASE_URL",
+			"name": "DATABASE_URL"
+		},
+		{
+			"description": "e.g. http://geth:8545",
+			"label": "ETHEREUM_JSONRPC_HTTP_URL",
+			"name": "ETHEREUM_JSONRPC_HTTP_URL"
+		},
+		{
+			"description": "e.g. ws://geth:8546",
+			"label": "ETHEREUM_JSONRPC_WS_URL",
+			"name": "ETHEREUM_JSONRPC_WS_URL"
+		},
+		{
+			"description": "Random 64-byte base64 secret, generate with: mix phx.gen.secret",
+			"label": "SECRET_KEY_BASE",
+			"name": "SECRET_KEY_BASE"
+		}
+	],
+	"image_amd64": "blockscout/blockscout:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/blockscout.png",
+	"name": "blockscout",
+	"officialDoc": "https://docs.blockscout.com/setup/deployment/docker-compose-deployment",
+	"platform": "linux",
+	"ports": [
+		"4000:4000/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Blockscout",
+	"type": 1,
+	"webpage": "https://www.blockscout.com/"
+}

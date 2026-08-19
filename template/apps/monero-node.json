@@ -1,0 +1,27 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "A full Monero node (monerod) — validates and relays Monero transactions and blocks, and can back a monero-wallet-rpc or GUI/CLI wallet for maximum privacy. This template uses the widely-used, community-maintained simple-monerod image, built from the official Monero project source.",
+	"image_arm64": "sethsimmons/simple-monerod:latest",
+	"image_amd64": "sethsimmons/simple-monerod:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/monero.png",
+	"name": "monero-node",
+	"officialDoc": "https://github.com/sethforprivacy/simple-monerod-docker",
+	"platform": "linux",
+	"ports": [
+		"18080:18080/tcp",
+		"18081:18081/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Monero Node",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/MoneroNode",
+			"container": "/home/monero/.bitmonero"
+		}
+	],
+	"webpage": "https://www.getmonero.org/"
+}

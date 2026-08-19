@@ -1,0 +1,29 @@
+{
+	"categories": [
+		"Finance",
+		"Other"
+	],
+	"description": "rotki is an open-source, privacy-first portfolio tracker, accounting, and analytics tool for cryptocurrencies. All data is processed and stored locally — nothing is sent to a remote server.",
+	"image_amd64": "rotki/rotki:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/rotki.png",
+	"name": "rotki",
+	"officialDoc": "https://docs.rotki.com/requirement-and-installation/packaged-binaries.html",
+	"platform": "linux",
+	"ports": [
+		"7411:80/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "rotki",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Rotki/data",
+			"container": "/data"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/Rotki/logs",
+			"container": "/logs"
+		}
+	],
+	"webpage": "https://rotki.com/"
+}

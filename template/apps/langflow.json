@@ -1,0 +1,26 @@
+{
+	"categories": [
+		"AI",
+		"Tools"
+	],
+	"description": "Langflow is a visual, drag-and-drop builder for LangChain-based LLM applications and agents.",
+	"image_arm64": "langflowai/langflow:latest",
+	"image_amd64": "langflowai/langflow:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/langflow.png",
+	"name": "langflow",
+	"officialDoc": "https://docs.langflow.org/deployment-docker",
+	"platform": "linux",
+	"ports": [
+		"7404:7860/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Langflow",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Langflow",
+			"container": "/app/langflow"
+		}
+	],
+	"webpage": "https://www.langflow.org/"
+}

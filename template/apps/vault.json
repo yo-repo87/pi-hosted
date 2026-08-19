@@ -1,0 +1,34 @@
+{
+	"categories": [
+		"Security",
+		"Tools"
+	],
+	"description": "HashiCorp Vault is a secrets management, encryption-as-a-service, and PKI tool for securely storing and tightly controlling access to tokens, passwords, certificates, and encryption keys.",
+	"env": [
+		{
+			"default": "http://0.0.0.0:8200",
+			"label": "VAULT_ADDR",
+			"name": "VAULT_ADDR"
+		}
+	],
+	"image_arm64": "hashicorp/vault:latest",
+	"image_amd64": "hashicorp/vault:latest",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/vault.png",
+	"name": "vault",
+	"note": "This starts Vault in server mode; you must initialize and unseal it on first run (vault operator init / vault operator unseal). The container's internal API port remains the conventional 8200 even though the host-mapped port is different. For production use, add the IPC_LOCK capability to this container in Portainer's advanced settings to prevent memory from being swapped to disk.",
+	"officialDoc": "https://developer.hashicorp.com/vault/docs/platform/docker",
+	"platform": "linux",
+	"ports": [
+		"7416:8200/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "HashiCorp Vault",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Vault",
+			"container": "/vault/file"
+		}
+	],
+	"webpage": "https://www.vaultproject.io/"
+}

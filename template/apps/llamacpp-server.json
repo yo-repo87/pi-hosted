@@ -1,0 +1,26 @@
+{
+	"categories": [
+		"AI",
+		"Tools"
+	],
+	"description": "llama.cpp server exposes an OpenAI-compatible API for running GGUF-quantized LLMs efficiently on CPU or GPU. Place a GGUF model file in the mounted /models volume and set the command to point at it (e.g. -m /models/model.gguf --host 0.0.0.0 --port 8080).",
+	"image_arm64": "ghcr.io/ggml-org/llama.cpp:server",
+	"image_amd64": "ghcr.io/ggml-org/llama.cpp:server",
+	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/llamacpp.png",
+	"name": "llamacpp-server",
+	"officialDoc": "https://github.com/ggml-org/llama.cpp/blob/master/docs/docker.md",
+	"platform": "linux",
+	"ports": [
+		"7397:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "llama.cpp Server",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/LlamaCpp/models",
+			"container": "/models"
+		}
+	],
+	"webpage": "https://github.com/ggml-org/llama.cpp"
+}

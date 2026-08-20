@@ -1,0 +1,31 @@
+{
+	"categories": [
+		"CCTV",
+		"Video"
+	],
+	"description": "go2rtc is a free, open-source, ultimate camera streaming application with support for RTSP, RTMP, HTTP-FLV, WebRTC, HomeKit, FFmpeg, and more. It is the streaming engine bundled inside Frigate and is commonly used to restream RTSP camera feeds with low-latency WebRTC playback in the browser.",
+	"image_arm32": "alexxit/go2rtc:latest",
+	"image_arm64": "alexxit/go2rtc:latest",
+	"image_amd64": "alexxit/go2rtc:latest",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/go2rtc.png",
+	"name": "go2rtc",
+	"note": "Web UI/API on port 1984. Edit /config/go2rtc.yaml to add your camera's RTSP source (e.g. rtsp://IP-CAM/ch0_0.h264). For full WebRTC/HomeKit functionality you may need to switch this container to host networking.",
+	"officialDoc": "https://github.com/AlexxIT/go2rtc/blob/master/docker/README.md",
+	"platform": "linux",
+	"ports": [
+		"1984:1984/tcp",
+		"8554:8554/tcp",
+		"8555:8555/tcp",
+		"8555:8555/udp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "go2rtc",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/go2rtc",
+			"container": "/config"
+		}
+	],
+	"webpage": "https://github.com/AlexxIT/go2rtc"
+}

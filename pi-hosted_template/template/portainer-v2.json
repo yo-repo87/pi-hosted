@@ -970,6 +970,33 @@
 		},
 		{
 			"categories": [
+				"CCTV",
+				"Video"
+			],
+			"description": "go2rtc is a free, open-source, ultimate camera streaming application with support for RTSP, RTMP, HTTP-FLV, WebRTC, HomeKit, FFmpeg, and more. It is the streaming engine bundled inside Frigate and is commonly used to restream RTSP camera feeds with low-latency WebRTC playback in the browser.",
+			"image": "alexxit/go2rtc:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/go2rtc.png",
+			"name": "go2rtc",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/AlexxIT/go2rtc\" target=\"_blank\">https://github.com/AlexxIT/go2rtc</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/AlexxIT/go2rtc/blob/master/docker/README.md\" target=\"_blank\">https://github.com/AlexxIT/go2rtc/blob/master/docker/README.md</a><br><br><br>Web UI/API on port 1984. Edit /config/go2rtc.yaml to add your camera's RTSP source (e.g. rtsp://IP-CAM/ch0_0.h264). For full WebRTC/HomeKit functionality you may need to switch this container to host networking.",
+			"platform": "linux",
+			"ports": [
+				"1984:1984/tcp",
+				"8554:8554/tcp",
+				"8555:8555/tcp",
+				"8555:8555/udp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "go2rtc",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/go2rtc",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
 				"Other",
 				"Tools"
 			],
@@ -1791,6 +1818,42 @@
 				{
 					"bind": "/portainer/Files/AppData/Config/mealie",
 					"container": "/app/data"
+				}
+			]
+		},
+		{
+			"categories": [
+				"CCTV",
+				"Video"
+			],
+			"description": "MediaMTX (formerly rtsp-simple-server) is a ready-to-use, zero-dependency, free and open-source real-time media server and media proxy that allows you to publish, read, and proxy live video and audio streams via RTSP, RTMP, HLS, WebRTC and SRT. Great for aggregating multiple IP camera RTSP feeds behind a single restream endpoint.",
+			"env": [
+				{
+					"default": "tcp",
+					"label": "MTX_RTSPTRANSPORTS",
+					"name": "MTX_RTSPTRANSPORTS"
+				}
+			],
+			"image": "bluenviron/mediamtx:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/mediamtx.png",
+			"name": "mediamtx",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/bluenviron/mediamtx\" target=\"_blank\">https://github.com/bluenviron/mediamtx</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/bluenviron/mediamtx#installation\" target=\"_blank\">https://github.com/bluenviron/mediamtx#installation</a><br><br><br>Free, open-source RTSP/RTMP/HLS/WebRTC/SRT server and proxy. Point it at your camera's RTSP URL (e.g. rtsp://IP-CAM/ch0_0.h264) via the mounted config file to restream/aggregate feeds for Frigate, Home Assistant, or NVR software.",
+			"platform": "linux",
+			"ports": [
+				"8554:8554/tcp",
+				"1935:1935/tcp",
+				"8888:8888/tcp",
+				"8889:8889/tcp",
+				"8890:8890/udp",
+				"9997:9997/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "MediaMTX",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/MediaMTX/mediamtx.yml",
+					"container": "/mediamtx.yml"
 				}
 			]
 		},

@@ -1,0 +1,45 @@
+version: "3.7"
+services:
+  mariadb:
+    hostname: mariadb
+    image: linuxserver/mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+    networks:
+      - shinobi-mariadb-network
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/Shinobi/Mariadb:/config
+
+  shinobi:
+    container_name: shinobi
+    hostname: shinobi
+    image: shinobicctv/shinobi:latest
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      MYSQL_HOST: mariadb
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+    networks:
+      - shinobi-mariadb-network
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    volumes:
+      - /portainer/Files/AppData/Config/Shinobi/config:/config
+      - /portainer/Files/AppData/Config/Shinobi/videos:/home/Shinobi/videos
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - mariadb
+
+networks:
+  shinobi-mariadb-network:

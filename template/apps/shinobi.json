@@ -1,0 +1,58 @@
+{
+	"categories": [
+		"CCTV",
+		"Video"
+	],
+	"description": "Shinobi is a free, open-source Network Video Recorder (NVR) and CCTV platform written in Node.js, supporting RTSP/ONVIF IP cameras, motion detection, object detection plugins, and a web/mobile-friendly viewer. This stack deploys Shinobi alongside its required MariaDB database.",
+	"env": [
+		{
+			"default": "shinobi",
+			"label": "DATABASE_NAME",
+			"name": "DATABASE_NAME"
+		},
+		{
+			"default": "shinobi",
+			"label": "DATABASE_USER",
+			"name": "DATABASE_USER"
+		},
+		{
+			"default": "",
+			"label": "DATABASE_PASSWORD",
+			"name": "DATABASE_PASSWORD"
+		},
+		{
+			"default": "",
+			"label": "MYSQL_ROOT_PASSWORD",
+			"name": "MYSQL_ROOT_PASSWORD"
+		},
+		{
+			"default": "1000",
+			"label": "PUID",
+			"name": "PUID"
+		},
+		{
+			"default": "1000",
+			"label": "PGID",
+			"name": "PGID"
+		},
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		}
+	],
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/shinobi.png",
+	"name": "shinobi",
+	"note": "After deploying, open the Super User Panel to create your first account/API key, then add a monitor pointed at your camera's RTSP stream (e.g. rtsp://IP-CAM/ch0_0.h264).",
+	"officialDoc": "https://hub.docker.com/r/shinobicctv/shinobi",
+	"platform": "linux",
+	"repository": {
+		"stackfile_amd64": "stack/shinobi-mariadb.yml",
+		"stackfile_arm64": "stack/shinobi-mariadb.yml",
+		"url": "https://github.com/yo-repo87/pi-hosted/"
+	},
+	"restart_policy": "unless-stopped",
+	"title": "Shinobi CCTV",
+	"type": 3,
+	"webpage": "https://shinobi.video/"
+}

@@ -1,0 +1,48 @@
+{
+	"categories": [
+		"CCTV",
+		"Video"
+	],
+	"description": "Frigate is a free, open-source Network Video Recorder (NVR) with realtime local object detection for IP cameras. It ingests RTSP camera streams (via its bundled go2rtc engine), records video, and detects people/vehicles/animals without sending footage to the cloud.",
+	"env": [
+		{
+			"default": "512mb",
+			"label": "FRIGATE_SHM_SIZE",
+			"name": "FRIGATE_SHM_SIZE"
+		}
+	],
+	"image_arm64": "ghcr.io/blakeblackshear/frigate:stable",
+	"image_amd64": "ghcr.io/blakeblackshear/frigate:stable",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/frigate.png",
+	"name": "frigate",
+	"note": "Requires a config.yml in the config volume defining your cameras' RTSP streams (e.g. rtsp://IP-CAM/ch0_1.h264 for detection, ch0_0.h264 for recording). This container needs a larger shared-memory allocation than Portainer's default 64MB — after deploying, edit the container/stack to add `shm_size: 512m` (or more) or detection will crash.",
+	"officialDoc": "https://docs.frigate.video/frigate/installation/",
+	"platform": "linux",
+	"ports": [
+		"8971:8971/tcp",
+		"8554:8554/tcp",
+		"8555:8555/tcp",
+		"8555:8555/udp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Frigate NVR",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Frigate/config",
+			"container": "/config"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/Frigate/media",
+			"container": "/media/frigate"
+		},
+		{
+			"container": "/tmp/cache"
+		},
+		{
+			"bind": "/etc/localtime",
+			"container": "/etc/localtime"
+		}
+	],
+	"webpage": "https://frigate.video/"
+}

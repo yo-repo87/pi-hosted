@@ -1,0 +1,29 @@
+version: "3.8"
+
+# Neko streams a full, real Google Chrome over WebRTC instead of VNC/RFB,
+# which holds up far better on lossy/intermittent connections than
+# VNC-based browser containers.
+#
+# Documentation: https://neko.m1k1o.net/docs/v3/installation
+#
+# shm_size is set here because it can't be set via a container environment
+# variable, nor through the plain "type: 1" Portainer container template
+# format - it's a host-level setting that has to be applied at container
+# creation, which docker-compose (and therefore a Portainer stack) supports
+# natively.
+services:
+  neko-chrome:
+    image: ghcr.io/m1k1o/neko/google-chrome:latest
+    container_name: neko-chrome
+    restart: unless-stopped
+    shm_size: "2gb"
+    ports:
+      - "${WEB_PORT}:8080/tcp"
+      # WebRTC ICE candidates carry the container-internal port number, so
+      # this range must stay unmapped (host port == container port).
+      - "${NEKO_WEBRTC_EPR}:${NEKO_WEBRTC_EPR}/udp"
+    environment:
+      NEKO_MEMBER_MULTIUSER_USER_PASSWORD: "${NEKO_MEMBER_MULTIUSER_USER_PASSWORD}"
+      NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD: "${NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD}"
+      NEKO_WEBRTC_EPR: "${NEKO_WEBRTC_EPR}"
+      NEKO_WEBRTC_NAT1TO1: "${NEKO_WEBRTC_NAT1TO1}"

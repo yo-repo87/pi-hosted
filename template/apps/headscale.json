@@ -1,0 +1,33 @@
+{
+	"categories": [
+		"VPN",
+		"Tools"
+	],
+	"command": "serve",
+	"description": "Headscale is a self-hosted, open-source implementation of the Tailscale coordination server — run your own control plane for a Tailscale-compatible mesh VPN instead of relying on Tailscale's hosted service (see the Tailscale template in this list for the client).",
+	"image_arm64": "headscale/headscale:latest",
+	"image_amd64": "headscale/headscale:latest",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/headscale.png",
+	"name": "headscale",
+	"note": "You must create a config.yaml in the config volume before first start — see the official quickstart. The image is distroless (no shell); use 'docker exec headscale headscale ...' for user/node management, which still works since headscale itself is the entrypoint binary.",
+	"officialDoc": "https://headscale.net/stable/setup/install/container/",
+	"platform": "linux",
+	"ports": [
+		"7417:8080/tcp",
+		"7418:9090/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Headscale",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Headscale/config",
+			"container": "/etc/headscale"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/Headscale/data",
+			"container": "/var/lib/headscale"
+		}
+	],
+	"webpage": "https://headscale.net/"
+}

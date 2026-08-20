@@ -3,6 +3,30 @@
 	"templates": [
 		{
 			"categories": [
+				"Finance",
+				"Other"
+			],
+			"description": "Actual Budget is a private, local-first envelope-budgeting app — a distinct budgeting philosophy from the full double-entry accounting the Firefly III template in this list offers, and generally simpler to get started with.",
+			"image": "actualbudget/actual-server:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/actual-budget.png",
+			"name": "actual-budget",
+			"platform": "linux",
+			"ports": [
+				"5006:5006/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Actual Budget",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/ActualBudget",
+					"container": "/data"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://actualbudget.org/\" target=\"_blank\">https://actualbudget.org/</a><br><b>Official Docker Documentation: </b><a href=\"https://actualbudget.org/docs/install/docker/\" target=\"_blank\">https://actualbudget.org/docs/install/docker/</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Other",
 				"Tools"
 			],
@@ -2935,6 +2959,41 @@
 		},
 		{
 			"categories": [
+				"Monitor",
+				"Tools"
+			],
+			"description": "Gatus is a status/uptime page and health-check tool — define endpoints and conditions in a config file and get a public-facing status page plus alerting (Slack, Discord, PagerDuty, and more). Complements the Uptime Kuma template in this list, which is geared more toward internal monitoring than a shareable status page.",
+			"env": [
+				{
+					"default": "America/New_York",
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "twinproduction/gatus:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/gatus.png",
+			"name": "gatus",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://gatus.io/\" target=\"_blank\">https://gatus.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/TwiN/gatus#usage\" target=\"_blank\">https://github.com/TwiN/gatus#usage</a><br><br><br>You must create a config.yaml in the mounted config volume defining your endpoints before Gatus has anything to monitor — see the official documentation for the config format.",
+			"platform": "linux",
+			"ports": [
+				"7419:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Gatus",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Gatus/config",
+					"container": "/config"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Gatus/data",
+					"container": "/data"
+				}
+			]
+		},
+		{
+			"categories": [
 				"Web",
 				"Books",
 				"Tools"
@@ -3465,6 +3524,36 @@
 				}
 			],
 			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/rembo10/headphones\" target=\"_blank\">https://github.com/rembo10/headphones</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.linuxserver.io/images/docker-headphones\" target=\"_blank\">https://docs.linuxserver.io/images/docker-headphones</a><br><br><br>"
+		},
+		{
+			"categories": [
+				"VPN",
+				"Tools"
+			],
+			"command": "serve",
+			"description": "Headscale is a self-hosted, open-source implementation of the Tailscale coordination server — run your own control plane for a Tailscale-compatible mesh VPN instead of relying on Tailscale's hosted service (see the Tailscale template in this list for the client).",
+			"image": "headscale/headscale:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/headscale.png",
+			"name": "headscale",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://headscale.net/\" target=\"_blank\">https://headscale.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://headscale.net/stable/setup/install/container/\" target=\"_blank\">https://headscale.net/stable/setup/install/container/</a><br><br><br>You must create a config.yaml in the config volume before first start — see the official quickstart. The image is distroless (no shell); use 'docker exec headscale headscale ...' for user/node management, which still works since headscale itself is the entrypoint binary.",
+			"platform": "linux",
+			"ports": [
+				"7417:8080/tcp",
+				"7418:9090/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Headscale",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Headscale/config",
+					"container": "/etc/headscale"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Headscale/data",
+					"container": "/var/lib/headscale"
+				}
+			]
 		},
 		{
 			"categories": [
@@ -9703,6 +9792,85 @@
 		},
 		{
 			"categories": [
+				"Video",
+				"Tools"
+			],
+			"description": "Tdarr is automated media transcoding and health-checking — build library-wide transcode workflows (e.g. re-encode to H.265, strip unwanted audio tracks) that run across your Sonarr/Radarr/Jellyfin/Plex media library. This template runs the combined server + internal node; add the separate tdarr_node image on other machines to distribute transcode workload.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "America/New_York",
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"default": "0.0.0.0",
+					"label": "serverIP",
+					"name": "serverIP"
+				},
+				{
+					"default": "8266",
+					"label": "serverPort",
+					"name": "serverPort"
+				},
+				{
+					"default": "8265",
+					"label": "webUIPort",
+					"name": "webUIPort"
+				},
+				{
+					"default": "true",
+					"label": "internalNode",
+					"name": "internalNode"
+				}
+			],
+			"image": "haveagitgat/tdarr:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/tdarr.png",
+			"name": "tdarr",
+			"platform": "linux",
+			"ports": [
+				"8265:8265/tcp",
+				"8266:8266/tcp",
+				"8267:8267/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Tdarr",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Tdarr/server",
+					"container": "/app/server"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Tdarr/configs",
+					"container": "/app/configs"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Tdarr/logs",
+					"container": "/app/logs"
+				},
+				{
+					"bind": "/portainer/Media",
+					"container": "/media"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/Tdarr/transcode_cache",
+					"container": "/temp"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://tdarr.io/\" target=\"_blank\">https://tdarr.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.tdarr.io/docs/installation/docker/run-compose/\" target=\"_blank\">https://docs.tdarr.io/docs/installation/docker/run-compose/</a><br><br><br>"
+		},
+		{
+			"categories": [
 				"Games"
 			],
 			"description": "Server for Teeworlds",
@@ -10101,6 +10269,37 @@
 					"container": "/etc/localtime"
 				}
 			]
+		},
+		{
+			"categories": [
+				"Productivity",
+				"Wiki"
+			],
+			"description": "Trilium Notes is a hierarchical, feature-rich personal knowledge base with note versioning, encryption, relation maps, and scripting. This template uses TriliumNext's actively-maintained fork, since the original zadam/trilium image is no longer updated (the author transferred the project to TriliumNext).",
+			"env": [
+				{
+					"default": "America/New_York",
+					"label": "TZ",
+					"name": "TZ"
+				}
+			],
+			"image": "triliumnext/notes:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/trilium.png",
+			"name": "trilium-notes",
+			"platform": "linux",
+			"ports": [
+				"7420:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Trilium Notes",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/TriliumNotes",
+					"container": "/home/node/trilium-data"
+				}
+			],
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/TriliumNext/Trilium\" target=\"_blank\">https://github.com/TriliumNext/Trilium</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/TriliumNext/Trilium/wiki/Docker-server-installation\" target=\"_blank\">https://github.com/TriliumNext/Trilium/wiki/Docker-server-installation</a><br><br><br>"
 		},
 		{
 			"categories": [

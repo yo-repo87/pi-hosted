@@ -1,0 +1,38 @@
+{
+	"categories": [
+		"Monitor",
+		"Tools"
+	],
+	"description": "Gatus is a status/uptime page and health-check tool — define endpoints and conditions in a config file and get a public-facing status page plus alerting (Slack, Discord, PagerDuty, and more). Complements the Uptime Kuma template in this list, which is geared more toward internal monitoring than a shareable status page.",
+	"env": [
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		}
+	],
+	"image_arm64": "twinproduction/gatus:latest",
+	"image_amd64": "twinproduction/gatus:latest",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/gatus.png",
+	"name": "gatus",
+	"note": "You must create a config.yaml in the mounted config volume defining your endpoints before Gatus has anything to monitor — see the official documentation for the config format.",
+	"officialDoc": "https://github.com/TwiN/gatus#usage",
+	"platform": "linux",
+	"ports": [
+		"7419:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Gatus",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Gatus/config",
+			"container": "/config"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/Gatus/data",
+			"container": "/data"
+		}
+	],
+	"webpage": "https://gatus.io/"
+}

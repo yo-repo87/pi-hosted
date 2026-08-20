@@ -1,0 +1,26 @@
+{
+	"categories": [
+		"Finance",
+		"Other"
+	],
+	"description": "Actual Budget is a private, local-first envelope-budgeting app — a distinct budgeting philosophy from the full double-entry accounting the Firefly III template in this list offers, and generally simpler to get started with.",
+	"image_arm64": "actualbudget/actual-server:latest",
+	"image_amd64": "actualbudget/actual-server:latest",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/actual-budget.png",
+	"name": "actual-budget",
+	"officialDoc": "https://actualbudget.org/docs/install/docker/",
+	"platform": "linux",
+	"ports": [
+		"5006:5006/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Actual Budget",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/ActualBudget",
+			"container": "/data"
+		}
+	],
+	"webpage": "https://actualbudget.org/"
+}

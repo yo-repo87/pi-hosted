@@ -1,0 +1,33 @@
+{
+	"categories": [
+		"Productivity",
+		"Wiki"
+	],
+	"description": "Trilium Notes is a hierarchical, feature-rich personal knowledge base with note versioning, encryption, relation maps, and scripting. This template uses TriliumNext's actively-maintained fork, since the original zadam/trilium image is no longer updated (the author transferred the project to TriliumNext).",
+	"env": [
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		}
+	],
+	"image_arm64": "triliumnext/notes:latest",
+	"image_amd64": "triliumnext/notes:latest",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/trilium.png",
+	"name": "trilium-notes",
+	"officialDoc": "https://github.com/TriliumNext/Trilium/wiki/Docker-server-installation",
+	"platform": "linux",
+	"ports": [
+		"7420:8080/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Trilium Notes",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/TriliumNotes",
+			"container": "/home/node/trilium-data"
+		}
+	],
+	"webpage": "https://github.com/TriliumNext/Trilium"
+}

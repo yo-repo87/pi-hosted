@@ -1,0 +1,53 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+	],
+	"description": "Karakeep (formerly Hoarder) is a self-hosted bookmark-everything app — save links, notes, and images with automatic tagging and full-text/AI-assisted search. A more actively developed alternative to the Shiori/linkding templates in this list.",
+	"env": [
+		{
+			"description": "Random secret, generate with: openssl rand -base64 36",
+			"label": "NEXTAUTH_SECRET",
+			"name": "NEXTAUTH_SECRET"
+		},
+		{
+			"description": "e.g. http://192.168.1.50:7421",
+			"label": "NEXTAUTH_URL",
+			"name": "NEXTAUTH_URL"
+		},
+		{
+			"default": "/data",
+			"label": "DATA_DIR",
+			"name": "DATA_DIR"
+		},
+		{
+			"description": "Optional: URL of an external Meilisearch instance to enable full-text search, e.g. http://meilisearch:7700",
+			"label": "MEILI_ADDR",
+			"name": "MEILI_ADDR"
+		},
+		{
+			"description": "Required if MEILI_ADDR is set",
+			"label": "MEILI_MASTER_KEY",
+			"name": "MEILI_MASTER_KEY"
+		}
+	],
+	"image_amd64": "ghcr.io/karakeep-app/karakeep:release",
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/karakeep.png",
+	"name": "karakeep",
+	"note": "Runs standalone without Meilisearch or a headless Chrome sidecar, but full-text search and screenshot capture will be disabled until those are configured — see the official docker-compose.yml for the full stack.",
+	"officialDoc": "https://docs.karakeep.app/Installation/docker/",
+	"platform": "linux",
+	"ports": [
+		"7421:3000/tcp"
+	],
+	"restart_policy": "unless-stopped",
+	"title": "Karakeep",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/Karakeep",
+			"container": "/data"
+		}
+	],
+	"webpage": "https://karakeep.app/"
+}

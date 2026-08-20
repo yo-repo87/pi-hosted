@@ -6816,6 +6816,48 @@
 		},
 		{
 			"categories": [
+				"browser",
+				"Other"
+			],
+			"description": "Neko runs a full, real Firefox inside the container and streams it to your browser over WebRTC — not VNC. Because WebRTC is built for real-time video over lossy/jittery connections (adaptive bitrate, UDP transport, automatic reconnect), it holds up far better on flaky remote links than VNC/RFB-based browser containers do. Multiple people can also join the same session together (with chat) if you want to co-browse.",
+			"env": [
+				{
+					"description": "Password for regular viewer/control access",
+					"label": "NEKO_MEMBER_MULTIUSER_USER_PASSWORD",
+					"name": "NEKO_MEMBER_MULTIUSER_USER_PASSWORD"
+				},
+				{
+					"description": "Password for the admin account",
+					"label": "NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD",
+					"name": "NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD"
+				},
+				{
+					"default": "56000-56100",
+					"description": "Must exactly match the UDP port range published below — WebRTC needs the host and container port numbers to be identical, not just mapped",
+					"label": "NEKO_WEBRTC_EPR",
+					"name": "NEKO_WEBRTC_EPR"
+				},
+				{
+					"description": "Your home server's public/reachable IP, needed for WebRTC to work when connecting from outside your LAN. Leave blank to let Neko auto-detect it via STUN (works for most setups); set it explicitly if auto-detection picks the wrong address or you're behind CGNAT with a port-forwarded router.",
+					"label": "NEKO_WEBRTC_NAT1TO1",
+					"name": "NEKO_WEBRTC_NAT1TO1"
+				}
+			],
+			"image": "ghcr.io/m1k1o/neko/firefox:latest",
+			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/neko-firefox.png",
+			"name": "neko-firefox",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://neko.m1k1o.net/\" target=\"_blank\">https://neko.m1k1o.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://neko.m1k1o.net/docs/v3/installation\" target=\"_blank\">https://neko.m1k1o.net/docs/v3/installation</a><br><br><br>The UDP port range must stay unmapped (host port == container port) for WebRTC to work — don't remap it. For a smoother experience with several tabs open, increase this container's Shared Memory Size (default 64MB) under Portainer's Advanced container settings, similar to how Chromium/Firefox need extra /dev/shm on any Docker host. If you're behind a router (not just accessing over VPN/LAN), you'll also need to forward the WebRTC UDP port range to this host.",
+			"platform": "linux",
+			"ports": [
+				"7422:8080/tcp",
+				"56000-56100:56000-56100/udp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Neko (Firefox)",
+			"type": 1
+		},
+		{
+			"categories": [
 				"Other",
 				"Tools"
 			],

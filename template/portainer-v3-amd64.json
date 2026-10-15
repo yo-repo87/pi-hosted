@@ -7288,7 +7288,7 @@
 				"adult",
 				"Video"
 			],
-			"description": "Search Pornhub, XVideos and SpankBang from one page. Filter by title, performer, channel/studio and tags, set a minimum and maximum length with a slider, hide trailers/shorts by title words, and include or hide channels. Fetches metadata only: videos play in each site's own embed player and nothing is downloaded or re-hosted.",
+			"description": "Search ten free tube sites from one page: Pornhub, XVideos, SpankBang, Tube8, YouPorn, RedTube, Eporner, XNXX, xHamster and YouJizz. Filter by title, performer, channel/studio and tags, set a minimum and maximum length with a slider, hide trailers/shorts by title words, and include or hide channels. Mobile friendly: phones and tablets get a touch layout automatically (slide-up filters, swipeable length chips, infinite scroll, full-screen player) and it can be installed to the home screen as an app. Fetches metadata only: videos play in each site's own embed player and nothing is downloaded or re-hosted.",
 			"env": [
 				{
 					"default": "3160",
@@ -7298,7 +7298,7 @@
 			],
 			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/naughty-site-aggregator.png",
 			"name": "naughty-site-aggregator",
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/yo-repo87/naughty-site-aggregator\" target=\"_blank\">https://github.com/yo-repo87/naughty-site-aggregator</a><br><br><br>Adults only (18+). The app has no login of its own: if you expose it outside your LAN, put it behind a reverse proxy with authentication (e.g. an Nginx Proxy Manager access list). Pornhub is blocked in some regions and will show as a failed source there.",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/yo-repo87/naughty-site-aggregator\" target=\"_blank\">https://github.com/yo-repo87/naughty-site-aggregator</a><br><br><br>Adults only (18+). The app has no login of its own: if you expose it outside your LAN, put it behind a reverse proxy with authentication (e.g. an Nginx Proxy Manager access list). For the home-screen install on phones, serve it over HTTPS. Pornhub and its sister sites (Tube8, YouPorn, RedTube) are blocked in some regions and will show as failed sources there.",
 			"platform": "linux",
 			"repository": {
 				"stackfile": "stack/naughty-site-aggregator.yml",

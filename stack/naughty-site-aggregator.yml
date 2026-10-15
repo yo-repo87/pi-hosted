@@ -17,3 +17,21 @@ services:
     restart: unless-stopped
     ports:
       - "${WEB_PORT}:8000/tcp"
+    # Optional accounts (sign-in, passkeys, 2FA, settings sync). Leave DATABASE_URL
+    # empty to run search-only. DATA_KEY / INDEX_KEY: two different 32-byte
+    # base64url keys - never change or lose them once accounts exist.
+    environment:
+      DATABASE_URL: "${DATABASE_URL:-}"
+      DB_SSL: "${DB_SSL:-prefer}"
+      DATA_KEY: "${DATA_KEY:-}"
+      INDEX_KEY: "${INDEX_KEY:-}"
+      PUBLIC_URL: "${PUBLIC_URL:-}"
+      REQUIRE_HTTPS: "${REQUIRE_HTTPS:-false}"
+      REQUIRE_LOGIN: "${REQUIRE_LOGIN:-false}"
+      ALLOW_REGISTRATION: "${ALLOW_REGISTRATION:-true}"
+      GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID:-}"
+      GOOGLE_CLIENT_SECRET: "${GOOGLE_CLIENT_SECRET:-}"
+      FACEBOOK_CLIENT_ID: "${FACEBOOK_CLIENT_ID:-}"
+      FACEBOOK_CLIENT_SECRET: "${FACEBOOK_CLIENT_SECRET:-}"
+      DISCORD_CLIENT_ID: "${DISCORD_CLIENT_ID:-}"
+      DISCORD_CLIENT_SECRET: "${DISCORD_CLIENT_SECRET:-}"

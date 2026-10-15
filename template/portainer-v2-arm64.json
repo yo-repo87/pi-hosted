@@ -6403,17 +6403,85 @@
 				"adult",
 				"Video"
 			],
-			"description": "Search twelve free tube sites from one page: Pornhub, XVideos, SpankBang, Tube8, YouPorn, RedTube, Eporner, XNXX, xHamster, YouJizz, PornTrex and HQPorner. Filter by title, performer, channel/studio and tags, set a minimum and maximum length with a slider, hide trailers/shorts by title words, and include or hide channels. Mobile friendly: phones and tablets get a touch layout automatically (slide-up filters, swipeable length chips, infinite scroll, full-screen player) and it can be installed to the home screen as an app. Fetches metadata only: videos play in each site's own embed player and nothing is downloaded or re-hosted.",
+			"description": "Search twelve free tube sites from one page: Pornhub, XVideos, SpankBang, Tube8, YouPorn, RedTube, Eporner, XNXX, xHamster, YouJizz, PornTrex and HQPorner. Filter by title, performer, channel/studio and tags, set a minimum and maximum length with a slider, hide trailers/shorts by title words, and include or hide channels. Mobile friendly: phones and tablets get a touch layout automatically (slide-up filters, swipeable length chips, infinite scroll, full-screen player) and it can be installed to the home screen as an app. Optional accounts (needs Postgres): email/password, passkeys, security keys, authenticator-app two-step sign-in and Google/Facebook/Discord sign-in, with a per-user Security tab and filters synced across devices; personal data is encrypted (AES-256-GCM). Fetches metadata only: videos play in each site's own embed player and nothing is downloaded or re-hosted.",
 			"env": [
 				{
 					"default": "3160",
 					"label": "WEB_PORT",
 					"name": "WEB_PORT"
+				},
+				{
+					"name": "DATABASE_URL",
+					"label": "DATABASE_URL",
+					"description": "Optional. postgresql://user:password@host:5432/db - enables accounts. Leave empty for search-only."
+				},
+				{
+					"name": "DB_SSL",
+					"label": "DB_SSL",
+					"description": "disable | prefer | require | verify-full",
+					"default": "prefer"
+				},
+				{
+					"name": "DATA_KEY",
+					"label": "DATA_KEY",
+					"description": "Required with accounts: 32 random bytes, base64url. Encrypts personal data - never change or lose it."
+				},
+				{
+					"name": "INDEX_KEY",
+					"label": "INDEX_KEY",
+					"description": "Required with accounts: a different 32-byte base64url key (lookups and code hashes)."
+				},
+				{
+					"name": "PUBLIC_URL",
+					"label": "PUBLIC_URL",
+					"description": "Your public HTTPS address, e.g. https://search.example.com (needed for passkeys and Google/Facebook/Discord)."
+				},
+				{
+					"name": "REQUIRE_LOGIN",
+					"label": "REQUIRE_LOGIN",
+					"description": "true = searching needs an account",
+					"default": "false"
+				},
+				{
+					"name": "ALLOW_REGISTRATION",
+					"label": "ALLOW_REGISTRATION",
+					"description": "false = no new sign-ups",
+					"default": "true"
+				},
+				{
+					"name": "GOOGLE_CLIENT_ID",
+					"label": "GOOGLE_CLIENT_ID",
+					"description": "Optional. Redirect URL: <PUBLIC_URL>/api/auth/oauth/google/callback"
+				},
+				{
+					"name": "GOOGLE_CLIENT_SECRET",
+					"label": "GOOGLE_CLIENT_SECRET",
+					"description": "Optional."
+				},
+				{
+					"name": "FACEBOOK_CLIENT_ID",
+					"label": "FACEBOOK_CLIENT_ID",
+					"description": "Optional. Redirect URL: <PUBLIC_URL>/api/auth/oauth/facebook/callback"
+				},
+				{
+					"name": "FACEBOOK_CLIENT_SECRET",
+					"label": "FACEBOOK_CLIENT_SECRET",
+					"description": "Optional."
+				},
+				{
+					"name": "DISCORD_CLIENT_ID",
+					"label": "DISCORD_CLIENT_ID",
+					"description": "Optional. Redirect URL: <PUBLIC_URL>/api/auth/oauth/discord/callback"
+				},
+				{
+					"name": "DISCORD_CLIENT_SECRET",
+					"label": "DISCORD_CLIENT_SECRET",
+					"description": "Optional."
 				}
 			],
 			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/naughty-site-aggregator.png",
 			"name": "naughty-site-aggregator",
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/yo-repo87/naughty-site-aggregator\" target=\"_blank\">https://github.com/yo-repo87/naughty-site-aggregator</a><br><br><br>Adults only (18+). The app has no login of its own: if you expose it outside your LAN, put it behind a reverse proxy with authentication (e.g. an Nginx Proxy Manager access list). For the home-screen install on phones, serve it over HTTPS. Pornhub and its sister sites (Tube8, YouPorn, RedTube) are blocked in some regions and will show as failed sources there.",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/yo-repo87/naughty-site-aggregator\" target=\"_blank\">https://github.com/yo-repo87/naughty-site-aggregator</a><br><br><br>Adults only (18+). The app has no login of its own: if you expose it outside your LAN, put it behind a reverse proxy with authentication (e.g. an Nginx Proxy Manager access list). For the home-screen install and passkeys, serve it over HTTPS. Generate DATA_KEY and INDEX_KEY with: python3 -c \\\\\\\"import secrets,base64;print(base64.urlsafe_b64encode(secrets.token_bytes(32)).decode())\\\\\\\" Pornhub and its sister sites (Tube8, YouPorn, RedTube) are blocked in some regions and will show as failed sources there.",
 			"platform": "linux",
 			"repository": {
 				"stackfile": "stack/naughty-site-aggregator.yml",

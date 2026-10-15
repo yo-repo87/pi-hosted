@@ -1,0 +1,19 @@
+version: "3.8"
+
+# Naughty Site Aggregator: one search page across Pornhub, XVideos and
+# SpankBang with length slider, channel and keyword filters. It fetches
+# metadata only (titles, lengths, thumbnails, links); videos play in each
+# site's own embed player and nothing is downloaded or re-hosted.
+#
+# Source: https://github.com/yo-repo87/naughty-site-aggregator
+#
+# The app has no login of its own. If you publish it outside your LAN, put it
+# behind a reverse proxy with authentication (e.g. an Nginx Proxy Manager
+# access list or Cloudflare Access).
+services:
+  naughty-site-aggregator:
+    image: ghcr.io/yo-repo87/naughty-site-aggregator:latest
+    container_name: naughty-site-aggregator
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT}:8000/tcp"

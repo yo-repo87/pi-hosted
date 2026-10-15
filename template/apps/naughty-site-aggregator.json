@@ -1,0 +1,26 @@
+{
+	"categories": [
+		"adult",
+		"Video"
+	],
+	"description": "Search Pornhub, XVideos and SpankBang from one page. Filter by title, performer, channel/studio and tags, set a minimum and maximum length with a slider, hide trailers/shorts by title words, and include or hide channels. Fetches metadata only: videos play in each site's own embed player and nothing is downloaded or re-hosted.",
+	"env": [
+		{
+			"default": "3160",
+			"label": "WEB_PORT",
+			"name": "WEB_PORT"
+		}
+	],
+	"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/naughty-site-aggregator.png",
+	"name": "naughty-site-aggregator",
+	"note": "Adults only (18+). The app has no login of its own: if you expose it outside your LAN, put it behind a reverse proxy with authentication (e.g. an Nginx Proxy Manager access list). Pornhub is blocked in some regions and will show as a failed source there.",
+	"platform": "linux",
+	"repository": {
+		"stackfile_arm64": "stack/naughty-site-aggregator.yml",
+		"stackfile_amd64": "stack/naughty-site-aggregator.yml",
+		"url": "https://github.com/yo-repo87/pi-hosted"
+	},
+	"title": "Naughty Site Aggregator",
+	"type": 3,
+	"webpage": "https://github.com/yo-repo87/naughty-site-aggregator"
+}

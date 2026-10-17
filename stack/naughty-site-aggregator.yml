@@ -1,15 +1,16 @@
 version: "3.8"
 
-# Naughty Site Aggregator: one search page across Pornhub, XVideos and
-# SpankBang with length slider, channel and keyword filters. It fetches
-# metadata only (titles, lengths, thumbnails, links); videos play in each
-# site's own embed player and nothing is downloaded or re-hosted.
+# Naughty Site Aggregator: one search page across twelve free tube sites with
+# length slider, channel and keyword filters, performer/channel dropdowns with
+# pictures and favorite performers. It fetches metadata only (titles, lengths,
+# thumbnails, links); videos play in each site's own embed player and nothing
+# is downloaded or re-hosted.
 #
 # Source: https://github.com/yo-repo87/naughty-site-aggregator
 #
-# The app has no login of its own. If you publish it outside your LAN, put it
-# behind a reverse proxy with authentication (e.g. an Nginx Proxy Manager
-# access list or Cloudflare Access).
+# If you publish it outside your LAN, turn on accounts with REQUIRE_LOGIN=true,
+# or put it behind a reverse proxy with authentication (e.g. an Nginx Proxy
+# Manager access list or Cloudflare Access).
 services:
   naughty-site-aggregator:
     image: ghcr.io/yo-repo87/naughty-site-aggregator:latest
@@ -17,9 +18,13 @@ services:
     restart: unless-stopped
     ports:
       - "${WEB_PORT}:8000/tcp"
-    # Optional accounts (sign-in, passkeys, 2FA, settings sync). Leave DATABASE_URL
-    # empty to run search-only. DATA_KEY / INDEX_KEY: two different 32-byte
-    # base64url keys - never change or lose them once accounts exist.
+    # Performer/channel dropdown lists (rebuilt daily), kept across updates
+    volumes:
+      - naughty-site-aggregator-data:/data
+    # Optional accounts (sign-in, passkeys, 2FA, settings and favorites sync).
+    # Leave DATABASE_URL empty to run search-only. DATA_KEY / INDEX_KEY: two
+    # different 32-byte base64url keys - never change or lose them once
+    # accounts exist.
     environment:
       DATABASE_URL: "${DATABASE_URL:-}"
       DB_SSL: "${DB_SSL:-prefer}"
@@ -35,3 +40,6 @@ services:
       FACEBOOK_CLIENT_SECRET: "${FACEBOOK_CLIENT_SECRET:-}"
       DISCORD_CLIENT_ID: "${DISCORD_CLIENT_ID:-}"
       DISCORD_CLIENT_SECRET: "${DISCORD_CLIENT_SECRET:-}"
+
+volumes:
+  naughty-site-aggregator-data:

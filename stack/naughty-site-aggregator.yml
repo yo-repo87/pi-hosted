@@ -2,7 +2,7 @@ version: "3.8"
 
 # Naughty Site Aggregator: one search page across twelve free tube sites with
 # length slider, channel and keyword filters, performer/channel dropdowns with
-# pictures and favorite performers. It fetches metadata only (titles, lengths,
+# pictures, favorite performers and optional per-user MeTube downloads. It fetches metadata only (titles, lengths,
 # thumbnails, links); videos play in each site's own embed player and nothing
 # is downloaded or re-hosted.
 #
@@ -34,6 +34,8 @@ services:
       REQUIRE_HTTPS: "${REQUIRE_HTTPS:-false}"
       REQUIRE_LOGIN: "${REQUIRE_LOGIN:-false}"
       ALLOW_REGISTRATION: "${ALLOW_REGISTRATION:-true}"
+      # LAN MeTube addresses users may connect (host, host:port or CIDR). Empty = public only.
+      METUBE_PRIVATE_HOSTS: "${METUBE_PRIVATE_HOSTS:-}"
       GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID:-}"
       GOOGLE_CLIENT_SECRET: "${GOOGLE_CLIENT_SECRET:-}"
       FACEBOOK_CLIENT_ID: "${FACEBOOK_CLIENT_ID:-}"

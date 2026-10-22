@@ -3,7 +3,7 @@
 		"adult",
 		"Video"
 	],
-	"description": "Search twelve free tube sites from one page: Pornhub, XVideos, SpankBang, Tube8, YouPorn, RedTube, Eporner, XNXX, xHamster, YouJizz, PornTrex and HQPorner. Filter by title, performer, channel/studio and tags, set a minimum and maximum length with a slider, hide trailers/shorts by title words, and include or hide channels. The Performer and Channel boxes double as Pornhub-style dropdowns with pictures, listing every performer and channel from the supported sites (refreshed daily), and performers can be starred into a Favorites list for one-click searches. Your library: favorite performers and channels with a \"New from favorites\" feed, Watch later, watched marking, saved searches with alerts, block lists, select-and-send in bulk, and the same video across sites merged into one card. Each account can optionally connect its own MeTube (with download progress), JDownloader, webhook, Discord or ntfy: videos get a Download button and saved searches can notify you. Admin page with accounts, sign-up switch and per-site health. Plug-ins add sites or destinations without rebuilding. Mobile friendly: phones and tablets get a touch layout automatically (slide-up filters, swipeable length chips, infinite scroll, full-screen player) and it can be installed to the home screen as an app. Optional accounts (needs Postgres): email/password, passkeys, security keys, authenticator-app two-step sign-in and Google/Facebook/Discord sign-in, with a per-user Security tab, and filters and favorites synced across devices; personal data is encrypted (AES-256-GCM). Fetches metadata only: videos play in each site's own embed player and nothing is downloaded or re-hosted.",
+	"description": "Search twelve free tube sites from one page: Pornhub, XVideos, SpankBang, Tube8, YouPorn, RedTube, Eporner, XNXX, xHamster, YouJizz, PornTrex and HQPorner. Filter by title, performer, channel/studio and tags, set a minimum and maximum length with a slider, hide trailers/shorts by title words, and include or hide channels. The Performer and Channel boxes double as Pornhub-style dropdowns with pictures, listing every performer and channel from the supported sites (refreshed daily), and performers can be starred into a Favorites list for one-click searches. Your library: favorite performers and channels with a \"New from favorites\" feed, Watch later, watched marking, saved searches with alerts, block lists, select-and-send in bulk, and the same video across sites merged into one card. Each account can optionally connect its own MeTube (with download progress), JDownloader, webhook, Discord or ntfy: videos get a Download button and saved searches can notify you. Admin page with accounts, sign-up switch and per-site health. Optional bundled plug-ins (switch on in the Admin tab): TNAFlix, EMPFlix and DrTuber sites; Telegram, Gotify, Pushover, Apprise, linkding and Karakeep destinations. Your own plug-ins add more sites or destinations without rebuilding. Mobile friendly: phones and tablets get a touch layout automatically (slide-up filters, swipeable length chips, infinite scroll, full-screen player) and it can be installed to the home screen as an app. Optional accounts (needs Postgres): email/password, passkeys, security keys, authenticator-app two-step sign-in and Google/Facebook/Discord sign-in, with a per-user Security tab, and filters and favorites synced across devices; personal data is encrypted (AES-256-GCM). Fetches metadata only: videos play in each site's own embed player and nothing is downloaded or re-hosted.",
 	"env": [
 		{
 			"default": "3160",
@@ -69,6 +69,11 @@
 			"label": "FEED_REFRESH_HOURS",
 			"description": "How often favorites are checked for new videos (hours).",
 			"default": "6"
+		},
+		{
+			"name": "ENABLED_PLUGINS",
+			"label": "ENABLED_PLUGINS",
+			"description": "Optional. Bundled plug-ins to switch on, comma-separated: tnaflix, empflix, drtuber, telegram, gotify, pushover, apprise, linkding, karakeep. (Can also be switched on the Admin tab.)"
 		},
 		{
 			"name": "PLUGINS_PATH",

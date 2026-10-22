@@ -42,6 +42,8 @@ services:
       SEND_PRIVATE_HOSTS: "${SEND_PRIVATE_HOSTS:-}"
       ALERT_HOURS: "${ALERT_HOURS:-6}"
       FEED_REFRESH_HOURS: "${FEED_REFRESH_HOURS:-6}"
+      # Bundled optional plug-ins to switch on (also switchable on the Admin tab)
+      ENABLED_PLUGINS: "${ENABLED_PLUGINS:-}"
       GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID:-}"
       GOOGLE_CLIENT_SECRET: "${GOOGLE_CLIENT_SECRET:-}"
       FACEBOOK_CLIENT_ID: "${FACEBOOK_CLIENT_ID:-}"

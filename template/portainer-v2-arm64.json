@@ -6403,7 +6403,7 @@
 				"adult",
 				"Video"
 			],
-			"description": "Search twelve free tube sites from one page: Pornhub, XVideos, SpankBang, Tube8, YouPorn, RedTube, Eporner, XNXX, xHamster, YouJizz, PornTrex and HQPorner. Filter by title, performer, channel/studio and tags, set a minimum and maximum length with a slider, hide trailers/shorts by title words, and include or hide channels. The Performer and Channel boxes double as Pornhub-style dropdowns with pictures, listing every performer and channel from the supported sites (refreshed daily), and performers can be starred into a Favorites list for one-click searches. Each account can optionally connect its own MeTube in the Profile tab; every video then gets a Download button with MeTube's Type, Codec, Format and Quality choices. Mobile friendly: phones and tablets get a touch layout automatically (slide-up filters, swipeable length chips, infinite scroll, full-screen player) and it can be installed to the home screen as an app. Optional accounts (needs Postgres): email/password, passkeys, security keys, authenticator-app two-step sign-in and Google/Facebook/Discord sign-in, with a per-user Security tab, and filters and favorites synced across devices; personal data is encrypted (AES-256-GCM). Fetches metadata only: videos play in each site's own embed player and nothing is downloaded or re-hosted.",
+			"description": "Search twelve free tube sites from one page: Pornhub, XVideos, SpankBang, Tube8, YouPorn, RedTube, Eporner, XNXX, xHamster, YouJizz, PornTrex and HQPorner. Filter by title, performer, channel/studio and tags, set a minimum and maximum length with a slider, hide trailers/shorts by title words, and include or hide channels. The Performer and Channel boxes double as Pornhub-style dropdowns with pictures, listing every performer and channel from the supported sites (refreshed daily), and performers can be starred into a Favorites list for one-click searches. Your library: favorite performers and channels with a \"New from favorites\" feed, Watch later, watched marking, saved searches with alerts, block lists, select-and-send in bulk, and the same video across sites merged into one card. Each account can optionally connect its own MeTube (with download progress), JDownloader, webhook, Discord or ntfy: videos get a Download button and saved searches can notify you. Admin page with accounts, sign-up switch and per-site health. Plug-ins add sites or destinations without rebuilding. Mobile friendly: phones and tablets get a touch layout automatically (slide-up filters, swipeable length chips, infinite scroll, full-screen player) and it can be installed to the home screen as an app. Optional accounts (needs Postgres): email/password, passkeys, security keys, authenticator-app two-step sign-in and Google/Facebook/Discord sign-in, with a per-user Security tab, and filters and favorites synced across devices; personal data is encrypted (AES-256-GCM). Fetches metadata only: videos play in each site's own embed player and nothing is downloaded or re-hosted.",
 			"env": [
 				{
 					"default": "3160",
@@ -6449,9 +6449,31 @@
 					"default": "true"
 				},
 				{
-					"name": "METUBE_PRIVATE_HOSTS",
-					"label": "METUBE_PRIVATE_HOSTS",
-					"description": "Optional. LAN MeTube addresses users may connect (host, host:port or CIDR, comma-separated, e.g. 192.168.1.10:8081). Empty = public MeTube addresses only."
+					"name": "ADMIN_EMAILS",
+					"label": "ADMIN_EMAILS",
+					"description": "Optional. Comma-separated emails of accounts that get the Admin tab."
+				},
+				{
+					"name": "SEND_PRIVATE_HOSTS",
+					"label": "SEND_PRIVATE_HOSTS",
+					"description": "Optional. LAN addresses users may send to (MeTube, JDownloader, webhooks): host, host:port or CIDR, comma-separated, e.g. 192.168.1.10:8081. Empty = public addresses only."
+				},
+				{
+					"name": "ALERT_HOURS",
+					"label": "ALERT_HOURS",
+					"description": "How often saved-search alerts are checked (hours).",
+					"default": "6"
+				},
+				{
+					"name": "FEED_REFRESH_HOURS",
+					"label": "FEED_REFRESH_HOURS",
+					"description": "How often favorites are checked for new videos (hours).",
+					"default": "6"
+				},
+				{
+					"name": "PLUGINS_PATH",
+					"label": "PLUGINS_PATH",
+					"description": "Optional. Host folder with plug-ins (sources/*.py, targets/*.py). Empty = an empty named volume."
 				},
 				{
 					"name": "GOOGLE_CLIENT_ID",
@@ -6486,7 +6508,7 @@
 			],
 			"logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/naughty-site-aggregator.png",
 			"name": "naughty-site-aggregator",
-			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/yo-repo87/naughty-site-aggregator\" target=\"_blank\">https://github.com/yo-repo87/naughty-site-aggregator</a><br><br><br>Adults only (18+). To expose it outside your LAN, either turn on accounts (DATABASE_URL, DATA_KEY, INDEX_KEY) with REQUIRE_LOGIN=true, or put it behind a reverse proxy with authentication (e.g. an Nginx Proxy Manager access list). For the home-screen install and passkeys, serve it over HTTPS. Generate DATA_KEY and INDEX_KEY with: python3 -c \\\\\\\"import secrets,base64;print(base64.urlsafe_b64encode(secrets.token_bytes(32)).decode())\\\\\\\" The performer/channel lists are built in the background on first start (about a minute) and kept in the naughty-site-aggregator-data volume. MeTube downloads need accounts; a MeTube on your LAN must be listed in METUBE_PRIVATE_HOSTS (anyone who can register can make the server contact it, so list only what you need). Pornhub and its sister sites (Tube8, YouPorn, RedTube) are blocked in some regions and will show as failed sources there.",
+			"note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/yo-repo87/naughty-site-aggregator\" target=\"_blank\">https://github.com/yo-repo87/naughty-site-aggregator</a><br><br><br>Adults only (18+). To expose it outside your LAN, either turn on accounts (DATABASE_URL, DATA_KEY, INDEX_KEY) with REQUIRE_LOGIN=true, or put it behind a reverse proxy with authentication (e.g. an Nginx Proxy Manager access list). For the home-screen install and passkeys, serve it over HTTPS. Generate DATA_KEY and INDEX_KEY with: python3 -c \\\\\\\"import secrets,base64;print(base64.urlsafe_b64encode(secrets.token_bytes(32)).decode())\\\\\\\" The performer/channel lists are built in the background on first start (about a minute) and kept in the naughty-site-aggregator-data volume. Send-to destinations and alerts need accounts; a MeTube/JDownloader/webhook on your LAN must be listed in SEND_PRIVATE_HOSTS (anyone who can register can make the server contact it, so list only what you need). Put your own email in ADMIN_EMAILS to get the Admin tab. Plug-ins run inside the server: only install code you trust (templates: plugins-example/ in the app repo). Pornhub and its sister sites (Tube8, YouPorn, RedTube) are blocked in some regions and will show as failed sources there.",
 			"platform": "linux",
 			"repository": {
 				"stackfile": "stack/naughty-site-aggregator.yml",

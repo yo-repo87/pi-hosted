@@ -2,9 +2,10 @@ version: "3.8"
 
 # Naughty Site Aggregator: one search page across twelve free tube sites with
 # length slider, channel and keyword filters, performer/channel dropdowns with
-# pictures, favorite performers and optional per-user MeTube downloads. It
-# fetches metadata only (titles, lengths, thumbnails, links); videos play in
-# each site's own embed player and nothing is re-hosted.
+# pictures, favorites feed, watch later, saved-search alerts and optional
+# per-user send-to (MeTube, JDownloader, webhook, Discord, ntfy). It fetches
+# metadata only (titles, lengths, thumbnails, links); videos play in each
+# site's own embed player and nothing is re-hosted.
 #
 # Source: https://github.com/yo-repo87/naughty-site-aggregator
 #
@@ -18,9 +19,11 @@ services:
     restart: unless-stopped
     ports:
       - "${WEB_PORT}:8000/tcp"
-    # Performer/channel dropdown lists (rebuilt daily), kept across updates
     volumes:
+      # Performer/channel lists and the favorites feed cache, kept across updates
       - naughty-site-aggregator-data:/data
+      # Optional plug-ins (sources/*.py, targets/*.py): set PLUGINS_PATH to a host folder
+      - ${PLUGINS_PATH:-naughty-site-aggregator-plugins}:/plugins:ro
     # Optional accounts (sign-in, passkeys, 2FA, settings and favorites sync).
     # Leave DATABASE_URL empty to run search-only. DATA_KEY / INDEX_KEY: two
     # different 32-byte base64url keys - never change or lose them once
@@ -34,8 +37,11 @@ services:
       REQUIRE_HTTPS: "${REQUIRE_HTTPS:-false}"
       REQUIRE_LOGIN: "${REQUIRE_LOGIN:-false}"
       ALLOW_REGISTRATION: "${ALLOW_REGISTRATION:-true}"
-      # LAN MeTube addresses users may connect (host, host:port or CIDR). Empty = public only.
-      METUBE_PRIVATE_HOSTS: "${METUBE_PRIVATE_HOSTS:-}"
+      ADMIN_EMAILS: "${ADMIN_EMAILS:-}"
+      # LAN addresses users may send to (host, host:port or CIDR). Empty = public only.
+      SEND_PRIVATE_HOSTS: "${SEND_PRIVATE_HOSTS:-}"
+      ALERT_HOURS: "${ALERT_HOURS:-6}"
+      FEED_REFRESH_HOURS: "${FEED_REFRESH_HOURS:-6}"
       GOOGLE_CLIENT_ID: "${GOOGLE_CLIENT_ID:-}"
       GOOGLE_CLIENT_SECRET: "${GOOGLE_CLIENT_SECRET:-}"
       FACEBOOK_CLIENT_ID: "${FACEBOOK_CLIENT_ID:-}"
@@ -45,3 +51,4 @@ services:
 
 volumes:
   naughty-site-aggregator-data:
+  naughty-site-aggregator-plugins:

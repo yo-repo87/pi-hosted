@@ -2,9 +2,9 @@ version: "3.8"
 
 # Naughty Site Aggregator: one search page across twelve free tube sites with
 # length slider, channel and keyword filters, performer/channel dropdowns with
-# pictures, favorite performers and optional per-user MeTube downloads. It fetches metadata only (titles, lengths,
-# thumbnails, links); videos play in each site's own embed player and nothing
-# is downloaded or re-hosted.
+# pictures, favorite performers and optional per-user MeTube downloads. It
+# fetches metadata only (titles, lengths, thumbnails, links); videos play in
+# each site's own embed player and nothing is re-hosted.
 #
 # Source: https://github.com/yo-repo87/naughty-site-aggregator
 #

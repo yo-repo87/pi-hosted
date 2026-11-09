@@ -23,3 +23,30 @@ Most of the follwing scripts are only needed if you are trying to load one of th
 |[unpoller-install.sh](../tools/unpoller-install.sh)|[Documentation](../docs/UnPoller-Monitor.md)|Preinstall|Preinstall Setup for UnPoller|wget -qO- https://git.io/JMszE \| bash|
 |[update_libseccomp2.sh](../tools/update_libseccomp2.sh)||Update|PI OS 32 libseccomp2 Repair utility|wget -qO- https://git.io/JPXdj \| bash|
 |[update_portainer_agent.sh](../tools/update_portainer_agent.sh)||Update|Upgrade Portainer Agent||
+
+## Helix OS catalog variant
+
+`convert_to_helix.py` rewrites a Portainer app template so its host folders fit
+[Helix OS](https://github.com/yo-repo87/helix-os) (shares under `/mnt/user`) instead of the
+Raspberry Pi `/portainer/...` layout:
+
+| Pi-Hosted path | Helix path |
+|---|---|
+| `/portainer/Files/AppData/Config/<app>` (and `/portainer/Files/<x>`) | `/mnt/user/appdata/<app>` |
+| `/portainer/Downloads`, `/portainer/Files/Downloads` | `/mnt/user/downloads` |
+| `/portainer/{TV,Movies,Music,Podcasts,Books,Comics,Pictures}` | `/mnt/user/media/<Name>` |
+
+System paths (`/etc/localtime`, `/var/run/docker.sock`, `/dev/*`) and named volumes are untouched.
+
+Generated files (use them as a template URL in Helix, or any Portainer-compatible tool):
+
+- `template/portainer-v3-amd64-helix.json`
+- `template/portainer-v3-arm64-helix.json`
+
+Regenerate after the upstream catalog changes:
+
+```bash
+for a in amd64 arm64; do
+  python3 tools/convert_to_helix.py --in template/portainer-v3-$a.json --out template/portainer-v3-$a-helix.json
+done
+```

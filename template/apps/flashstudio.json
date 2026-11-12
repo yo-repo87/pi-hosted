@@ -1,0 +1,54 @@
+{
+	"categories": [
+		"Tools",
+		"Other"
+	],
+	"description": "Flashforge's Flash Studio (Orca-Flashforge) 3D-printer slicer in your browser. Open port 6080 (noVNC) to use it; LAN printers work because it uses host networking. Cloud account, camera and MQTT features need Flashforge's closed network plugin and are not available.",
+	"env": [
+		{
+			"default": "1000",
+			"label": "PUID",
+			"name": "PUID"
+		},
+		{
+			"default": "1000",
+			"label": "PGID",
+			"name": "PGID"
+		},
+		{
+			"default": "America/New_York",
+			"label": "TZ",
+			"name": "TZ"
+		},
+		{
+			"default": "1920",
+			"label": "DISPLAY_WIDTH",
+			"name": "DISPLAY_WIDTH"
+		},
+		{
+			"default": "1080",
+			"label": "DISPLAY_HEIGHT",
+			"name": "DISPLAY_HEIGHT"
+		}
+	],
+	"logo": "https://raw.githubusercontent.com/FlashForge/Orca-Flashforge/main/resources/images/Orca-Flashforge_192px.png",
+	"name": "flashstudio",
+	"network": "host",
+	"platform": "linux",
+	"restart_policy": "unless-stopped",
+	"title": "Flash Studio",
+	"type": 1,
+	"volumes": [
+		{
+			"bind": "/portainer/Files/AppData/Config/FlashStudio",
+			"container": "/config"
+		},
+		{
+			"bind": "/portainer/Files/AppData/Config/FlashStudio/prints",
+			"container": "/prints"
+		}
+	],
+	"webpage": "https://github.com/yo-repo87/flashstudio",
+	"image_arm64": "ghcr.io/yo-repo87/flashstudio:latest",
+	"image_amd64": "ghcr.io/yo-repo87/flashstudio:latest"
+}

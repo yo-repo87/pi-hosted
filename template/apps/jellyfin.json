@@ -24,7 +24,7 @@
 	],
 	"image_arm64": "linuxserver/jellyfin:latest",
 	"image_amd64": "linuxserver/jellyfin:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/jellyfin.png",
+	"logo": "https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/icon-transparent.svg",
 	"name": "jellyfin",
 	"officialDoc": "https://docs.linuxserver.io/images/docker-jellyfin",
 	"platform": "linux",

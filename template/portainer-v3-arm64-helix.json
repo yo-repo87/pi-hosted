@@ -6,7 +6,7 @@
     "Finance",
     "Other"
    ],
-   "description": "Actual Budget is a private, local-first envelope-budgeting app — a distinct budgeting philosophy from the full double-entry accounting the Firefly III template in this list offers, and generally simpler to get started with.",
+   "description": "Actual Budget is a private, local-first envelope-budgeting app \u2014 a distinct budgeting philosophy from the full double-entry accounting the Firefly III template in this list offers, and generally simpler to get started with.",
    "image": "actualbudget/actual-server:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/actual-budget.png",
    "name": "actual-budget",
@@ -903,7 +903,7 @@
     "Other",
     "Tools"
    ],
-   "description": "Bitcoin Core is the reference full node implementation of the Bitcoin protocol — validates and relays transactions/blocks and can serve as the trusted backend for a wallet, an Electrum server (see the electrs template in this list), or a Lightning node (see the LND template in this list).",
+   "description": "Bitcoin Core is the reference full node implementation of the Bitcoin protocol \u2014 validates and relays transactions/blocks and can serve as the trusted backend for a wallet, an Electrum server (see the electrs template in this list), or a Lightning node (see the LND template in this list).",
    "env": [
     {
      "label": "BITCOIN_RPC_USER",
@@ -1041,7 +1041,7 @@
     "Cloud",
     "Books"
    ],
-   "description": "calibre is a powerful and easy to use e-book manager. Users say it’s outstanding and a must-have. It’ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It’s also completely free and open source and great for both casual users and computer experts.",
+   "description": "calibre is a powerful and easy to use e-book manager. Users say it\u2019s outstanding and a must-have. It\u2019ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It\u2019s also completely free and open source and great for both casual users and computer experts.",
    "env": [
     {
      "default": "1000",
@@ -1171,7 +1171,7 @@
     "Other",
     "Tools"
    ],
-   "description": "changedetection.io monitors websites for content changes and sends alerts via email, Discord, Slack, and many other services — useful for tracking price drops, restock alerts, or any page content change.",
+   "description": "changedetection.io monitors websites for content changes and sends alerts via email, Discord, Slack, and many other services \u2014 useful for tracking price drops, restock alerts, or any page content change.",
    "image": "ghcr.io/dgtlmoon/changedetection.io:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/changedetection.png",
    "name": "changedetection.io",
@@ -1296,7 +1296,7 @@
     "Other",
     "Anitvirus"
    ],
-   "description": "ClamAV® is an open source antivirus engine for detecting trojans, viruses, malware & other malicious threats.",
+   "description": "ClamAV\u00ae is an open source antivirus engine for detecting trojans, viruses, malware & other malicious threats.",
    "image": "mkodockx/docker-clamav:alpine",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/clamav-trademark.png",
    "name": "clamav",
@@ -1354,7 +1354,7 @@
    "interactive": true,
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/claude-code.png",
    "name": "claude-code",
-   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://docs.claude.com/en/docs/claude-code\" target=\"_blank\">https://docs.claude.com/en/docs/claude-code</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/yo-repo87/claude-code-docker#readme\" target=\"_blank\">https://github.com/yo-repo87/claude-code-docker#readme</a><br><br><br>This container has no web UI — after deploying, open Portainer's Console for this container and attach to a shell (or directly to the claude command) to use it interactively. Your project files belong in the /workspace volume; Claude Code's own login/session state is kept in /home/claude/.claude so it survives restarts.",
+   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://docs.claude.com/en/docs/claude-code\" target=\"_blank\">https://docs.claude.com/en/docs/claude-code</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/yo-repo87/claude-code-docker#readme\" target=\"_blank\">https://github.com/yo-repo87/claude-code-docker#readme</a><br><br><br>This container has no web UI \u2014 after deploying, open Portainer's Console for this container and attach to a shell (or directly to the claude command) to use it interactively. Your project files belong in the /workspace volume; Claude Code's own login/session state is kept in /home/claude/.claude so it survives restarts.",
    "officialDoc": "https://github.com/yo-repo87/claude-code-docker#readme",
    "platform": "linux",
    "restart_policy": "unless-stopped",
@@ -1415,7 +1415,7 @@
     "VPN",
     "Proxy"
    ],
-   "description": "Cloudflare Tunnel provides you with a secure way to connect your resources to Cloudflare without a publicly routable IP address. With Tunnel, you do not send traffic to an external IP — instead, a lightweight daemon in your infrastructure (cloudflared) creates outbound-only connections to Cloudflare's edge.",
+   "description": "Cloudflare Tunnel provides you with a secure way to connect your resources to Cloudflare without a publicly routable IP address. With Tunnel, you do not send traffic to an external IP \u2014 instead, a lightweight daemon in your infrastructure (cloudflared) creates outbound-only connections to Cloudflare's edge.",
    "env": [
     {
      "default": "Your_Tunnel_Token_From_The_Zero_Dashboard_Access_Tunnel",
@@ -1551,19 +1551,19 @@
      "name": "password"
     },
     {
-     "description": "When this environment variable is set (is not “”), then startup script will not generate a new SSL certificate signed by a dummy CA. It is useful, if you want to use your own SSL certificate for some reason.",
+     "description": "When this environment variable is set (is not \u201c\u201d), then startup script will not generate a new SSL certificate signed by a dummy CA. It is useful, if you want to use your own SSL certificate for some reason.",
      "default": "",
      "label": "DONT_GEN_SSL_CERT",
      "name": "DONT_GEN_SSL_CERT"
     },
     {
-     "description": "When this environment variable is set (is not “”), then startup script will generate a new SSL certificate signed by a dummy CA for this domain, not for localhost",
+     "description": "When this environment variable is set (is not \u201c\u201d), then startup script will generate a new SSL certificate signed by a dummy CA for this domain, not for localhost",
      "default": "",
      "label": "cert_domain",
      "name": "cert_domain"
     },
     {
-     "description": "When this environment variable is set (is not “”), then its value will be used as server name in /etc/coolwsd/coolwsd.xml. Without this, CODE is not delivering a correct host for the websocket connection in case of a proxy in front of it.",
+     "description": "When this environment variable is set (is not \u201c\u201d), then its value will be used as server name in /etc/coolwsd/coolwsd.xml. Without this, CODE is not delivering a correct host for the websocket connection in case of a proxy in front of it.",
      "default": "collabora.domain.tld | http://IP:Port",
      "label": "server_name",
      "name": "server_name"
@@ -1697,7 +1697,7 @@
     "Productivity",
     "Security"
    ],
-   "description": "CryptPad is a privacy-focused, end-to-end encrypted collaborative office suite — real-time documents, spreadsheets, presentations, kanban boards, and more, with the server never able to read your content.",
+   "description": "CryptPad is a privacy-focused, end-to-end encrypted collaborative office suite \u2014 real-time documents, spreadsheets, presentations, kanban boards, and more, with the server never able to read your content.",
    "image": "cryptpad/cryptpad:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/cryptpad.png",
    "name": "cryptpad",
@@ -2466,7 +2466,7 @@
     "Other",
     "Tools"
    ],
-   "description": "electrs is an efficient Electrum Server implementation in Rust, letting Electrum-compatible wallets query balances and transaction history against your own Bitcoin Core node instead of a third-party server. Requires an already-running, txindex-enabled Bitcoin Core node — see the Bitcoin Core template in this list.",
+   "description": "electrs is an efficient Electrum Server implementation in Rust, letting Electrum-compatible wallets query balances and transaction history against your own Bitcoin Core node instead of a third-party server. Requires an already-running, txindex-enabled Bitcoin Core node \u2014 see the Bitcoin Core template in this list.",
    "env": [
     {
      "description": "e.g. bitcoin-core:8332",
@@ -3118,7 +3118,7 @@
     "Other"
    ],
    "command": "trade --config /freqtrade/user_data/config.json --strategy SampleStrategy",
-   "description": "Freqtrade is a free, open-source crypto trading bot supporting backtesting, strategy optimization, and automated trading across many exchanges, with a FreqUI web dashboard. You must supply your own user_data/config.json (with exchange API keys and strategy) in the mounted volume before the bot can trade — see the official quickstart.",
+   "description": "Freqtrade is a free, open-source crypto trading bot supporting backtesting, strategy optimization, and automated trading across many exchanges, with a FreqUI web dashboard. You must supply your own user_data/config.json (with exchange API keys and strategy) in the mounted volume before the bot can trade \u2014 see the official quickstart.",
    "image": "freqtradeorg/freqtrade:stable",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/freqtrade.png",
    "name": "freqtrade",
@@ -3144,7 +3144,7 @@
    "categories": [
     "Other"
    ],
-   "description": "A free, self-hostable rss aggregator…",
+   "description": "A free, self-hostable rss aggregator\u2026",
    "env": [
     {
      "default": "1000",
@@ -3194,7 +3194,7 @@
    "image": "ghcr.io/blakeblackshear/frigate:stable",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/frigate.png",
    "name": "frigate",
-   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://frigate.video/\" target=\"_blank\">https://frigate.video/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.frigate.video/frigate/installation/\" target=\"_blank\">https://docs.frigate.video/frigate/installation/</a><br><br><br>Requires a config.yml in the config volume defining your cameras' RTSP streams (e.g. rtsp://IP-CAM/ch0_1.h264 for detection, ch0_0.h264 for recording). This container needs a larger shared-memory allocation than Portainer's default 64MB — after deploying, edit the container/stack to add `shm_size: 512m` (or more) or detection will crash.",
+   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://frigate.video/\" target=\"_blank\">https://frigate.video/</a><br><b>Official Docker Documentation: </b><a href=\"https://docs.frigate.video/frigate/installation/\" target=\"_blank\">https://docs.frigate.video/frigate/installation/</a><br><br><br>Requires a config.yml in the config volume defining your cameras' RTSP streams (e.g. rtsp://IP-CAM/ch0_1.h264 for detection, ch0_0.h264 for recording). This container needs a larger shared-memory allocation than Portainer's default 64MB \u2014 after deploying, edit the container/stack to add `shm_size: 512m` (or more) or detection will crash.",
    "officialDoc": "https://docs.frigate.video/frigate/installation/",
    "platform": "linux",
    "ports": [
@@ -3231,7 +3231,7 @@
     "Monitor",
     "Tools"
    ],
-   "description": "Gatus is a status/uptime page and health-check tool — define endpoints and conditions in a config file and get a public-facing status page plus alerting (Slack, Discord, PagerDuty, and more). Complements the Uptime Kuma template in this list, which is geared more toward internal monitoring than a shareable status page.",
+   "description": "Gatus is a status/uptime page and health-check tool \u2014 define endpoints and conditions in a config file and get a public-facing status page plus alerting (Slack, Discord, PagerDuty, and more). Complements the Uptime Kuma template in this list, which is geared more toward internal monitoring than a shareable status page.",
    "env": [
     {
      "default": "America/New_York",
@@ -3242,7 +3242,7 @@
    "image": "twinproduction/gatus:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/gatus.png",
    "name": "gatus",
-   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://gatus.io/\" target=\"_blank\">https://gatus.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/TwiN/gatus#usage\" target=\"_blank\">https://github.com/TwiN/gatus#usage</a><br><br><br>You must create a config.yaml in the mounted config volume defining your endpoints before Gatus has anything to monitor — see the official documentation for the config format.",
+   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://gatus.io/\" target=\"_blank\">https://gatus.io/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/TwiN/gatus#usage\" target=\"_blank\">https://github.com/TwiN/gatus#usage</a><br><br><br>You must create a config.yaml in the mounted config volume defining your endpoints before Gatus has anything to monitor \u2014 see the official documentation for the config format.",
    "officialDoc": "https://github.com/TwiN/gatus#usage",
    "platform": "linux",
    "ports": [
@@ -3318,7 +3318,7 @@
     "Tools"
    ],
    "command": "--http --http.addr 0.0.0.0 --http.vhosts=* --authrpc.addr 0.0.0.0 --authrpc.vhosts=*",
-   "description": "Geth (go-ethereum) is the most widely-used execution client for the Ethereum network. Post-Merge, it must be paired with a consensus client — see the Lighthouse template in this list — to fully sync and validate the chain.",
+   "description": "Geth (go-ethereum) is the most widely-used execution client for the Ethereum network. Post-Merge, it must be paired with a consensus client \u2014 see the Lighthouse template in this list \u2014 to fully sync and validate the chain.",
    "image": "ethereum/client-go:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/geth.png",
    "name": "geth",
@@ -3666,7 +3666,7 @@
     "Monitor",
     "Tools"
    ],
-   "description": "Grafana Dashboard anything. Observe everything.  Query, visualize, alert on, and understand your data no matter where it’s stored. With Grafana you can create, explore, and share all of your data through beautiful, flexible dashboards.",
+   "description": "Grafana Dashboard anything. Observe everything.  Query, visualize, alert on, and understand your data no matter where it\u2019s stored. With Grafana you can create, explore, and share all of your data through beautiful, flexible dashboards.",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/grafana-logo.png",
    "name": "grafana",
    "officialDoc": "https://grafana.com/docs/grafana/v9.0/setup-grafana/installation/docker/",
@@ -3880,11 +3880,11 @@
     "Tools"
    ],
    "command": "serve",
-   "description": "Headscale is a self-hosted, open-source implementation of the Tailscale coordination server — run your own control plane for a Tailscale-compatible mesh VPN instead of relying on Tailscale's hosted service (see the Tailscale template in this list for the client).",
+   "description": "Headscale is a self-hosted, open-source implementation of the Tailscale coordination server \u2014 run your own control plane for a Tailscale-compatible mesh VPN instead of relying on Tailscale's hosted service (see the Tailscale template in this list for the client).",
    "image": "headscale/headscale:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/headscale.png",
    "name": "headscale",
-   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://headscale.net/\" target=\"_blank\">https://headscale.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://headscale.net/stable/setup/install/container/\" target=\"_blank\">https://headscale.net/stable/setup/install/container/</a><br><br><br>You must create a config.yaml in the config volume before first start — see the official quickstart. The image is distroless (no shell); use 'docker exec headscale headscale ...' for user/node management, which still works since headscale itself is the entrypoint binary.",
+   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://headscale.net/\" target=\"_blank\">https://headscale.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://headscale.net/stable/setup/install/container/\" target=\"_blank\">https://headscale.net/stable/setup/install/container/</a><br><br><br>You must create a config.yaml in the config volume before first start \u2014 see the official quickstart. The image is distroless (no shell); use 'docker exec headscale headscale ...' for user/node management, which still works since headscale itself is the entrypoint binary.",
    "officialDoc": "https://headscale.net/stable/setup/install/container/",
    "platform": "linux",
    "ports": [
@@ -4711,7 +4711,7 @@
    "categories": [
     "Tools"
    ],
-   "description": "IT-Tools is a collection of handy online tools for developers and sysadmins, such as JSON formatters, encoders/decoders, token generators, regex testers, and more — all in one self-hosted web app.",
+   "description": "IT-Tools is a collection of handy online tools for developers and sysadmins, such as JSON formatters, encoders/decoders, token generators, regex testers, and more \u2014 all in one self-hosted web app.",
    "image": "corentinth/it-tools:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/it-tools.png",
    "name": "it-tools",
@@ -5180,7 +5180,7 @@
    "categories": [
     "Video"
    ],
-   "description": "[DEPRECATED] Headless installation of Kodi™ (formerly known as XBMC™), to enable library updates.",
+   "description": "[DEPRECATED] Headless installation of Kodi\u2122 (formerly known as XBMC\u2122), to enable library updates.",
    "env": [
     {
      "default": "1000",
@@ -5489,7 +5489,7 @@
     "Tools"
    ],
    "command": "lighthouse bn --network mainnet --execution-endpoint http://geth:8551 --execution-jwt /root/.lighthouse/jwt.hex --http --http-address 0.0.0.0 --checkpoint-sync-url https://mainnet.checkpoint.sigp.io",
-   "description": "Lighthouse is a fast, secure Ethereum consensus (beacon chain) client written in Rust. It must be paired with an execution client — such as the Geth template in this list — via the Engine API to run a full Ethereum node.",
+   "description": "Lighthouse is a fast, secure Ethereum consensus (beacon chain) client written in Rust. It must be paired with an execution client \u2014 such as the Geth template in this list \u2014 via the Engine API to run a full Ethereum node.",
    "image": "sigp/lighthouse:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/lighthouse.png",
    "name": "lighthouse",
@@ -5762,7 +5762,7 @@
     "AI",
     "Tools"
    ],
-   "description": "LocalAI is a free, open-source drop-in replacement for the OpenAI API that runs LLM, image, audio, and video generation models entirely on your own hardware — no GPU required.",
+   "description": "LocalAI is a free, open-source drop-in replacement for the OpenAI API that runs LLM, image, audio, and video generation models entirely on your own hardware \u2014 no GPU required.",
    "image": "localai/localai:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/localai.png",
    "name": "localai",
@@ -5788,7 +5788,7 @@
    "categories": [
     "Other"
    ],
-   "description": "Server version of Luanti (formerly Minetest — renamed in October 2024 due to a trademark dispute), a free, open source alternative to minecraft.",
+   "description": "Server version of Luanti (formerly Minetest \u2014 renamed in October 2024 due to a trademark dispute), a free, open source alternative to minecraft.",
    "env": [
     {
      "default": "1000",
@@ -6323,7 +6323,7 @@
    "categories": [
     "Other"
    ],
-   "description": "Miniflux is a minimalist, opinionated RSS/Atom feed reader. It requires an external PostgreSQL database — point DATABASE_URL at an existing PostgreSQL container (e.g. the PostgreSQL template in this app list) before starting.",
+   "description": "Miniflux is a minimalist, opinionated RSS/Atom feed reader. It requires an external PostgreSQL database \u2014 point DATABASE_URL at an existing PostgreSQL container (e.g. the PostgreSQL template in this app list) before starting.",
    "env": [
     {
      "description": "e.g. postgres://miniflux:password@dbhost/miniflux?sslmode=disable",
@@ -6462,7 +6462,7 @@
     "Other",
     "Tools"
    ],
-   "description": "A full Monero node (monerod) — validates and relays Monero transactions and blocks, and can back a monero-wallet-rpc or GUI/CLI wallet for maximum privacy. This template uses the widely-used, community-maintained simple-monerod image, built from the official Monero project source.",
+   "description": "A full Monero node (monerod) \u2014 validates and relays Monero transactions and blocks, and can back a monero-wallet-rpc or GUI/CLI wallet for maximum privacy. This template uses the widely-used, community-maintained simple-monerod image, built from the official Monero project source.",
    "image": "sethsimmons/simple-monerod:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/monero.png",
    "name": "monero-node",
@@ -7056,7 +7056,7 @@
     "browser",
     "Other"
    ],
-   "description": "Neko runs a full, real Brave browser inside the container and streams it to your browser over WebRTC — not VNC. WebRTC is built for real-time video over lossy/jittery connections (adaptive bitrate, UDP transport, automatic reconnect), so it holds up far better on flaky remote links than VNC/RFB-based browser containers do. Multiple people can also join the same session together (with chat) if you want to co-browse.",
+   "description": "Neko runs a full, real Brave browser inside the container and streams it to your browser over WebRTC \u2014 not VNC. WebRTC is built for real-time video over lossy/jittery connections (adaptive bitrate, UDP transport, automatic reconnect), so it holds up far better on flaky remote links than VNC/RFB-based browser containers do. Multiple people can also join the same session together (with chat) if you want to co-browse.",
    "env": [
     {
      "default": "7424",
@@ -7075,7 +7075,7 @@
     },
     {
      "default": "56300-56400",
-     "description": "Must exactly match the UDP port range published below — WebRTC needs the host and container port numbers to be identical, not just mapped",
+     "description": "Must exactly match the UDP port range published below \u2014 WebRTC needs the host and container port numbers to be identical, not just mapped",
      "label": "NEKO_WEBRTC_EPR",
      "name": "NEKO_WEBRTC_EPR"
     },
@@ -7087,7 +7087,7 @@
    ],
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/neko-brave.png",
    "name": "neko-brave",
-   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://neko.m1k1o.net/\" target=\"_blank\">https://neko.m1k1o.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://neko.m1k1o.net/docs/v3/installation\" target=\"_blank\">https://neko.m1k1o.net/docs/v3/installation</a><br><br><br>The UDP port range must stay unmapped (host port == container port) for WebRTC to work — don't change WEB_PORT's mapping and don't remap the UDP range. If you're behind a router (not just accessing over VPN/LAN), you'll also need to forward the WebRTC UDP port range to this host. Shared memory is set to 2GB in the stack file for headroom with several tabs open.",
+   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://neko.m1k1o.net/\" target=\"_blank\">https://neko.m1k1o.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://neko.m1k1o.net/docs/v3/installation\" target=\"_blank\">https://neko.m1k1o.net/docs/v3/installation</a><br><br><br>The UDP port range must stay unmapped (host port == container port) for WebRTC to work \u2014 don't change WEB_PORT's mapping and don't remap the UDP range. If you're behind a router (not just accessing over VPN/LAN), you'll also need to forward the WebRTC UDP port range to this host. Shared memory is set to 2GB in the stack file for headroom with several tabs open.",
    "officialDoc": "https://neko.m1k1o.net/docs/v3/installation",
    "platform": "linux",
    "repository": {
@@ -7104,7 +7104,7 @@
     "browser",
     "Other"
    ],
-   "description": "Neko runs a full, real Firefox inside the container and streams it to your browser over WebRTC — not VNC. Because WebRTC is built for real-time video over lossy/jittery connections (adaptive bitrate, UDP transport, automatic reconnect), it holds up far better on flaky remote links than VNC/RFB-based browser containers do. Multiple people can also join the same session together (with chat) if you want to co-browse.",
+   "description": "Neko runs a full, real Firefox inside the container and streams it to your browser over WebRTC \u2014 not VNC. Because WebRTC is built for real-time video over lossy/jittery connections (adaptive bitrate, UDP transport, automatic reconnect), it holds up far better on flaky remote links than VNC/RFB-based browser containers do. Multiple people can also join the same session together (with chat) if you want to co-browse.",
    "env": [
     {
      "default": "7422",
@@ -7123,7 +7123,7 @@
     },
     {
      "default": "56000-56100",
-     "description": "Must exactly match the UDP port range published below — WebRTC needs the host and container port numbers to be identical, not just mapped",
+     "description": "Must exactly match the UDP port range published below \u2014 WebRTC needs the host and container port numbers to be identical, not just mapped",
      "label": "NEKO_WEBRTC_EPR",
      "name": "NEKO_WEBRTC_EPR"
     },
@@ -7135,7 +7135,7 @@
    ],
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/neko-firefox.png",
    "name": "neko-firefox",
-   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://neko.m1k1o.net/\" target=\"_blank\">https://neko.m1k1o.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://neko.m1k1o.net/docs/v3/installation\" target=\"_blank\">https://neko.m1k1o.net/docs/v3/installation</a><br><br><br>The UDP port range must stay unmapped (host port == container port) for WebRTC to work — don't change WEB_PORT's mapping and don't remap the UDP range. If you're behind a router (not just accessing over VPN/LAN), you'll also need to forward the WebRTC UDP port range to this host. Shared memory is set to 2GB in the stack file for headroom with several tabs open.",
+   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://neko.m1k1o.net/\" target=\"_blank\">https://neko.m1k1o.net/</a><br><b>Official Docker Documentation: </b><a href=\"https://neko.m1k1o.net/docs/v3/installation\" target=\"_blank\">https://neko.m1k1o.net/docs/v3/installation</a><br><br><br>The UDP port range must stay unmapped (host port == container port) for WebRTC to work \u2014 don't change WEB_PORT's mapping and don't remap the UDP range. If you're behind a router (not just accessing over VPN/LAN), you'll also need to forward the WebRTC UDP port range to this host. Shared memory is set to 2GB in the stack file for headroom with several tabs open.",
    "officialDoc": "https://neko.m1k1o.net/docs/v3/installation",
    "platform": "linux",
    "repository": {
@@ -8070,7 +8070,7 @@
     "AI",
     "Chat"
    ],
-   "description": "Open WebUI is a feature-rich, self-hosted web interface for Ollama and OpenAI-compatible APIs, supporting multiple users, RAG document chat, web search, and more. This is the CPU/default build — see 'Open WebUI (GPU)' in this app list for the CUDA-accelerated variant.",
+   "description": "Open WebUI is a feature-rich, self-hosted web interface for Ollama and OpenAI-compatible APIs, supporting multiple users, RAG document chat, web search, and more. This is the CPU/default build \u2014 see 'Open WebUI (GPU)' in this app list for the CUDA-accelerated variant.",
    "env": [
     {
      "default": "http://ollama:11434",
@@ -8506,7 +8506,7 @@
    "categories": [
     "Photos"
    ],
-   "description": "PhotoPrism® is an AI-powered app for browsing, organizing & sharing your photo collection. It makes use of the latest technologies to tag and find pictures automatically without getting in your way. You can run it at home, on a private server, or in the cloud.",
+   "description": "PhotoPrism\u00ae is an AI-powered app for browsing, organizing & sharing your photo collection. It makes use of the latest technologies to tag and find pictures automatically without getting in your way. You can run it at home, on a private server, or in the cloud.",
    "env": [
     {
      "default": "change me to a secure password",
@@ -9254,7 +9254,7 @@
     "Cloud",
     "Other"
    ],
-   "description": "Pydio Cells is a mature open source software solution for file sharing and synchronization. With intuitive user interfaces (web / mobile / desktop), Pydio provides enterprise-grade features to gain back control and privacy of your data: user directory connectors, legacy filesystems drivers, comprehensive admin interface, and much more. Classic Pydio (the PHP version this template used) was deprecated by both its author and LinuxServer.io in favor of Pydio Cells, a full Go rewrite — this template now uses that.",
+   "description": "Pydio Cells is a mature open source software solution for file sharing and synchronization. With intuitive user interfaces (web / mobile / desktop), Pydio provides enterprise-grade features to gain back control and privacy of your data: user directory connectors, legacy filesystems drivers, comprehensive admin interface, and much more. Classic Pydio (the PHP version this template used) was deprecated by both its author and LinuxServer.io in favor of Pydio Cells, a full Go rewrite \u2014 this template now uses that.",
    "env": [
     {
      "default": "1000",
@@ -9296,7 +9296,7 @@
    "categories": [
     "Downloaders"
    ],
-   "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.",
+   "description": "The qBittorrent project aims to provide an open-source software alternative to \u00b5Torrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.",
    "env": [
     {
      "default": "1000",
@@ -9469,7 +9469,7 @@
     "Downloaders",
     "Video"
    ],
-   "description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
+   "description": "Radarr - A fork of Sonarr to work with movies \u00e0 la Couchpotato.",
    "env": [
     {
      "default": "1000",
@@ -10626,7 +10626,7 @@
     "Security",
     "Tools"
    ],
-   "description": "step-ca is a private online certificate authority (CA) for secure, automated X.509 and SSH certificate management on your own network — issue and rotate internal TLS certificates without relying on a public CA.",
+   "description": "step-ca is a private online certificate authority (CA) for secure, automated X.509 and SSH certificate management on your own network \u2014 issue and rotate internal TLS certificates without relying on a public CA.",
    "env": [
     {
      "description": "Name for your private CA, e.g. Homelab CA",
@@ -10925,7 +10925,7 @@
     "Video",
     "Tools"
    ],
-   "description": "Tdarr is automated media transcoding and health-checking — build library-wide transcode workflows (e.g. re-encode to H.265, strip unwanted audio tracks) that run across your Sonarr/Radarr/Jellyfin/Plex media library. This template runs the combined server + internal node; add the separate tdarr_node image on other machines to distribute transcode workload.",
+   "description": "Tdarr is automated media transcoding and health-checking \u2014 build library-wide transcode workflows (e.g. re-encode to H.265, strip unwanted audio tracks) that run across your Sonarr/Radarr/Jellyfin/Plex media library. This template runs the combined server + internal node; add the separate tdarr_node image on other machines to distribute transcode workload.",
    "env": [
     {
      "default": "1000",
@@ -11048,7 +11048,7 @@
     "Other",
     "Tools"
    ],
-   "description": "Termix is a clientless, self-hosted, web-based server management platform with an SSH terminal, tunneling, and file editing capabilities — a self-hosted alternative to Termius.",
+   "description": "Termix is a clientless, self-hosted, web-based server management platform with an SSH terminal, tunneling, and file editing capabilities \u2014 a self-hosted alternative to Termius.",
    "env": [
     {
      "default": "8080",
@@ -11227,7 +11227,7 @@
    "categories": [
     "Downloaders"
    ],
-   "description": "Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.",
+   "description": "Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, \u00b5TP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.",
    "env": [
     {
      "default": "1000",
@@ -11608,7 +11608,7 @@
    "categories": [
     "CCTV"
    ],
-   "description": "[DEPRECATED] UniFi Video is a powerful and flexible, integrated IP video management surveillance system designed to work with Ubiquiti's UniFi Video Camera product line. UniFi Video has an intuitive, configurable, and feature‑packed user interface with advanced features such as motion detection, auto‑discovery, user‑level security, storage management, reporting, and mobile device support. [DEPRECATED] Ubiquiti discontinued the UniFi Video product line in favor of UniFi Protect, which requires their own NVR/controller hardware and has no self-hosted docker equivalent. This template is kept only for existing UniFi Video camera owners.",
+   "description": "[DEPRECATED] UniFi Video is a powerful and flexible, integrated IP video management surveillance system designed to work with Ubiquiti's UniFi Video Camera product line. UniFi Video has an intuitive, configurable, and feature\u2011packed user interface with advanced features such as motion detection, auto\u2011discovery, user\u2011level security, storage management, reporting, and mobile device support. [DEPRECATED] Ubiquiti discontinued the UniFi Video product line in favor of UniFi Protect, which requires their own NVR/controller hardware and has no self-hosted docker equivalent. This template is kept only for existing UniFi Video camera owners.",
    "env": [
     {
      "default": "99",
@@ -12563,7 +12563,7 @@
    "image": "dlandon/zoneminder:latest",
    "logo": "https://raw.githubusercontent.com/yo-repo87/pi-hosted/master/images/zoneminder.png",
    "name": "zoneminder",
-   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://zoneminder.com/\" target=\"_blank\">https://zoneminder.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/dlandon/zoneminder.master-docker\" target=\"_blank\">https://github.com/dlandon/zoneminder.master-docker</a><br><br><br>Web console is served over HTTPS on the mapped port (default self-signed cert). Add cameras as an ONVIF or FFMPEG/RTSP source pointed at your camera's stream (e.g. rtsp://IP-CAM/ch0_0.h264). ZoneMinder uses a large shared-memory segment for frame buffers — if recording fails to start, increase the container's shm_size.",
+   "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://zoneminder.com/\" target=\"_blank\">https://zoneminder.com/</a><br><b>Official Docker Documentation: </b><a href=\"https://github.com/dlandon/zoneminder.master-docker\" target=\"_blank\">https://github.com/dlandon/zoneminder.master-docker</a><br><br><br>Web console is served over HTTPS on the mapped port (default self-signed cert). Add cameras as an ONVIF or FFMPEG/RTSP source pointed at your camera's stream (e.g. rtsp://IP-CAM/ch0_0.h264). ZoneMinder uses a large shared-memory segment for frame buffers \u2014 if recording fails to start, increase the container's shm_size.",
    "officialDoc": "https://github.com/dlandon/zoneminder.master-docker",
    "platform": "linux",
    "ports": [
@@ -12687,6 +12687,172 @@
    "image": "ghcr.io/yo-repo87/flashstudio:latest",
    "id": 302,
    "note": "<b>Template created by Pi-Hosted Series</b><br><b>Check our Github page: <a href=\"https://github.com/pi-hosted/pi-hosted\" target=\"_blank\">https://github.com/pi-hosted/pi-hosted</a></b><br><br><b>Official Webpage: </b><a href=\"https://github.com/yo-repo87/flashstudio\" target=\"_blank\">https://github.com/yo-repo87/flashstudio</a><br><br>"
+  },
+  {
+   "id": 303,
+   "title": "Jellyfin Plex - Unified",
+   "name": "jellyfin-plex-unified",
+   "description": "All-in-one single-container Jellyfin + Plex UI. Complete media server with 95%+ Plex feature parity. Jellyfin on :8096, UI on :3000.",
+   "image": "ghcr.io/yo-repo87/jellyfin-plex-enhancement:integrated-latest",
+   "type": 1,
+   "categories": [
+    "Media"
+   ],
+   "platform": "linux",
+   "restart_policy": "unless-stopped",
+   "ports": [
+    {
+     "WebUI": 3000,
+     "TCP": 3000
+    },
+    {
+     "Jellyfin": 8096,
+     "TCP": 8096
+    }
+   ],
+   "volumes": [
+    {
+     "bind": "/mnt/user/appdata/jellyfin-plex-unified",
+     "container": "/config"
+    },
+    {
+     "bind": "/mnt/user/appdata/jellyfin-plex-cache",
+     "container": "/cache"
+    },
+    {
+     "bind": "/mnt/user/media",
+     "container": "/media"
+    }
+   ],
+   "env": [
+    {
+     "name": "JELLYFIN_PublishedServerUrl",
+     "default": "http://localhost:8096"
+    },
+    {
+     "name": "JELLYFIN_CACHE_DIR",
+     "default": "/cache"
+    }
+   ],
+   "logo": "https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/icon-transparent.svg",
+   "webpage": "https://github.com/yo-repo87/Jellyfin_Plex_Enhancement"
+  },
+  {
+   "id": 304,
+   "title": "Jellyfin Plex - Production",
+   "name": "jellyfin-plex-production",
+   "description": "Full production setup with persistent storage for config and backups. Recommended for power users.",
+   "image": "ghcr.io/yo-repo87/jellyfin-plex-enhancement:latest",
+   "type": 1,
+   "categories": [
+    "Media"
+   ],
+   "platform": "linux",
+   "restart_policy": "unless-stopped",
+   "ports": [
+    {
+     "WebUI": 3000,
+     "TCP": 3000
+    }
+   ],
+   "volumes": [
+    {
+     "bind": "/mnt/user/appdata/jellyfin-plex",
+     "container": "/app/config"
+    },
+    {
+     "bind": "/mnt/user/media",
+     "container": "/media"
+    }
+   ],
+   "env": [
+    {
+     "name": "NODE_ENV",
+     "default": "production"
+    },
+    {
+     "name": "JELLYFIN_API_URL",
+     "default": "http://jellyfin:8096"
+    },
+    {
+     "name": "JELLYFIN_API_KEY",
+     "default": ""
+    }
+   ],
+   "logo": "https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/icon-transparent.svg",
+   "webpage": "https://github.com/yo-repo87/Jellyfin_Plex_Enhancement"
+  },
+  {
+   "id": 305,
+   "title": "Jellyfin Plex - Media Hub",
+   "name": "jellyfin-plex-media",
+   "description": "Media library integration with volumes for movies, TV, music, and metadata caching.",
+   "image": "ghcr.io/yo-repo87/jellyfin-plex-enhancement:latest",
+   "type": 1,
+   "categories": [
+    "Media"
+   ],
+   "platform": "linux",
+   "restart_policy": "unless-stopped",
+   "ports": [
+    {
+     "WebUI": 3000,
+     "TCP": 3000
+    }
+   ],
+   "volumes": [
+    {
+     "bind": "/mnt/user/media",
+     "container": "/media"
+    },
+    {
+     "bind": "/mnt/user/appdata/jellyfin-plex-cache",
+     "container": "/cache"
+    }
+   ],
+   "env": [
+    {
+     "name": "NODE_ENV",
+     "default": "production"
+    }
+   ],
+   "logo": "https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/icon-transparent.svg",
+   "webpage": "https://github.com/yo-repo87/Jellyfin_Plex_Enhancement"
+  },
+  {
+   "id": 306,
+   "title": "Jellyfin Plex - Integrated",
+   "name": "jellyfin-plex-integrated",
+   "description": "Full Jellyfin backend integration for complete library management.",
+   "image": "ghcr.io/yo-repo87/jellyfin-plex-enhancement:latest",
+   "type": 1,
+   "categories": [
+    "Media"
+   ],
+   "platform": "linux",
+   "restart_policy": "unless-stopped",
+   "ports": [
+    {
+     "WebUI": 3000,
+     "TCP": 3000
+    }
+   ],
+   "env": [
+    {
+     "name": "NODE_ENV",
+     "default": "production"
+    },
+    {
+     "name": "JELLYFIN_API_URL",
+     "default": "http://jellyfin:8096"
+    },
+    {
+     "name": "JELLYFIN_API_KEY",
+     "default": ""
+    }
+   ],
+   "logo": "https://raw.githubusercontent.com/jellyfin/jellyfin-ux/master/branding/SVG/icon-transparent.svg",
+   "webpage": "https://github.com/yo-repo87/Jellyfin_Plex_Enhancement"
   }
  ],
  "_helix": {
